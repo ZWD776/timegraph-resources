@@ -1,0 +1,239 @@
+# Frozen effective historical configuration for release regression tests.
+profile_name: nextqa_cg6_human_compat_v2
+static_labels:
+- wall
+- floor
+- ceiling
+- window
+- door
+hierarchy_static_labels: []
+dynamic_labels: []
+noise_labels:
+- label
+- text
+- digits
+- numbers
+component_labels:
+- shirt
+- pants
+- shoes
+- arm
+- hand
+- leg
+component_host_labels:
+- person
+- man
+- woman
+- boy
+- girl
+- player
+component_inside_ratio: 0.85
+state_subject_labels:
+- person
+- people
+- man
+- woman
+- boy
+- girl
+- child
+- player
+state_prefix_allowlist:
+- wearing
+- holding
+- carrying
+- riding
+- sitting
+- standing
+- walking
+- running
+- jumping
+- cooking
+- eating
+- drinking
+- opening
+- closing
+- picking
+- putting
+- playing
+- looking
+- touching
+- using
+state_exact_allowlist: []
+state_episode_exclude_prefixes: []
+state_aliases: {}
+enable_structured_state_extraction: true
+min_state_episode_length_frames: 2
+min_state_transition_support_frames: 2
+state_transition_min_dominance_margin_frames: 1
+state_transition_min_dominance_share: 0.5
+state_transition_max_gap_frames: 3
+relation_subject_labels: []
+relation_object_labels: []
+allow_dynamic_static_relations: false
+dynamic_static_relation_predicates: []
+enable_semantic_relation_assignment_cleanup: false
+label_aliases:
+  t shirt: shirt
+  t - shirt: shirt
+  shoe: shoes
+  jerseys: jersey
+label_compatibility_groups:
+- - person
+  - people
+  - man
+  - woman
+  - boy
+  - girl
+  - child
+  - player
+label_min_scores: {}
+association_label_gap_overrides: {}
+fragment_noise_labels: []
+fragment_noise_max_score: null
+relation_map:
+  standing on: STANDING_ON
+  'on': 'ON'
+  above: ABOVE
+  below: BELOW
+  against: AGAINST
+  near: NEAR
+  close to: NEAR
+  beside: NEXT_TO
+  adjacent to: NEXT_TO
+  next to: NEXT_TO
+  in front of: IN_FRONT_OF
+  behind: BEHIND
+  holding: HOLDING
+  holds: HOLDING
+  looking at: LOOKING_AT
+  attached to: ATTACHED_TO
+  reflects: REFLECTS
+  is similar to: SIMILAR_TO
+  features: FEATURES
+  advertises: ADVERTISES
+  define: DEFINES
+enable_relation_predicate_mapping: false
+relation_episode_exclude_predicates: []
+relation_episode_gap_overrides: {}
+relation_episode_min_support_overrides: {}
+min_relation_episode_support_frames: 1
+min_relation_episode_length_frames: 2
+min_relation_event_support_frames: 3
+max_entity_absence_tolerance_frames: 2
+min_entity_segment_event_support_frames: 3
+entity_segment_event_support_overrides: {}
+scene_segmentation:
+  enabled: true
+  min_scene_length: 8
+  boundary_confirmation_frames: 2
+  boundary_window_size: 3
+  min_static_entities: 2
+  min_anchor_entity_support_frames: 2
+  static_entity_jaccard_threshold: 0.25
+  static_label_jaccard_threshold: 0.45
+  max_timestamp_gap_sec: 30.0
+scene_base_graph:
+  enabled: true
+  min_anchor_coverage_ratio: 0.6
+  min_anchor_support_frames: 3
+association:
+  enable_visual_embeddings: true
+  enable_parent_label_constraint: false
+  enable_track_hints: true
+  identity_role_strategy: tracklet
+  allow_visual_stability_static_role: false
+  static_entity_match_max_frame_gap: 2
+  local_tracklet_mode: true
+  local_tracklet_max_frame_gap: 1
+  local_tracklet_embedding_similarity_threshold: 0.72
+  local_tracklet_min_score: 0.6
+  local_tracklet_score_margin: 0.08
+  local_tracklet_motion_weight: 0.35
+  local_tracklet_embedding_weight: 0.45
+  local_tracklet_iou_weight: 0.15
+  local_tracklet_object_index_weight: 0.05
+  continuity_max_center_distance_ratio: 1.75
+  continuity_min_area_ratio: 0.12
+  object_index_jump_max_delta: 8
+  object_index_jump_embedding_veto_threshold: 0.7
+  state_conflict_embedding_veto_threshold: 0.72
+  state_conflict_min_token_overlap_ratio: 0.75
+  label_conflict_embedding_veto_threshold: 0.86
+  fast_match_embedding_veto_threshold: 0.55
+  static_fast_match_embedding_veto_threshold: 0.55
+  enable_same_label_dynamic_spatial_gate: true
+llm_fallback:
+  enabled: false
+  provider: deepseek_openai_compatible
+  model: deepseek-v4-flash
+  api_base_url: https://api.deepseek.com
+  endpoint_path: /chat/completions
+  api_key_env_var: DEEPSEEK_API_KEY
+  timeout_sec: 30.0
+  temperature: 0.0
+  max_tokens: 512
+  reasoning_effort: null
+  thinking_enabled: false
+  max_candidates: 4
+  max_requests_per_run: 5
+  min_candidate_count: 1
+  ambiguity_margin: 0.05
+  low_similarity_floor: 0.55
+  low_similarity_ambiguity_margin: 0.03
+  single_candidate_score_margin: 0.03
+  enable_static_fallback: false
+  enable_noise_fallback: false
+  enable_candidate_context_fallback: false
+  require_second_candidate_for_low_similarity: true
+  override_confidence_threshold: 0.8
+  decision_log_path: null
+graph_qa:
+  enabled: false
+  provider: deepseek_openai_compatible
+  model: deepseek-v4-flash
+  api_base_url: https://api.deepseek.com
+  endpoint_path: /chat/completions
+  api_key_env_var: DEEPSEEK_API_KEY
+  timeout_sec: 30.0
+  temperature: 0.1
+  max_tokens: 700
+  reasoning_effort: null
+  thinking_enabled: false
+  prompt_style: full
+  max_evidence_lines: 6
+  max_focus_frames: 6
+  max_scene_lines: 4
+  min_evidence_lines: 1
+  target_evidence_lines: 2
+  min_focus_frames: 1
+  target_focus_frames: 2
+  complex_query_bonus_evidence_lines: 1
+  complex_query_bonus_focus_frames: 1
+  enforce_supported_evidence_only: true
+  fallback_to_graph_only_on_invalid_response: true
+  evidence_rerank_enabled: false
+  evidence_rerank_max_candidates: 18
+  evidence_rerank_max_selected: 6
+  evidence_rerank_max_tokens: 700
+  evidence_rerank_temperature: 0.0
+  answer_candidate_extraction_enabled: false
+  answer_candidate_extraction_max_candidates: 6
+  answer_candidate_extraction_max_tokens: 700
+  answer_candidate_extraction_temperature: 0.0
+  experimental_balanced_evidence_candidates: false
+  experimental_answerable_candidate_packs: false
+  answerable_candidate_pack_max_items: 12
+  experimental_unified_evidence_layer: false
+  unified_evidence_max_items: 10
+  unified_evidence_graph_quota: 5
+  unified_evidence_visual_quota: 3
+  unified_evidence_frame_quota: 2
+  experimental_atomic_answer_facts: false
+  atomic_answer_fact_max_items: 8
+garbage_collection:
+  min_lifespan: 2
+  static_fragment_max_observations: null
+export:
+  exclude_noise: false
+  exclude_fragments: false
+  protected_fragment_labels: []

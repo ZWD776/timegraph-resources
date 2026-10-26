@@ -1,0 +1,30 @@
+{
+  "pointer_version": "asset_pointer_v1",
+  "dataset": "nextqa",
+  "layer": "cache",
+  "asset_id": "nextqa-cache-external-v1",
+  "status": "active_owned_mainline",
+  "payload_migrated": true,
+  "current_paths": [
+    "datasets/nextqa/cache/nextqa-cache-external-v1/payload/embedding_cache.sqlite"
+  ],
+  "target_path": "datasets/nextqa/cache/nextqa-cache-external-v1",
+  "code_revision": "7b0345e41de2142329be972312fbc3fcf620f06b",
+  "registry": "configs/dataset_asset_registry.yaml",
+  "migration": {
+    "copy": false,
+    "move": false,
+    "delete": false,
+    "next_step": "final_deletion_gate"
+  },
+  "metadata_paths": [],
+  "entrypoints": {
+    "sqlite": "datasets/nextqa/cache/nextqa-cache-external-v1/payload/embedding_cache.sqlite",
+    "embeddings": "datasets/nextqa/cache/nextqa-cache-external-v1/payload/embedding_cache.sqlite"
+  },
+  "previous_paths": [
+    "datasets/nextqa/graphs/nextqa-cg6-human-v2-time-fact-core-v1/payload/runtime_paths_v2/cache/siglip_object_crop.sqlite"
+  ],
+  "dependency_paths": [],
+  "remaining_work": "Final review of sealed deletion catalog; actual deletion remains disabled."
+}

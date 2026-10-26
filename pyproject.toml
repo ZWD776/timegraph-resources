@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vlkg-refactor"
+version = "0.1.0"
+description = "Parallel dataset pipelines for structured video graph memory."
+requires-python = ">=3.10"
+dependencies = [
+  "faiss-cpu==1.13.2",
+  "numpy>=1.26",
+  "neo4j>=5.20",
+  "openai==1.109.1",
+  "pydantic>=2.7,<3",
+  "Pillow>=10.0",
+  "protobuf>=4.25",
+  "PyYAML>=6.0",
+  "sentence-transformers>=3.0",
+  "sentencepiece>=0.2.0",
+  "torch>=2.2",
+  "torchvision>=0.17",
+  "transformers>=4.40",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8", "pytest-asyncio>=0.23"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+markers = [
+  "requires_data: integration checks that require externally supplied dataset payloads",
+]
+asyncio_default_fixture_loop_scope = "function"
+addopts = "-p no:cacheprovider"
+testpaths = ["tests"]
+cache_dir = ".scratch/pytest-cache"
+filterwarnings = [
+  "ignore:builtin type SwigPyPacked has no __module__ attribute:DeprecationWarning",
+  "ignore:builtin type SwigPyObject has no __module__ attribute:DeprecationWarning",
+  "ignore:builtin type swigvarlink has no __module__ attribute:DeprecationWarning",
+]

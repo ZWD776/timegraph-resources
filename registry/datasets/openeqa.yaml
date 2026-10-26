@@ -1,0 +1,91 @@
+manifest_version: dataset_manifest_v1
+dataset: openeqa
+display_name: OpenEQA
+status: owned_mainlines_cleanup_completed
+planning_only: false
+asset_ids:
+  source_id: openeqa-em-eqa-hm3d-scannet-v1
+  graph_id: openeqa-time-fact-core-v1
+  ir_id: openeqa-v5-14class-strategy-v4
+  index_id: openeqa-v5-full-visual-indexes
+  retrieval_id: openeqa-v5-canonical-vector-evidence-v5
+  qa_id: openeqa-v5-qa-mainline-luna
+  cache_id: openeqa-cache-external-v1
+  reports_id: openeqa-reports-v1
+  scratch_id: openeqa-scratch-external-v1
+target_layout:
+  source: datasets/openeqa/source
+  graphs: datasets/openeqa/graphs
+  indexes: datasets/openeqa/indexes
+  ir: datasets/openeqa/ir
+  retrieval: datasets/openeqa/retrieval
+  runs: datasets/openeqa/runs
+  reports: datasets/openeqa/reports
+  cache: datasets/openeqa/cache
+  scratch: datasets/openeqa/scratch
+current_paths:
+  source:
+  - datasets/openeqa/source/openeqa-em-eqa-hm3d-scannet-v1/payload/source_manifest.json
+  - datasets/openeqa/source/openeqa-em-eqa-hm3d-scannet-v1/payload/official/open-eqa-v0.json
+  graph:
+  - datasets/openeqa/graphs/openeqa-time-fact-core-v1/payload/runtime/graph_manifest.json
+  - datasets/openeqa/graphs/openeqa-time-fact-core-v1/payload/runtime/hm3d/openeqa_hm3d_graph_build_manifest.json
+  - datasets/openeqa/graphs/openeqa-time-fact-core-v1/payload/runtime/scannet/openeqa_hm3d_graph_build_manifest.json
+  indexes:
+  - datasets/openeqa/indexes/openeqa-v5-full-visual-indexes/payload/runtime/index_manifest.json
+  - datasets/openeqa/indexes/openeqa-v5-full-visual-indexes/payload/runtime/hm3d/openeqa_object_siglip_flat_ip.manifest.json
+  - datasets/openeqa/indexes/openeqa-v5-full-visual-indexes/payload/runtime/scannet/openeqa_object_siglip_flat_ip.manifest.json
+  ir:
+  - datasets/openeqa/ir/openeqa-v5-14class-strategy-v4/payload/runtime_question_ir.json
+  retrieval:
+  - datasets/openeqa/retrieval/openeqa-v5-canonical-vector-evidence-v5/payload/retrieval_manifest.json
+  runs:
+  - datasets/openeqa/runs/openeqa-v5-qa-mainline-luna/payload/A/full_v5_ir_key0_temp0/predictions.json
+  - datasets/openeqa/runs/openeqa-v5-qa-mainline-luna/payload/B/full_v5_ir_key0_temp0/predictions.json
+  - datasets/openeqa/runs/openeqa-v5-qa-mainline-luna/payload/C/predictions.json
+  reports:
+  - datasets/openeqa/reports/openeqa-reports-v1/metadata/runtime_views.json
+  - datasets/openeqa/reports/openeqa-reports-v1/metadata/embedding_cache.json
+  cache:
+  - datasets/openeqa/cache/openeqa-cache-external-v1/payload/embedding_cache.sqlite
+  scratch: []
+migration:
+  copy_payloads: false
+  move_payloads: true
+  delete_payloads: false
+  next_gate: final_dependency_and_deletion_catalog_acceptance
+provenance:
+  registry: configs/dataset_asset_registry.yaml
+  lock: archive/legacy_20260928/governance/registry/registry_lock_v1.json
+  code_revision: e81ee0a8d0d92df93ecf0c9cefdebe054791dc4e
+retained_dependencies:
+- openeqa-visual-runtime-v4-compat
+- openeqa-visual-runtime-v2-compat
+- openeqa-visual-runtime-v1-compat
+- openeqa-visual-runtime-v3-compat
+graph_config: configs/datasets/openeqa/graph.yaml
+entrypoints:
+  source:
+    manifest: datasets/openeqa/source/openeqa-em-eqa-hm3d-scannet-v1/payload/source_manifest.json
+    questions: datasets/openeqa/source/openeqa-em-eqa-hm3d-scannet-v1/payload/official/open-eqa-v0.json
+  graphs:
+    manifest: datasets/openeqa/graphs/openeqa-time-fact-core-v1/payload/runtime/graph_manifest.json
+    hm3d: datasets/openeqa/graphs/openeqa-time-fact-core-v1/payload/runtime/hm3d/openeqa_hm3d_graph_build_manifest.json
+    scannet: datasets/openeqa/graphs/openeqa-time-fact-core-v1/payload/runtime/scannet/openeqa_hm3d_graph_build_manifest.json
+  indexes:
+    manifest: datasets/openeqa/indexes/openeqa-v5-full-visual-indexes/payload/runtime/index_manifest.json
+    hm3d: datasets/openeqa/indexes/openeqa-v5-full-visual-indexes/payload/runtime/hm3d/openeqa_object_siglip_flat_ip.manifest.json
+    scannet: datasets/openeqa/indexes/openeqa-v5-full-visual-indexes/payload/runtime/scannet/openeqa_object_siglip_flat_ip.manifest.json
+  ir:
+    runtime: datasets/openeqa/ir/openeqa-v5-14class-strategy-v4/payload/runtime_question_ir.json
+  retrieval:
+    manifest: datasets/openeqa/retrieval/openeqa-v5-canonical-vector-evidence-v5/payload/retrieval_manifest.json
+  runs:
+    A: datasets/openeqa/runs/openeqa-v5-qa-mainline-luna/payload/A/full_v5_ir_key0_temp0/predictions.json
+    B: datasets/openeqa/runs/openeqa-v5-qa-mainline-luna/payload/B/full_v5_ir_key0_temp0/predictions.json
+    C: datasets/openeqa/runs/openeqa-v5-qa-mainline-luna/payload/C/predictions.json
+  cache:
+    embeddings: datasets/openeqa/cache/openeqa-cache-external-v1/payload/embedding_cache.sqlite
+  reports:
+    runtime_views: datasets/openeqa/reports/openeqa-reports-v1/metadata/runtime_views.json
+    embedding_cache: datasets/openeqa/reports/openeqa-reports-v1/metadata/embedding_cache.json

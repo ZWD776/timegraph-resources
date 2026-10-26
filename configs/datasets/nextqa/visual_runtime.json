@@ -1,0 +1,16 @@
+{
+  "schema_version": "nextqa_visual_runtime_config_v2",
+  "profile_name": "nextqa_visual_runtime_v2",
+  "embedding_model": "google/siglip-base-patch16-224",
+  "embedding_dimension": 768,
+  "faiss_metric": "inner_product_on_l2_normalized_vectors",
+  "visual_evidence_limit": 12,
+  "count_candidate_budget": 64,
+  "text_embedding_batch_size": 32,
+  "same_video_only": true,
+  "route_source": "nextqa_luna_ir_intent_only",
+  "qa_receives_images": false,
+  "qa_receives_image_paths": false,
+  "qa_receives_visual_embeddings": false,
+  "uses_gold_answer": false
+}

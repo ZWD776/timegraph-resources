@@ -1,0 +1,24 @@
+config_manifest_version: dataset_config_manifest_v1
+dataset: navqa
+status: owned_selected_configs
+runtime_switch_enabled: true
+graph_config: configs/datasets/navqa/graph.yaml
+pipeline_entrypoint: scripts/datasets/pipeline.py
+configs:
+- path: configs/datasets/navqa/graph.yaml
+  sha256: 08a3d506d1e8c3333a4df7822c82e7c0af8d3a729007d2debda73c16700887ab
+  bytes: 5715
+- path: configs/datasets/navqa/routes.json
+  sha256: f3daaa14d6676d84f706b1c0ff87b18d7c2ce6293c3021cecc3da96f455ac4e1
+  bytes: 17578
+- path: configs/datasets/navqa/sequences.json
+  sha256: ecb837c0bd6ff4922f227e5e576caa5a4eb2ed981f6827dd41a00c0420b9fba1
+  bytes: 8596
+- path: configs/datasets/navqa/sequences_reuse.json
+  sha256: aa326406c0a699293cf61c5a806a0c54aa3732be9e9be6bf4305a84da6b99842
+  bytes: 14467
+- path: configs/datasets/navqa/synonyms.json
+  sha256: f6e211431f27c0ae12f6676f39a90e3bc82db0bbc2df9b4f5b85493d68aecc73
+  bytes: 7131
+original_configs_sealed: true
+final_workspace_acceptance: false

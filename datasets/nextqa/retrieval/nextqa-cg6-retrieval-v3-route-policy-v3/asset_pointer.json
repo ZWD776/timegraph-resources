@@ -1,0 +1,48 @@
+{
+  "pointer_version": "asset_pointer_v1",
+  "dataset": "nextqa",
+  "layer": "retrieval",
+  "asset_id": "nextqa-cg6-retrieval-v3-route-policy-v3",
+  "status": "active_owned_mainline",
+  "payload_migrated": true,
+  "current_paths": [
+    "datasets/nextqa/retrieval/nextqa-cg6-retrieval-v3-route-policy-v3/payload/nextqa-graph-retrieval-v2-irv3-full4996-20260817b",
+    "datasets/nextqa/retrieval/nextqa-cg6-retrieval-v3-route-policy-v3/payload/nextqa_visual_routes_v2_irv3_full4996_20260818a",
+    "datasets/nextqa/retrieval/nextqa-cg6-retrieval-v3-route-policy-v3/payload/nextqa_visual_evidence_v2_irv3_full4996_20260818a",
+    "datasets/nextqa/retrieval/nextqa-cg6-retrieval-v3-route-policy-v3/payload/nextqa_visual_route_policy_v3_full4996_20260902a"
+  ],
+  "target_path": "datasets/nextqa/retrieval/nextqa-cg6-retrieval-v3-route-policy-v3",
+  "code_revision": "7b0345e41de2142329be972312fbc3fcf620f06b",
+  "registry": "configs/dataset_asset_registry.yaml",
+  "migration": {
+    "copy": true,
+    "move": false,
+    "delete": false,
+    "next_step": "final_deletion_gate"
+  },
+  "metadata_paths": [
+    "datasets/nextqa/retrieval/nextqa-cg6-retrieval-v3-route-policy-v3/metadata/retrieval_audit.json",
+    "datasets/nextqa/retrieval/nextqa-cg6-retrieval-v3-route-policy-v3/metadata/route_audit.json",
+    "datasets/nextqa/retrieval/nextqa-cg6-retrieval-v3-route-policy-v3/metadata/route_policy_v3_audit.json"
+  ],
+  "previous_paths": [
+    ".scratch/nextqa/graph_retrieval/nextqa-graph-retrieval-v2-irv3-full4996-20260817b",
+    ".scratch/nextqa/visual_routes/nextqa_visual_routes_v2_irv3_full4996_20260818a",
+    ".scratch/nextqa/visual_evidence/nextqa_visual_evidence_v2_irv3_full4996_20260818a",
+    ".scratch/nextqa/ablation/nextqa_visual_route_policy_v3_full4996_20260902a"
+  ],
+  "dependency_paths": [
+    "datasets/nextqa/retrieval/nextqa-cg6-retrieval-v3-route-policy-v3/payload/nextqa_visual_graph_baseline_v2_irv3_full4996_20260818a",
+    "datasets/nextqa/retrieval/nextqa-cg6-retrieval-v3-route-policy-v3/payload/nextqa_visual_no_routing_evidence_full4996_20260901b",
+    "datasets/nextqa/retrieval/nextqa-cg6-retrieval-v3-route-policy-v3/payload/nextqa_causal_why_coherent_chain_v2_full1927_20260829a/visual_evidence_records.json"
+  ],
+  "entrypoints": {
+    "records": "datasets/nextqa/retrieval/nextqa-cg6-retrieval-v3-route-policy-v3/payload/nextqa-graph-retrieval-v2-irv3-full4996-20260817b/retrieval_records.json",
+    "routes": "datasets/nextqa/retrieval/nextqa-cg6-retrieval-v3-route-policy-v3/payload/nextqa_visual_routes_v2_irv3_full4996_20260818a/route_records.json",
+    "frozen_graph": "datasets/nextqa/retrieval/nextqa-cg6-retrieval-v3-route-policy-v3/payload/nextqa_visual_graph_baseline_v2_irv3_full4996_20260818a/frozen_graph_evidence.json",
+    "visual_evidence": "datasets/nextqa/retrieval/nextqa-cg6-retrieval-v3-route-policy-v3/payload/nextqa_visual_evidence_v2_irv3_full4996_20260818a/visual_evidence_records.json",
+    "causal_evidence": "datasets/nextqa/retrieval/nextqa-cg6-retrieval-v3-route-policy-v3/payload/nextqa_causal_why_coherent_chain_v2_full1927_20260829a/visual_evidence_records.json",
+    "uniform_evidence": "datasets/nextqa/retrieval/nextqa-cg6-retrieval-v3-route-policy-v3/payload/nextqa_visual_no_routing_evidence_full4996_20260901b/visual_evidence_records.json"
+  },
+  "remaining_work": "Final review of sealed deletion catalog; actual deletion remains disabled."
+}

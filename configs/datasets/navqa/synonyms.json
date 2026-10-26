@@ -1,0 +1,159 @@
+{
+  "contract": "navqa_synonym_l0_l1_v1",
+  "description": "Experimental L0/L1 synonym lexicon for NaVQA retrieval. It is used before graph/FAISS retrieval and never derived from gold answers.",
+  "entries": [
+    {
+      "canonical": "couch",
+      "aliases": ["couches", "sofa", "sofas", "bench", "benches", "seating", "seat"],
+      "level": "L0",
+      "roles": ["target"],
+      "source": "general_language",
+      "source_evidence": ["Common English visual-object naming: couch, sofa, bench, and seating can describe the same answer target class in indoor seating contexts."],
+      "uses_gold_answer": false
+    },
+    {
+      "canonical": "art installation",
+      "aliases": ["installation", "sculpture", "statue", "artwork", "decorative sculpture"],
+      "level": "L0",
+      "roles": ["target"],
+      "source": "general_language",
+      "source_evidence": ["Common visual-language mismatch: large public art installations are often labeled as sculpture/statue/artwork in object descriptions."],
+      "uses_gold_answer": false
+    },
+    {
+      "canonical": "semi truck",
+      "aliases": ["semi-truck", "tractor trailer", "truck", "trailer", "big rig"],
+      "level": "L0",
+      "roles": ["target"],
+      "source": "general_language",
+      "source_evidence": ["Common vehicle naming: semi truck, tractor trailer, truck, trailer, and big rig can refer to overlapping heavy-vehicle targets."],
+      "uses_gold_answer": false
+    },
+    {
+      "canonical": "van",
+      "aliases": ["minivan", "delivery van"],
+      "level": "L0",
+      "roles": ["target"],
+      "source": "general_language",
+      "source_evidence": ["Common vehicle naming: a van can be referred to as a minivan or delivery van in general visual descriptions."],
+      "uses_gold_answer": false
+    },
+    {
+      "canonical": "logo",
+      "aliases": ["sign", "text", "lettering", "wordmark", "writing", "mark"],
+      "level": "L0",
+      "roles": ["target", "attribute"],
+      "source": "general_language",
+      "source_evidence": ["Common text/OCR vocabulary: logo, sign, text, lettering, wordmark, and writing can all carry the asked visual text content."],
+      "uses_gold_answer": false
+    },
+    {
+      "canonical": "building name",
+      "aliases": ["building sign", "sign", "storefront text", "lettering", "text", "business name"],
+      "level": "L0",
+      "roles": ["target", "attribute"],
+      "source": "general_language",
+      "source_evidence": ["Common street-view naming: a building name is often visible as a sign, storefront text, lettering, or business name."],
+      "uses_gold_answer": false
+    },
+    {
+      "canonical": "food truck",
+      "aliases": ["food trailer", "vendor truck", "concession truck", "truck", "trailer"],
+      "level": "L0",
+      "roles": ["target"],
+      "source": "general_language",
+      "source_evidence": ["Common street-scene naming: food trucks may be labeled as vendor trucks, concession trucks, trucks, or trailers."],
+      "uses_gold_answer": false
+    },
+    {
+      "canonical": "gate",
+      "aliases": ["entrance", "entryway", "gateway", "opening"],
+      "level": "L0",
+      "roles": ["constraint"],
+      "source": "general_language",
+      "source_evidence": ["Common spatial/event constraint naming: gate, entrance, entryway, gateway, and opening can describe the same passage constraint."],
+      "uses_gold_answer": false
+    },
+    {
+      "canonical": "intersection",
+      "aliases": ["cross street", "junction", "crossing", "road junction"],
+      "level": "L0",
+      "roles": ["constraint"],
+      "source": "general_language",
+      "source_evidence": ["Common driving-scene naming: intersection, cross street, junction, and crossing are interchangeable spatial constraints."],
+      "uses_gold_answer": false
+    },
+    {
+      "canonical": "sidewalk",
+      "aliases": ["walkway", "pavement", "curb", "pedestrian path"],
+      "level": "L0",
+      "roles": ["target", "constraint"],
+      "source": "general_language",
+      "source_evidence": ["Common street-scene naming: sidewalk can appear as walkway, pavement, curb, or pedestrian path in visual evidence."],
+      "uses_gold_answer": false
+    },
+    {
+      "canonical": "door",
+      "aliases": ["doors", "glass door", "glass doors", "doorway", "entrance"],
+      "level": "L0",
+      "roles": ["target", "constraint"],
+      "source": "general_language",
+      "source_evidence": ["Common building-object naming: door, doors, glass door, doorway, and entrance often describe related doorway objects."],
+      "uses_gold_answer": false
+    },
+    {
+      "canonical": "jacket",
+      "aliases": ["coat", "outerwear", "top", "shirt"],
+      "level": "L0",
+      "roles": ["target", "attribute"],
+      "source": "general_language",
+      "source_evidence": ["Common clothing naming: jacket, coat, outerwear, top, and shirt can overlap in HSGG clothing descriptions."],
+      "uses_gold_answer": false
+    },
+    {
+      "canonical": "cotton logo",
+      "aliases": ["cotton text", "cottoncomp text", "trailer logo", "trailer text", "logo on trailer"],
+      "level": "L1",
+      "roles": ["target", "attribute"],
+      "source": "hsgg_cg_observed",
+      "source_evidence": ["Observed project evidence audit: HSGG/CG6 candidates contained cotton logo / cottoncomp text style descriptions around trailer objects."],
+      "uses_gold_answer": false
+    },
+    {
+      "canonical": "metal art installation",
+      "aliases": ["metal sculpture", "decorative sculpture", "sculpture", "metal artwork"],
+      "level": "L1",
+      "roles": ["target"],
+      "source": "hsgg_cg_observed",
+      "source_evidence": ["Observed project evidence audit: HSGG candidates described the asked large art installation as metal sculpture/decorative sculpture."],
+      "uses_gold_answer": false
+    },
+    {
+      "canonical": "red couch",
+      "aliases": ["red couches", "red sofa", "red sofas", "red leather sofa", "red bench", "red benches", "red seating"],
+      "level": "L1",
+      "roles": ["target"],
+      "source": "hsgg_cg_observed",
+      "source_evidence": ["Observed project evidence audit: HSGG candidates included Red couch / Red leather sofa / red bench for the couch target wording mismatch."],
+      "uses_gold_answer": false
+    },
+    {
+      "canonical": "yellow semi truck",
+      "aliases": ["yellow truck", "yellow trailer", "yellow semi-truck", "yellow tractor trailer"],
+      "level": "L1",
+      "roles": ["target"],
+      "source": "hsgg_cg_observed",
+      "source_evidence": ["Observed project evidence audit: vehicle evidence can label the semi-truck target as yellow truck or yellow trailer."],
+      "uses_gold_answer": false
+    },
+    {
+      "canonical": "building sign",
+      "aliases": ["building name", "storefront sign", "storefront lettering", "sign text"],
+      "level": "L1",
+      "roles": ["target", "attribute"],
+      "source": "hsgg_cg_observed",
+      "source_evidence": ["Observed project evidence audit: street/building name questions may surface as sign text, storefront sign, or storefront lettering evidence."],
+      "uses_gold_answer": false
+    }
+  ]
+}

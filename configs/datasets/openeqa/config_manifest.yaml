@@ -1,0 +1,21 @@
+config_manifest_version: dataset_config_manifest_v1
+dataset: openeqa
+status: owned_selected_configs
+runtime_switch_enabled: true
+graph_config: configs/datasets/openeqa/graph.yaml
+pipeline_entrypoint: scripts/datasets/pipeline.py
+configs:
+- path: configs/datasets/openeqa/execution_resources.json
+  sha256: 050b203ce920347916d26677f090a83bad5df8f0ce328bff141117f5b5c9c592
+  bytes: 940
+- path: configs/datasets/openeqa/graph.yaml
+  sha256: 250323b2c84e3e2c85c716a589da09534e95b1823ce438bb934b149263dfed0a
+  bytes: 5715
+- path: configs/datasets/openeqa/qa.yaml
+  sha256: eff2b3f6c942dcf859ebad82609777b2fc7181ea39ef587bcdbbb4468482de55
+  bytes: 5703
+- path: configs/datasets/openeqa/taxonomy.json
+  sha256: a971464d166fb027947de817f9b0befc582d6a116f92b5b9b676115871af932d
+  bytes: 975
+original_configs_sealed: true
+final_workspace_acceptance: false

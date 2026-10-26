@@ -1,0 +1,37 @@
+{
+  "pointer_version": "asset_pointer_v1",
+  "dataset": "openeqa",
+  "layer": "graphs",
+  "asset_id": "openeqa-time-fact-core-v1",
+  "status": "active_owned_mainline",
+  "payload_migrated": true,
+  "current_paths": [
+    "datasets/openeqa/graphs/openeqa-time-fact-core-v1/payload/runtime/graph_manifest.json",
+    "datasets/openeqa/graphs/openeqa-time-fact-core-v1/payload/runtime/hm3d/openeqa_hm3d_graph_build_manifest.json",
+    "datasets/openeqa/graphs/openeqa-time-fact-core-v1/payload/runtime/scannet/openeqa_hm3d_graph_build_manifest.json"
+  ],
+  "target_path": "datasets/openeqa/graphs/openeqa-time-fact-core-v1",
+  "code_revision": "7b0345e41de2142329be972312fbc3fcf620f06b",
+  "registry": "configs/dataset_asset_registry.yaml",
+  "migration": {
+    "copy": false,
+    "move": true,
+    "delete": false,
+    "next_step": "final_deletion_gate"
+  },
+  "metadata_paths": [
+    "datasets/openeqa/graphs/openeqa-time-fact-core-v1/payload/runtime/hm3d/openeqa_hm3d_graph_build_manifest.json",
+    "datasets/openeqa/graphs/openeqa-time-fact-core-v1/metadata/scannet/graph_build_manifest.json"
+  ],
+  "previous_paths": [
+    ".scratch/openeqa/hm3d_graphs_stride2/stride2_hm3d_full_temp01_v1",
+    ".scratch/openeqa/scannet_graphs_fullhsgg/scannet_fullhsgg_cg6_visualassoc_v2_20260804"
+  ],
+  "entrypoints": {
+    "manifest": "datasets/openeqa/graphs/openeqa-time-fact-core-v1/payload/runtime/graph_manifest.json",
+    "hm3d": "datasets/openeqa/graphs/openeqa-time-fact-core-v1/payload/runtime/hm3d/openeqa_hm3d_graph_build_manifest.json",
+    "scannet": "datasets/openeqa/graphs/openeqa-time-fact-core-v1/payload/runtime/scannet/openeqa_hm3d_graph_build_manifest.json"
+  },
+  "dependency_paths": [],
+  "remaining_work": "Final review of sealed deletion catalog; actual deletion remains disabled."
+}

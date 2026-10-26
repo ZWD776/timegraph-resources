@@ -1,0 +1,40 @@
+{
+  "pointer_version": "asset_pointer_v1",
+  "dataset": "nextqa",
+  "layer": "source",
+  "asset_id": "nextqa-val-v1-repaired29",
+  "status": "active_owned_mainline",
+  "payload_migrated": true,
+  "current_paths": [
+    "datasets/nextqa/source/nextqa-val-v1-repaired29/payload/items",
+    "datasets/nextqa/source/nextqa-val-v1-repaired29/payload/source_manifest.json",
+    "datasets/nextqa/source/nextqa-val-v1-repaired29/payload/evaluation"
+  ],
+  "target_path": "datasets/nextqa/source/nextqa-val-v1-repaired29",
+  "code_revision": "7b0345e41de2142329be972312fbc3fcf620f06b",
+  "registry": "configs/dataset_asset_registry.yaml",
+  "migration": {
+    "copy": true,
+    "move": false,
+    "delete": false,
+    "next_step": "final_deletion_gate"
+  },
+  "metadata_paths": [],
+  "previous_paths": [
+    "data/next-qa",
+    ".scratch/nextqa/manifests/nextqa_val_manifest_v1.json",
+    ".scratch/nextqa/standardized/nextqa_val_standardized_full4996_20260812a"
+  ],
+  "dependency_paths": [
+    "datasets/nextqa/source/nextqa-val-v1-repaired29/payload/manifests/repaired29_manifest.json",
+    "datasets/nextqa/source/nextqa-val-v1-repaired29/payload/provenance/history/special_splice/original_records",
+    "datasets/nextqa/source/nextqa-val-v1-repaired29/payload/official/val.csv"
+  ],
+  "entrypoints": {
+    "manifest": "datasets/nextqa/source/nextqa-val-v1-repaired29/payload/source_manifest.json",
+    "questions": "datasets/nextqa/source/nextqa-val-v1-repaired29/payload/evaluation/questions.runtime.json",
+    "labels": "datasets/nextqa/source/nextqa-val-v1-repaired29/payload/evaluation/labels.evaluator_only.json",
+    "official_annotations": "datasets/nextqa/source/nextqa-val-v1-repaired29/payload/official/val.csv"
+  },
+  "remaining_work": "Raw archive paths are historical provenance; active builds read verified materialized directories."
+}

@@ -1,0 +1,20 @@
+{
+  "pointer_version": "asset_pointer_v1",
+  "dataset": "nextqa",
+  "layer": "scratch",
+  "asset_id": "nextqa-scratch-external-v1",
+  "status": "reserved_dataset_scratch",
+  "payload_migrated": false,
+  "current_paths": [],
+  "target_path": "datasets/nextqa/scratch/nextqa-scratch-external-v1",
+  "code_revision": "7b0345e41de2142329be972312fbc3fcf620f06b",
+  "registry": "configs/dataset_asset_registry.yaml",
+  "migration": {
+    "copy": false,
+    "move": false,
+    "delete": false,
+    "next_step": "final_deletion_gate"
+  },
+  "metadata_paths": [],
+  "remaining_work": "Final review of sealed deletion catalog; actual deletion remains disabled."
+}

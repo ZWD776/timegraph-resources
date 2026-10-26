@@ -1,0 +1,83 @@
+manifest_version: dataset_manifest_v1
+dataset: navqa
+display_name: NAVQA
+status: owned_mainlines_cleanup_completed
+planning_only: false
+asset_ids:
+  source_id: navqa-coda-every10-v1
+  graph_id: navqa-cg6-time-fact-core-v1
+  ir_id: navqa-cg6-question-ir-v1
+  index_id: navqa-cg6-retrieval-v1
+  retrieval_id: navqa-cg6-retrieval-v1
+  qa_id: navqa-cg6-qa-v1
+  cache_id: navqa-cache-external-v1
+  reports_id: navqa-reports-v1
+  scratch_id: navqa-scratch-external-v1
+target_layout:
+  source: datasets/navqa/source
+  graphs: datasets/navqa/graphs
+  indexes: datasets/navqa/indexes
+  ir: datasets/navqa/ir
+  retrieval: datasets/navqa/retrieval
+  runs: datasets/navqa/runs
+  reports: datasets/navqa/reports
+  cache: datasets/navqa/cache
+  scratch: datasets/navqa/scratch
+current_paths:
+  source:
+  - datasets/navqa/source/navqa-coda-every10-v1/payload/source_manifest.json
+  - datasets/navqa/source/navqa-coda-every10-v1/payload/official/qa.csv
+  graph:
+  - datasets/navqa/graphs/navqa-cg6-time-fact-core-v1/payload/runtime/graph_manifest.json
+  indexes:
+  - datasets/navqa/indexes/navqa-cg6-retrieval-v1/payload/runtime/index_manifest.json
+  - datasets/navqa/indexes/navqa-cg6-retrieval-v1/payload/runtime/object_siglip_flat_ip.manifest.json
+  - datasets/navqa/indexes/navqa-cg6-retrieval-v1/payload/runtime/evidence_layer.sqlite
+  ir:
+  - datasets/navqa/ir/navqa-cg6-question-ir-v1/payload/question_ir_manifest.json
+  retrieval:
+  - datasets/navqa/retrieval/navqa-cg6-retrieval-v1/payload/retrieval_manifest.json
+  runs:
+  - datasets/navqa/runs/navqa-cg6-qa-v1/payload/current/A/mainline_all_sequences_summary.json
+  - datasets/navqa/runs/navqa-cg6-qa-v1/payload/current/B/mainline_all_sequences_summary.json
+  - datasets/navqa/runs/navqa-cg6-qa-v1/payload/current/C/navqa_route_composite.json
+  reports:
+  - datasets/navqa/reports/navqa-reports-v1/metadata/runtime_views.json
+  - datasets/navqa/reports/navqa-reports-v1/metadata/embedding_cache.json
+  cache:
+  - datasets/navqa/cache/navqa-cache-external-v1/payload/embedding_cache.sqlite
+  scratch: []
+migration:
+  copy_payloads: false
+  move_payloads: true
+  delete_payloads: false
+  next_gate: final_dependency_and_deletion_catalog_acceptance
+provenance:
+  registry: configs/dataset_asset_registry.yaml
+  lock: archive/legacy_20260928/governance/registry/registry_lock_v1.json
+  code_revision: e81ee0a8d0d92df93ecf0c9cefdebe054791dc4e
+active_route_registry: configs/datasets/navqa/routes.json
+graph_config: configs/datasets/navqa/graph.yaml
+entrypoints:
+  source:
+    manifest: datasets/navqa/source/navqa-coda-every10-v1/payload/source_manifest.json
+    official_annotations: datasets/navqa/source/navqa-coda-every10-v1/payload/official/qa.csv
+  graphs:
+    manifest: datasets/navqa/graphs/navqa-cg6-time-fact-core-v1/payload/runtime/graph_manifest.json
+  indexes:
+    manifest: datasets/navqa/indexes/navqa-cg6-retrieval-v1/payload/runtime/index_manifest.json
+    visual_manifest: datasets/navqa/indexes/navqa-cg6-retrieval-v1/payload/runtime/object_siglip_flat_ip.manifest.json
+    evidence_layer: datasets/navqa/indexes/navqa-cg6-retrieval-v1/payload/runtime/evidence_layer.sqlite
+  ir:
+    runtime: datasets/navqa/ir/navqa-cg6-question-ir-v1/payload/question_ir_manifest.json
+  retrieval:
+    manifest: datasets/navqa/retrieval/navqa-cg6-retrieval-v1/payload/retrieval_manifest.json
+  runs:
+    A: datasets/navqa/runs/navqa-cg6-qa-v1/payload/current/A/mainline_all_sequences_summary.json
+    B: datasets/navqa/runs/navqa-cg6-qa-v1/payload/current/B/mainline_all_sequences_summary.json
+    C: datasets/navqa/runs/navqa-cg6-qa-v1/payload/current/C/navqa_route_composite.json
+  cache:
+    embeddings: datasets/navqa/cache/navqa-cache-external-v1/payload/embedding_cache.sqlite
+  reports:
+    runtime_views: datasets/navqa/reports/navqa-reports-v1/metadata/runtime_views.json
+    embedding_cache: datasets/navqa/reports/navqa-reports-v1/metadata/embedding_cache.json

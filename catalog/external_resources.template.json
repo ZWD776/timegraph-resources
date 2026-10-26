@@ -1,0 +1,138 @@
+{
+  "schema_version": "external_resources_v1",
+  "resources": [
+    {
+      "dataset": "navqa",
+      "resource_kind": "hsgg",
+      "download_url": null,
+      "access_code": null,
+      "archive_sha256": null,
+      "archive_bytes": null,
+      "status": "user_supplied_link_contents_not_verified",
+      "large_binary_in_git": false,
+      "access_method": "contact_maintainer_separately"
+    },
+    {
+      "dataset": "navqa",
+      "resource_kind": "sampled_images",
+      "download_url": null,
+      "access_code": null,
+      "archive_sha256": null,
+      "archive_bytes": null,
+      "status": "user_supplied_link_contents_not_verified",
+      "large_binary_in_git": false,
+      "access_method": "contact_maintainer_separately"
+    },
+    {
+      "dataset": "navqa",
+      "resource_kind": "graph_memory",
+      "download_url": null,
+      "access_code": null,
+      "archive_sha256": null,
+      "archive_bytes": null,
+      "status": "link_to_be_supplied",
+      "large_binary_in_git": false,
+      "access_method": "contact_maintainer_separately"
+    },
+    {
+      "dataset": "navqa",
+      "resource_kind": "visual_features",
+      "download_url": null,
+      "access_code": null,
+      "archive_sha256": null,
+      "archive_bytes": null,
+      "status": "link_to_be_supplied",
+      "large_binary_in_git": false,
+      "access_method": "contact_maintainer_separately"
+    },
+    {
+      "dataset": "nextqa",
+      "resource_kind": "hsgg",
+      "download_url": null,
+      "access_code": null,
+      "archive_sha256": null,
+      "archive_bytes": null,
+      "status": "user_supplied_link_contents_not_verified",
+      "large_binary_in_git": false,
+      "access_method": "contact_maintainer_separately"
+    },
+    {
+      "dataset": "nextqa",
+      "resource_kind": "sampled_images",
+      "download_url": null,
+      "access_code": null,
+      "archive_sha256": null,
+      "archive_bytes": null,
+      "status": "user_supplied_link_contents_not_verified",
+      "large_binary_in_git": false,
+      "access_method": "contact_maintainer_separately"
+    },
+    {
+      "dataset": "nextqa",
+      "resource_kind": "graph_memory",
+      "download_url": null,
+      "access_code": null,
+      "archive_sha256": null,
+      "archive_bytes": null,
+      "status": "link_to_be_supplied",
+      "large_binary_in_git": false,
+      "access_method": "contact_maintainer_separately"
+    },
+    {
+      "dataset": "nextqa",
+      "resource_kind": "visual_features",
+      "download_url": null,
+      "access_code": null,
+      "archive_sha256": null,
+      "archive_bytes": null,
+      "status": "link_to_be_supplied",
+      "large_binary_in_git": false,
+      "access_method": "contact_maintainer_separately"
+    },
+    {
+      "dataset": "openeqa",
+      "resource_kind": "hsgg",
+      "download_url": null,
+      "access_code": null,
+      "archive_sha256": null,
+      "archive_bytes": null,
+      "status": "user_supplied_link_contents_not_verified",
+      "large_binary_in_git": false,
+      "access_method": "contact_maintainer_separately"
+    },
+    {
+      "dataset": "openeqa",
+      "resource_kind": "sampled_images",
+      "download_url": null,
+      "access_code": null,
+      "archive_sha256": null,
+      "archive_bytes": null,
+      "status": "user_supplied_link_contents_not_verified",
+      "large_binary_in_git": false,
+      "access_method": "contact_maintainer_separately"
+    },
+    {
+      "dataset": "openeqa",
+      "resource_kind": "graph_memory",
+      "download_url": null,
+      "access_code": null,
+      "archive_sha256": null,
+      "archive_bytes": null,
+      "status": "link_to_be_supplied",
+      "large_binary_in_git": false,
+      "access_method": "contact_maintainer_separately"
+    },
+    {
+      "dataset": "openeqa",
+      "resource_kind": "visual_features",
+      "download_url": null,
+      "access_code": null,
+      "archive_sha256": null,
+      "archive_bytes": null,
+      "status": "link_to_be_supplied",
+      "large_binary_in_git": false,
+      "access_method": "contact_maintainer_separately"
+    }
+  ],
+  "note": "Resource access credentials are intentionally withheld."
+}

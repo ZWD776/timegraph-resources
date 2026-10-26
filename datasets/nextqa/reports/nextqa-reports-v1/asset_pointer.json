@@ -1,0 +1,44 @@
+{
+  "pointer_version": "asset_pointer_v1",
+  "dataset": "nextqa",
+  "layer": "reports",
+  "asset_id": "nextqa-reports-v1",
+  "status": "active_owned_mainline",
+  "payload_migrated": false,
+  "current_paths": [
+    "datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_mainline_replay.json",
+    "datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_mainline_mock_smoke.json",
+    "datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_mainline_activation.json",
+    "datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_runtime_path_rebase.json",
+    "datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_runtime_path_parity.json",
+    "datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_cache_path_rebase.json",
+    "datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_cache_candidate_parity.json",
+    "datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_runtime_view_activation.json",
+    "datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_prearchive_gate.json",
+    "datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_final_c_recomposition.json",
+    "datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_prearchive_summary.json"
+  ],
+  "target_path": "datasets/nextqa/reports/nextqa-reports-v1",
+  "code_revision": "7b0345e41de2142329be972312fbc3fcf620f06b",
+  "registry": "configs/dataset_asset_registry.yaml",
+  "migration": {
+    "copy": false,
+    "move": false,
+    "delete": false,
+    "next_step": "final_deletion_gate"
+  },
+  "metadata_paths": [
+    "datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_mainline_replay.json",
+    "datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_mainline_mock_smoke.json",
+    "datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_mainline_activation.json",
+    "datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_runtime_path_rebase.json",
+    "datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_runtime_path_parity.json",
+    "datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_cache_path_rebase.json",
+    "datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_cache_candidate_parity.json",
+    "datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_runtime_view_activation.json",
+    "datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_prearchive_gate.json",
+    "datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_final_c_recomposition.json",
+    "datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_prearchive_summary.json"
+  ],
+  "remaining_work": "Final review of sealed deletion catalog; actual deletion remains disabled."
+}

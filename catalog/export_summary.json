@@ -1,0 +1,31 @@
+{
+  "schema_version": "resource_catalog_export_v1",
+  "exported_at_utc": "2026-10-26T16:29:05.621312+00:00",
+  "frame_counts": {
+    "navqa": 9889,
+    "nextqa": 23381,
+    "openeqa": 31742
+  },
+  "qa_counts": {
+    "navqa": 210,
+    "nextqa": 4996,
+    "openeqa": 1636
+  },
+  "official_qa_total": 6842,
+  "unit_count": 729,
+  "current_completed_hsgg_counts": {
+    "navqa": 9759,
+    "nextqa": 23044,
+    "openeqa": 31034
+  },
+  "legacy_graph_frame_counts": {
+    "navqa": 9757,
+    "nextqa": 23381,
+    "openeqa": 30997
+  },
+  "coverage_note": "NextQA graph frame_count includes skipped placeholders; NaVQA/OpenEQA legacy graph frame_count counts completed frames.",
+  "original_data_modified": false,
+  "benchmark_data_accessed": false,
+  "question_text_or_answers_included": false,
+  "images_hsgg_graphs_features_copied": false
+}

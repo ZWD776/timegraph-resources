@@ -1,0 +1,36 @@
+{
+  "pointer_version": "asset_pointer_v1",
+  "dataset": "navqa",
+  "layer": "ir",
+  "asset_id": "navqa-cg6-question-ir-v1",
+  "status": "active_owned_mainline",
+  "payload_migrated": true,
+  "current_paths": [
+    "datasets/navqa/ir/navqa-cg6-question-ir-v1/payload/question_ir_manifest.json"
+  ],
+  "target_path": "datasets/navqa/ir/navqa-cg6-question-ir-v1",
+  "code_revision": "7b0345e41de2142329be972312fbc3fcf620f06b",
+  "registry": "configs/dataset_asset_registry.yaml",
+  "migration": {
+    "copy": false,
+    "move": true,
+    "delete": false,
+    "next_step": "final_deletion_gate"
+  },
+  "metadata_paths": [],
+  "source_manifest": "configs/datasets/navqa/sequences_reuse.json",
+  "previous_paths": [
+    ".scratch/navqa_cg6_local_tracklet_runs/CG6-clean_IR-QA-F-CG6-local-subgraph-v1_full_20260602/seq0_cam0_every10/llm_question_ir_non_position.json",
+    ".scratch/navqa_cg6_local_tracklet_runs/CG6-clean_IR-QA-F-CG6-local-subgraph-v1_full_20260602/seq3_cam0_every10/llm_question_ir_non_position.json",
+    ".scratch/navqa_cg6_local_tracklet_runs/CG6-clean_IR-QA-F-CG6-local-subgraph-v1_full_20260602/seq4_cam0_every10/llm_question_ir_non_position.json",
+    ".scratch/navqa_cg6_local_tracklet_runs/CG6-clean_IR-QA-F-CG6-local-subgraph-v1_full_20260602/seq6_cam0_every10/llm_question_ir_non_position.json",
+    ".scratch/navqa_cg6_local_tracklet_runs/CG6-clean_IR-QA-F-CG6-local-subgraph-v1_full_20260602/seq16_cam0_every10/llm_question_ir_non_position.json",
+    ".scratch/navqa_cg6_local_tracklet_runs/CG6-clean_IR-QA-F-CG6-local-subgraph-v1_full_20260602/seq21_cam0_every10/llm_question_ir_non_position.json",
+    ".scratch/navqa_cg6_local_tracklet_runs/CG6-clean_IR-QA-F-CG6-local-subgraph-v1_full_20260602/seq22_cam0_every10/llm_question_ir_non_position.json"
+  ],
+  "entrypoints": {
+    "runtime": "datasets/navqa/ir/navqa-cg6-question-ir-v1/payload/question_ir_manifest.json"
+  },
+  "dependency_paths": [],
+  "remaining_work": "Final review of sealed deletion catalog; actual deletion remains disabled."
+}

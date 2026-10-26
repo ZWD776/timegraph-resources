@@ -1,0 +1,11 @@
+* text=auto eol=lf
+
+# Catalogue SHA256 records refer to exact exported bytes, including CSV newlines.
+/catalog/** -text whitespace=cr-at-eol
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.faiss binary
+*.sqlite binary
+*.db binary

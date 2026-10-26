@@ -1,0 +1,29 @@
+{
+  "pointer_version": "asset_pointer_v1",
+  "dataset": "navqa",
+  "layer": "reports",
+  "asset_id": "navqa-reports-v1",
+  "status": "active_owned_mainline",
+  "payload_migrated": true,
+  "current_paths": [
+    "datasets/navqa/reports/navqa-reports-v1/metadata/runtime_views.json",
+    "datasets/navqa/reports/navqa-reports-v1/metadata/embedding_cache.json"
+  ],
+  "target_path": "datasets/navqa/reports/navqa-reports-v1",
+  "code_revision": "7b0345e41de2142329be972312fbc3fcf620f06b",
+  "registry": "configs/dataset_asset_registry.yaml",
+  "migration": {
+    "copy": false,
+    "move": true,
+    "delete": false,
+    "next_step": "final_deletion_gate"
+  },
+  "metadata_paths": [],
+  "previous_paths": [],
+  "entrypoints": {
+    "runtime_views": "datasets/navqa/reports/navqa-reports-v1/metadata/runtime_views.json",
+    "embedding_cache": "datasets/navqa/reports/navqa-reports-v1/metadata/embedding_cache.json"
+  },
+  "dependency_paths": [],
+  "remaining_work": "Final review of sealed deletion catalog; actual deletion remains disabled."
+}

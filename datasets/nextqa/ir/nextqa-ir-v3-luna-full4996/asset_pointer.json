@@ -1,0 +1,32 @@
+{
+  "pointer_version": "asset_pointer_v1",
+  "dataset": "nextqa",
+  "layer": "ir",
+  "asset_id": "nextqa-ir-v3-luna-full4996",
+  "status": "active_owned_mainline",
+  "payload_migrated": true,
+  "current_paths": [
+    "datasets/nextqa/ir/nextqa-ir-v3-luna-full4996/payload/nextqa-ir-v3-luna-full4996-20260817b"
+  ],
+  "target_path": "datasets/nextqa/ir/nextqa-ir-v3-luna-full4996",
+  "code_revision": "7b0345e41de2142329be972312fbc3fcf620f06b",
+  "registry": "configs/dataset_asset_registry.yaml",
+  "migration": {
+    "copy": true,
+    "move": false,
+    "delete": false,
+    "next_step": "final_deletion_gate"
+  },
+  "metadata_paths": [
+    "datasets/nextqa/ir/nextqa-ir-v3-luna-full4996/metadata/question_ir_audit.json"
+  ],
+  "previous_paths": [
+    ".scratch/nextqa/question_ir/nextqa-ir-v3-luna-full4996-20260817b"
+  ],
+  "dependency_paths": [],
+  "entrypoints": {
+    "runtime": "datasets/nextqa/ir/nextqa-ir-v3-luna-full4996/payload/nextqa-ir-v3-luna-full4996-20260817b/question_ir.runtime.json",
+    "retrieval": "datasets/nextqa/ir/nextqa-ir-v3-luna-full4996/payload/nextqa-ir-v3-luna-full4996-20260817b/question_ir.retrieval.json"
+  },
+  "remaining_work": "Final review of sealed deletion catalog; actual deletion remains disabled."
+}

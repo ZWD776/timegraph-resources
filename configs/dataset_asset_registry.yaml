@@ -1,0 +1,175 @@
+registry_version: dataset_asset_registry_v3
+status: owned_mainlines_cleanup_completed
+destructive_actions_enabled: false
+migration_actions_enabled: true
+policy:
+  dataset_order:
+  - navqa
+  - nextqa
+  - openeqa
+  equal_first_class_datasets: true
+  shared_core_is_dataset_neutral: true
+  dataset_to_dataset_strategy_imports_allowed: false
+  same_interface_not_identical_algorithms: true
+  active_runtime_may_read_archive: false
+  archive_root: archive/legacy_20260928
+  default_for_unclassified: hold_for_review
+  storage_minimum_reserve_gib: 20
+  deletion_requires_verified_scope: true
+target_layout:
+  dataset_template:
+    source: datasets/<dataset>/source
+    graphs: datasets/<dataset>/graphs
+    indexes: datasets/<dataset>/indexes
+    ir: datasets/<dataset>/ir
+    retrieval: datasets/<dataset>/retrieval
+    runs: datasets/<dataset>/runs
+    reports: datasets/<dataset>/reports
+    cache: datasets/<dataset>/cache
+    scratch: datasets/<dataset>/scratch
+  core: src/vlkg/core
+  code: src/vlkg/datasets/<dataset>
+  scripts: scripts/datasets/<dataset>
+  tests: tests/datasets/<dataset>
+  docs: docs/datasets/<dataset>
+  entrypoint: scripts/datasets/pipeline.py --dataset <dataset> --stage <operation>
+datasets:
+  navqa:
+    display_name: NAVQA
+    role: equal_first_class_dataset
+    asset_ids:
+      source_id: navqa-coda-every10-v1
+      graph_id: navqa-cg6-time-fact-core-v1
+      ir_id: navqa-cg6-question-ir-v1
+      index_id: navqa-cg6-retrieval-v1
+      retrieval_id: navqa-cg6-retrieval-v1
+      qa_id: navqa-cg6-qa-v1
+      cache_id: navqa-cache-external-v1
+      reports_id: navqa-reports-v1
+      scratch_id: navqa-scratch-external-v1
+    manifest: registry/datasets/navqa.yaml
+    graph_config_current: configs/datasets/navqa/graph.yaml
+    canonical_profile: time_fact_core
+    archive_target: archive/legacy_20260928/navqa
+    selected_current_paths:
+      source:
+      - datasets/navqa/source/navqa-coda-every10-v1/payload/source_manifest.json
+      - datasets/navqa/source/navqa-coda-every10-v1/payload/official/qa.csv
+      graph:
+      - datasets/navqa/graphs/navqa-cg6-time-fact-core-v1/payload/runtime/graph_manifest.json
+      indexes:
+      - datasets/navqa/indexes/navqa-cg6-retrieval-v1/payload/runtime/index_manifest.json
+      - datasets/navqa/indexes/navqa-cg6-retrieval-v1/payload/runtime/object_siglip_flat_ip.manifest.json
+      - datasets/navqa/indexes/navqa-cg6-retrieval-v1/payload/runtime/evidence_layer.sqlite
+      ir:
+      - datasets/navqa/ir/navqa-cg6-question-ir-v1/payload/question_ir_manifest.json
+      retrieval:
+      - datasets/navqa/retrieval/navqa-cg6-retrieval-v1/payload/retrieval_manifest.json
+      runs:
+      - datasets/navqa/runs/navqa-cg6-qa-v1/payload/current/A/mainline_all_sequences_summary.json
+      - datasets/navqa/runs/navqa-cg6-qa-v1/payload/current/B/mainline_all_sequences_summary.json
+      - datasets/navqa/runs/navqa-cg6-qa-v1/payload/current/C/navqa_route_composite.json
+      reports:
+      - datasets/navqa/reports/navqa-reports-v1/metadata/runtime_views.json
+      - datasets/navqa/reports/navqa-reports-v1/metadata/embedding_cache.json
+      cache:
+      - datasets/navqa/cache/navqa-cache-external-v1/payload/embedding_cache.sqlite
+      scratch: []
+  nextqa:
+    display_name: NExT-QA
+    role: equal_first_class_dataset
+    asset_ids:
+      source_id: nextqa-val-v1-repaired29
+      graph_id: nextqa-cg6-human-v2-time-fact-core-v1
+      ir_id: nextqa-ir-v3-luna-full4996
+      index_id: nextqa-visual-index-v2-strict-pairs-full570
+      retrieval_id: nextqa-cg6-retrieval-v3-route-policy-v3
+      qa_id: nextqa-cg6-qa-v3-luna-full4996
+      cache_id: nextqa-cache-external-v1
+      reports_id: nextqa-reports-v1
+      scratch_id: nextqa-scratch-external-v1
+    manifest: registry/datasets/nextqa.yaml
+    graph_config_current: configs/datasets/nextqa/graph.yaml
+    canonical_profile: time_fact_core
+    archive_target: archive/legacy_20260928/nextqa
+    selected_current_paths:
+      source:
+      - datasets/nextqa/source/nextqa-val-v1-repaired29/payload/items
+      - datasets/nextqa/source/nextqa-val-v1-repaired29/payload/source_manifest.json
+      - datasets/nextqa/source/nextqa-val-v1-repaired29/payload/evaluation
+      graph:
+      - datasets/nextqa/graphs/nextqa-cg6-human-v2-time-fact-core-v1/payload/runtime_paths_v3/graph_manifest.json
+      indexes:
+      - datasets/nextqa/indexes/nextqa-visual-index-v2-strict-pairs-full570/payload/runtime_paths_v3/index_manifest.json
+      ir:
+      - datasets/nextqa/ir/nextqa-ir-v3-luna-full4996/payload/nextqa-ir-v3-luna-full4996-20260817b
+      retrieval:
+      - datasets/nextqa/retrieval/nextqa-cg6-retrieval-v3-route-policy-v3/payload/nextqa-graph-retrieval-v2-irv3-full4996-20260817b
+      - datasets/nextqa/retrieval/nextqa-cg6-retrieval-v3-route-policy-v3/payload/nextqa_visual_routes_v2_irv3_full4996_20260818a
+      - datasets/nextqa/retrieval/nextqa-cg6-retrieval-v3-route-policy-v3/payload/nextqa_visual_evidence_v2_irv3_full4996_20260818a
+      - datasets/nextqa/retrieval/nextqa-cg6-retrieval-v3-route-policy-v3/payload/nextqa_visual_route_policy_v3_full4996_20260902a
+      runs:
+      - datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/payload/nextqa-graph-qa-luna-irv3-full4996-20260817a
+      - datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/payload/nextqa-visual-qa-luna-v2-irv3-full4996-20260818a
+      - datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/payload/nextqa-graph-qa-luna-irv3-full4996-evalfix-20260817a
+      - datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/payload/nextqa-visual-paired-eval-v2-irv3-full4996-20260818a
+      - datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/payload/nextqa_visual_route_policy_v3_mainline_eval_20260902a
+      - datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/payload/nextqa_visual_route_policy_v3_mainline_composite_20260902a
+      reports:
+      - datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_mainline_replay.json
+      - datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_mainline_mock_smoke.json
+      - datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_mainline_activation.json
+      - datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_runtime_path_rebase.json
+      - datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_runtime_path_parity.json
+      - datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_cache_path_rebase.json
+      - datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_cache_candidate_parity.json
+      - datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_runtime_view_activation.json
+      - datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_prearchive_gate.json
+      - datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_final_c_recomposition.json
+      - datasets/nextqa/reports/nextqa-reports-v1/metadata/nextqa_prearchive_summary.json
+      cache:
+      - datasets/nextqa/cache/nextqa-cache-external-v1/payload/embedding_cache.sqlite
+      scratch: []
+  openeqa:
+    display_name: OpenEQA
+    role: equal_first_class_dataset
+    asset_ids:
+      source_id: openeqa-em-eqa-hm3d-scannet-v1
+      graph_id: openeqa-time-fact-core-v1
+      ir_id: openeqa-v5-14class-strategy-v4
+      index_id: openeqa-v5-full-visual-indexes
+      retrieval_id: openeqa-v5-canonical-vector-evidence-v5
+      qa_id: openeqa-v5-qa-mainline-luna
+      cache_id: openeqa-cache-external-v1
+      reports_id: openeqa-reports-v1
+      scratch_id: openeqa-scratch-external-v1
+    manifest: registry/datasets/openeqa.yaml
+    graph_config_current: configs/datasets/openeqa/graph.yaml
+    canonical_profile: time_fact_core
+    archive_target: archive/legacy_20260928/openeqa
+    selected_current_paths:
+      source:
+      - datasets/openeqa/source/openeqa-em-eqa-hm3d-scannet-v1/payload/source_manifest.json
+      - datasets/openeqa/source/openeqa-em-eqa-hm3d-scannet-v1/payload/official/open-eqa-v0.json
+      graph:
+      - datasets/openeqa/graphs/openeqa-time-fact-core-v1/payload/runtime/graph_manifest.json
+      - datasets/openeqa/graphs/openeqa-time-fact-core-v1/payload/runtime/hm3d/openeqa_hm3d_graph_build_manifest.json
+      - datasets/openeqa/graphs/openeqa-time-fact-core-v1/payload/runtime/scannet/openeqa_hm3d_graph_build_manifest.json
+      indexes:
+      - datasets/openeqa/indexes/openeqa-v5-full-visual-indexes/payload/runtime/index_manifest.json
+      - datasets/openeqa/indexes/openeqa-v5-full-visual-indexes/payload/runtime/hm3d/openeqa_object_siglip_flat_ip.manifest.json
+      - datasets/openeqa/indexes/openeqa-v5-full-visual-indexes/payload/runtime/scannet/openeqa_object_siglip_flat_ip.manifest.json
+      ir:
+      - datasets/openeqa/ir/openeqa-v5-14class-strategy-v4/payload/runtime_question_ir.json
+      retrieval:
+      - datasets/openeqa/retrieval/openeqa-v5-canonical-vector-evidence-v5/payload/retrieval_manifest.json
+      runs:
+      - datasets/openeqa/runs/openeqa-v5-qa-mainline-luna/payload/A/full_v5_ir_key0_temp0/predictions.json
+      - datasets/openeqa/runs/openeqa-v5-qa-mainline-luna/payload/B/full_v5_ir_key0_temp0/predictions.json
+      - datasets/openeqa/runs/openeqa-v5-qa-mainline-luna/payload/C/predictions.json
+      reports:
+      - datasets/openeqa/reports/openeqa-reports-v1/metadata/runtime_views.json
+      - datasets/openeqa/reports/openeqa-reports-v1/metadata/embedding_cache.json
+      cache:
+      - datasets/openeqa/cache/openeqa-cache-external-v1/payload/embedding_cache.sqlite
+      scratch: []

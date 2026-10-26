@@ -1,0 +1,7 @@
+extends: default.yaml
+
+# Archived Qwen experiment config.
+# The final Graph QA layer no longer routes to Qwen; keep this file only so old
+# command references resolve to the current default DeepSeek QA provider.
+graph_qa:
+  enabled: true

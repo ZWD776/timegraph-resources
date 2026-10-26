@@ -1,0 +1,39 @@
+{
+  "pointer_version": "asset_pointer_v1",
+  "dataset": "openeqa",
+  "layer": "runs",
+  "asset_id": "openeqa-v5-qa-mainline-luna",
+  "status": "active_owned_mainline",
+  "payload_migrated": true,
+  "current_paths": [
+    "datasets/openeqa/runs/openeqa-v5-qa-mainline-luna/payload/A/full_v5_ir_key0_temp0/predictions.json",
+    "datasets/openeqa/runs/openeqa-v5-qa-mainline-luna/payload/B/full_v5_ir_key0_temp0/predictions.json",
+    "datasets/openeqa/runs/openeqa-v5-qa-mainline-luna/payload/C/predictions.json"
+  ],
+  "target_path": "datasets/openeqa/runs/openeqa-v5-qa-mainline-luna",
+  "code_revision": "7b0345e41de2142329be972312fbc3fcf620f06b",
+  "registry": "configs/dataset_asset_registry.yaml",
+  "migration": {
+    "copy": false,
+    "move": true,
+    "delete": false,
+    "next_step": "final_deletion_gate"
+  },
+  "metadata_paths": [
+    "datasets/openeqa/runs/openeqa-v5-qa-mainline-luna/metadata/a_graph_only_manifest.json",
+    "datasets/openeqa/runs/openeqa-v5-qa-mainline-luna/metadata/b_no_routing_manifest.json",
+    "datasets/openeqa/runs/openeqa-v5-qa-mainline-luna/metadata/v5_run_manifest.json"
+  ],
+  "previous_paths": [
+    ".scratch/openeqa/ablation/A_matched_graph_only",
+    ".scratch/openeqa/ablation/B_no_routing_visual_control",
+    ".scratch/openeqa/qa_runs/openeqa_v5_strategy_v4_luna_full_key0_temp0_20260826"
+  ],
+  "entrypoints": {
+    "A": "datasets/openeqa/runs/openeqa-v5-qa-mainline-luna/payload/A/full_v5_ir_key0_temp0/predictions.json",
+    "B": "datasets/openeqa/runs/openeqa-v5-qa-mainline-luna/payload/B/full_v5_ir_key0_temp0/predictions.json",
+    "C": "datasets/openeqa/runs/openeqa-v5-qa-mainline-luna/payload/C/predictions.json"
+  },
+  "dependency_paths": [],
+  "remaining_work": "Final review of sealed deletion catalog; actual deletion remains disabled."
+}

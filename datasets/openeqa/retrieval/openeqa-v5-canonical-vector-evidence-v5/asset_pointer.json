@@ -1,0 +1,32 @@
+{
+  "pointer_version": "asset_pointer_v1",
+  "dataset": "openeqa",
+  "layer": "retrieval",
+  "asset_id": "openeqa-v5-canonical-vector-evidence-v5",
+  "status": "active_owned_mainline",
+  "payload_migrated": true,
+  "current_paths": [
+    "datasets/openeqa/retrieval/openeqa-v5-canonical-vector-evidence-v5/payload/retrieval_manifest.json"
+  ],
+  "target_path": "datasets/openeqa/retrieval/openeqa-v5-canonical-vector-evidence-v5",
+  "code_revision": "7b0345e41de2142329be972312fbc3fcf620f06b",
+  "registry": "configs/dataset_asset_registry.yaml",
+  "migration": {
+    "copy": false,
+    "move": true,
+    "delete": false,
+    "next_step": "final_deletion_gate"
+  },
+  "metadata_paths": [],
+  "execution_mode": "in_process_retrieval_with_vectors_colocated_with_graph",
+  "previous_paths": [
+    "src/vlkg/eval_adapters/openeqa/canonical_record_vector_recall.py",
+    "src/vlkg/eval_adapters/openeqa/canonical_hybrid_retrieval.py",
+    "configs/openeqa_unified_execution_resources_v1.json"
+  ],
+  "entrypoints": {
+    "manifest": "datasets/openeqa/retrieval/openeqa-v5-canonical-vector-evidence-v5/payload/retrieval_manifest.json"
+  },
+  "dependency_paths": [],
+  "remaining_work": "Final review of sealed deletion catalog; actual deletion remains disabled."
+}

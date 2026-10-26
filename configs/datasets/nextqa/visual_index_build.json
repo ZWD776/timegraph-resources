@@ -1,0 +1,26 @@
+{
+  "schema_version": "nextqa_visual_runtime_config_v1",
+  "profile_name": "nextqa_visual_runtime_v1",
+  "embedding_model": "google/siglip-base-patch16-224",
+  "embedding_dimension": 768,
+  "faiss_metric": "inner_product_on_l2_normalized_vectors",
+  "candidate_kinds": [
+    "object",
+    "frame",
+    "tracklet",
+    "temporal_window",
+    "event_boundary",
+    "before_after_pair"
+  ],
+  "window_size_sec": 5.0,
+  "window_stride_sec": 2.0,
+  "event_boundary_radius_sec": 2.0,
+  "visual_top_k_per_kind": 4,
+  "visual_evidence_limit": 12,
+  "frame_embedding_batch_size": 16,
+  "same_video_only": true,
+  "question_only_visual_query": true,
+  "qa_receives_images": false,
+  "qa_receives_visual_embeddings": false,
+  "uses_gold_answer": false
+}

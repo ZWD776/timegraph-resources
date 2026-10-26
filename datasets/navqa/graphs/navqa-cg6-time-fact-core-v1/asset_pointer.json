@@ -1,0 +1,38 @@
+{
+  "pointer_version": "asset_pointer_v1",
+  "dataset": "navqa",
+  "layer": "graphs",
+  "asset_id": "navqa-cg6-time-fact-core-v1",
+  "status": "active_owned_mainline",
+  "payload_migrated": true,
+  "current_paths": [
+    "datasets/navqa/graphs/navqa-cg6-time-fact-core-v1/payload/runtime/graph_manifest.json"
+  ],
+  "target_path": "datasets/navqa/graphs/navqa-cg6-time-fact-core-v1",
+  "code_revision": "7b0345e41de2142329be972312fbc3fcf620f06b",
+  "registry": "configs/dataset_asset_registry.yaml",
+  "migration": {
+    "copy": false,
+    "move": true,
+    "delete": false,
+    "next_step": "final_deletion_gate"
+  },
+  "metadata_paths": [
+    "datasets/navqa/graphs/navqa-cg6-time-fact-core-v1/metadata/seq0/time_fact_core_report.json",
+    "datasets/navqa/graphs/navqa-cg6-time-fact-core-v1/metadata/seq16/time_fact_core_report.json",
+    "datasets/navqa/graphs/navqa-cg6-time-fact-core-v1/metadata/seq21/time_fact_core_report.json",
+    "datasets/navqa/graphs/navqa-cg6-time-fact-core-v1/metadata/seq22/time_fact_core_report.json",
+    "datasets/navqa/graphs/navqa-cg6-time-fact-core-v1/metadata/seq3/time_fact_core_report.json",
+    "datasets/navqa/graphs/navqa-cg6-time-fact-core-v1/metadata/seq4/time_fact_core_report.json",
+    "datasets/navqa/graphs/navqa-cg6-time-fact-core-v1/metadata/seq6/time_fact_core_report.json"
+  ],
+  "previous_paths": [
+    ".scratch/navqa_cg6_local_tracklet/temporal",
+    ".scratch/navqa_cg6_local_tracklet/time_fact_core"
+  ],
+  "entrypoints": {
+    "manifest": "datasets/navqa/graphs/navqa-cg6-time-fact-core-v1/payload/runtime/graph_manifest.json"
+  },
+  "dependency_paths": [],
+  "remaining_work": "Final review of sealed deletion catalog; actual deletion remains disabled."
+}

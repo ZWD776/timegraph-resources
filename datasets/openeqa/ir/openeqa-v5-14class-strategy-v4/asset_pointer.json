@@ -1,0 +1,29 @@
+{
+  "pointer_version": "asset_pointer_v1",
+  "dataset": "openeqa",
+  "layer": "ir",
+  "asset_id": "openeqa-v5-14class-strategy-v4",
+  "status": "active_owned_mainline",
+  "payload_migrated": true,
+  "current_paths": [
+    "datasets/openeqa/ir/openeqa-v5-14class-strategy-v4/payload/runtime_question_ir.json"
+  ],
+  "target_path": "datasets/openeqa/ir/openeqa-v5-14class-strategy-v4",
+  "code_revision": "7b0345e41de2142329be972312fbc3fcf620f06b",
+  "registry": "configs/dataset_asset_registry.yaml",
+  "migration": {
+    "copy": false,
+    "move": true,
+    "delete": false,
+    "next_step": "final_deletion_gate"
+  },
+  "metadata_paths": [],
+  "previous_paths": [
+    ".scratch/openeqa/question_ir/openeqa_unified_question_route_v5_14class_strategy_v4_20260826.json"
+  ],
+  "entrypoints": {
+    "runtime": "datasets/openeqa/ir/openeqa-v5-14class-strategy-v4/payload/runtime_question_ir.json"
+  },
+  "dependency_paths": [],
+  "remaining_work": "Final review of sealed deletion catalog; actual deletion remains disabled."
+}

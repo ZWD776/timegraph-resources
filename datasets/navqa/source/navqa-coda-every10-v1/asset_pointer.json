@@ -1,0 +1,31 @@
+{
+  "pointer_version": "asset_pointer_v1",
+  "dataset": "navqa",
+  "layer": "source",
+  "asset_id": "navqa-coda-every10-v1",
+  "status": "active_owned_mainline",
+  "payload_migrated": true,
+  "current_paths": [
+    "datasets/navqa/source/navqa-coda-every10-v1/payload/source_manifest.json",
+    "datasets/navqa/source/navqa-coda-every10-v1/payload/official/qa.csv"
+  ],
+  "target_path": "datasets/navqa/source/navqa-coda-every10-v1",
+  "code_revision": "7b0345e41de2142329be972312fbc3fcf620f06b",
+  "registry": "configs/dataset_asset_registry.yaml",
+  "migration": {
+    "copy": false,
+    "move": true,
+    "delete": false,
+    "next_step": "final_deletion_gate"
+  },
+  "metadata_paths": [],
+  "previous_paths": [
+    ".scratch/navqa"
+  ],
+  "entrypoints": {
+    "manifest": "datasets/navqa/source/navqa-coda-every10-v1/payload/source_manifest.json",
+    "official_annotations": "datasets/navqa/source/navqa-coda-every10-v1/payload/official/qa.csv"
+  },
+  "dependency_paths": [],
+  "remaining_work": "Final review of sealed deletion catalog; actual deletion remains disabled."
+}

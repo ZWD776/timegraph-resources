@@ -1,0 +1,33 @@
+{
+  "pointer_version": "asset_pointer_v1",
+  "dataset": "nextqa",
+  "layer": "indexes",
+  "asset_id": "nextqa-visual-index-v2-strict-pairs-full570",
+  "status": "active_owned_mainline",
+  "payload_migrated": true,
+  "current_paths": [
+    "datasets/nextqa/indexes/nextqa-visual-index-v2-strict-pairs-full570/payload/runtime_paths_v3/index_manifest.json"
+  ],
+  "target_path": "datasets/nextqa/indexes/nextqa-visual-index-v2-strict-pairs-full570",
+  "code_revision": "7b0345e41de2142329be972312fbc3fcf620f06b",
+  "registry": "configs/dataset_asset_registry.yaml",
+  "migration": {
+    "copy": true,
+    "move": false,
+    "delete": false,
+    "next_step": "final_deletion_gate"
+  },
+  "metadata_paths": [
+    "datasets/nextqa/indexes/nextqa-visual-index-v2-strict-pairs-full570/metadata/visual_index_audit.json"
+  ],
+  "previous_paths": [
+    "datasets/nextqa/indexes/nextqa-visual-index-v2-strict-pairs-full570/payload"
+  ],
+  "entrypoints": {
+    "manifest": "datasets/nextqa/indexes/nextqa-visual-index-v2-strict-pairs-full570/payload/runtime_paths_v3/index_manifest.json"
+  },
+  "verification": "archive/legacy_20260928/governance/registry/migrations/nextqa_index_materialization.json",
+  "runtime_path_validation": "archive/legacy_20260928/governance/registry/migrations/nextqa_runtime_path_rebase.json",
+  "remaining_work": "Final review of sealed deletion catalog; actual deletion remains disabled.",
+  "dependency_paths": []
+}

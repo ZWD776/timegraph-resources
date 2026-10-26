@@ -1,0 +1,327 @@
+{
+  "contract": "navqa_cg6_route_registry_v1",
+  "description": "CG6 route presets using the materialized NAVQA configuration.",
+  "defaults": {
+    "runner": "scripts/eval/run_navqa_mainline_all_sequences.py",
+    "csv": "datasets/navqa/source/navqa-coda-every10-v1/payload/official/qa.csv",
+    "layout_root": "datasets/navqa/source/navqa-coda-every10-v1/payload/navqa",
+    "answer_mode": "live",
+    "ir_mode": "live",
+    "domain_profile": "generic",
+    "retrieval_limit": 10,
+    "qa_batch_size": 5,
+    "qa_workers": 3,
+    "qa_scheduler": "global",
+    "qa_retries": 2,
+    "include_types": [
+      "binary",
+      "text",
+      "time",
+      "duration"
+    ]
+  },
+  "routes": [
+    {
+      "id": "CG6-clean+IR-QA-F-GER-v3-role-aware-compression",
+      "description": "CG6-clean GER-v3-binding route with role-aware object-FAISS compression. Separates question-IR target objects from constraint/context objects before GER evidence packaging, while reusing existing CG6 question IR and projection cache.",
+      "sequence_manifest": "configs/datasets/navqa/sequences_reuse.json",
+      "output_root": "datasets/navqa/runs/new_runs/payload",
+      "config": "datasets/navqa/graph.yaml",
+      "args": [
+        "--reuse-manifest-question-ir",
+        "--reuse-sequence-projection-cache",
+        "--skip-question-ir-generation",
+        "--llm-evidence-rerank",
+        "--experimental-visual-query-faiss-recall",
+        "--experimental-visual-faiss-ger-fusion",
+        "--experimental-visual-faiss-ger-binding",
+        "--experimental-visual-faiss-role-aware-compression"
+      ]
+    },
+    {
+      "id": "CG6-clean+IR-QA-F-synonym-l0-l1-v1",
+      "description": "CG6-clean GER-v3-binding route with an explicit L0/L1 synonym lexicon expanded between question IR and graph/FAISS retrieval. It preserves target versus constraint roles, uses no L2 oracle, no gold answers, and no question-id or seq-specific rules.",
+      "sequence_manifest": "configs/datasets/navqa/sequences_reuse.json",
+      "output_root": "datasets/navqa/runs/new_runs/payload",
+      "config": "datasets/navqa/graph.yaml",
+      "args": [
+        "--reuse-manifest-question-ir",
+        "--reuse-sequence-projection-cache",
+        "--skip-question-ir-generation",
+        "--experimental-synonym-lexicon",
+        "--synonym-lexicon-json",
+        "configs/navqa_synonym_l0_l1.json",
+        "--experimental-visual-query-faiss-recall",
+        "--experimental-visual-faiss-ger-fusion",
+        "--experimental-visual-faiss-ger-binding"
+      ]
+    },
+    {
+      "id": "CG6-clean+IR-QA-F-entity-pack-v1",
+      "description": "CG6-clean FAISS entity-pack route. Uses object FAISS as an entity/tracklet candidate generator, maps hits back to CG6 entity ids, and exposes visual_entity_candidate_pack evidence as the primary LLM rerank unit instead of mixing GER/object-local evidence fragments.",
+      "sequence_manifest": "configs/datasets/navqa/sequences_reuse.json",
+      "output_root": "datasets/navqa/runs/new_runs/payload",
+      "config": "datasets/navqa/graph.yaml",
+      "args": [
+        "--reuse-manifest-question-ir",
+        "--reuse-sequence-projection-cache",
+        "--skip-question-ir-generation",
+        "--llm-evidence-rerank",
+        "--experimental-visual-query-faiss-recall",
+        "--experimental-visual-faiss-entity-pack"
+      ]
+    },
+    {
+      "id": "CG6-clean+IR-QA-F-entity-pack-v2-semantic-align",
+      "description": "CG6-clean entity-pack v2 route. Keeps FAISS as an entity/tracklet candidate generator, then uses SigLIP text embeddings within each question to weakly align primary target phrases with candidate entity labels/direct attributes/direct relations. It does not use LLM semantic alignment, gold answers, question ids, seq special cases, or dataset/domain wordlists.",
+      "sequence_manifest": "configs/datasets/navqa/sequences_reuse.json",
+      "output_root": "datasets/navqa/runs/new_runs/payload",
+      "config": "datasets/navqa/graph.yaml",
+      "args": [
+        "--reuse-manifest-question-ir",
+        "--reuse-sequence-projection-cache",
+        "--skip-question-ir-generation",
+        "--llm-evidence-rerank",
+        "--experimental-visual-query-faiss-recall",
+        "--experimental-visual-faiss-entity-pack",
+        "--experimental-visual-faiss-entity-pack-semantic-align"
+      ]
+    },
+    {
+      "id": "CG6-clean+IR-QA-F-entity-pack-v3-semantic-gated-role",
+      "description": "CG6-clean entity-pack v3 route. Keeps FAISS as an entity/tracklet candidate generator, then uses SigLIP text embeddings as a semantic gate so primary-target query recalls remain provisional unless candidate direct evidence aligns with the target more than with constraints. It does not use LLM semantic alignment, gold answers, question ids, seq special cases, or dataset/domain wordlists.",
+      "sequence_manifest": "configs/datasets/navqa/sequences_reuse.json",
+      "output_root": "datasets/navqa/runs/new_runs/payload",
+      "config": "datasets/navqa/graph.yaml",
+      "args": [
+        "--reuse-manifest-question-ir",
+        "--reuse-sequence-projection-cache",
+        "--skip-question-ir-generation",
+        "--llm-evidence-rerank",
+        "--experimental-visual-query-faiss-recall",
+        "--experimental-visual-faiss-entity-pack",
+        "--experimental-visual-faiss-entity-pack-semantic-gated-role"
+      ]
+    },
+    {
+      "id": "CG6-clean+IR-QA-F-score-contract-v1",
+      "description": "CG6-clean score-contract route. Keeps object FAISS as an entity/tracklet candidate generator, then ranks candidate packs with separated retrieval, binding, semantic, and answerability fields before exposing only candidate_pack plus limited fallback evidence to LLM rerank.",
+      "sequence_manifest": "configs/datasets/navqa/sequences_reuse.json",
+      "output_root": "datasets/navqa/runs/new_runs/payload",
+      "config": "datasets/navqa/graph.yaml",
+      "args": [
+        "--reuse-manifest-question-ir",
+        "--reuse-sequence-projection-cache",
+        "--skip-question-ir-generation",
+        "--llm-evidence-rerank",
+        "--experimental-visual-query-faiss-recall",
+        "--experimental-visual-faiss-entity-pack",
+        "--experimental-visual-faiss-score-contract"
+      ]
+    },
+    {
+      "id": "CG6-clean+IR-QA-F-question-router-v1",
+      "description": "CG6-clean unified QuestionRoute route. Attaches a generic route after question IR, keeps object FAISS as the candidate generator, and uses entity-pack score-contract candidate packs with route-aware audit metadata.",
+      "sequence_manifest": "configs/datasets/navqa/sequences_reuse.json",
+      "output_root": "datasets/navqa/runs/new_runs/payload",
+      "config": "datasets/navqa/graph.yaml",
+      "args": [
+        "--reuse-manifest-question-ir",
+        "--reuse-sequence-projection-cache",
+        "--skip-question-ir-generation",
+        "--llm-evidence-rerank",
+        "--experimental-question-router",
+        "--experimental-visual-query-faiss-recall",
+        "--experimental-visual-faiss-entity-pack",
+        "--experimental-visual-faiss-score-contract"
+      ]
+    },
+    {
+      "id": "CG6-clean+IR-QA-F-question-router-v2-hybrid-backbone",
+      "description": "CG6-clean QuestionRoute v2 route. Attaches a generic route after question IR, then chooses a route-specific visual evidence backbone: stable GER-v3-style wide evidence for binary/time/open, entity-pack score-contract for entity attributes, owner-aware GER for OCR/logo text, object-local GER for duration/spatial, and an explicit count candidate-set pack for count questions.",
+      "sequence_manifest": "configs/datasets/navqa/sequences_reuse.json",
+      "output_root": "datasets/navqa/runs/new_runs/payload",
+      "config": "datasets/navqa/graph.yaml",
+      "args": [
+        "--qa-workers",
+        "2",
+        "--reuse-manifest-question-ir",
+        "--reuse-sequence-projection-cache",
+        "--skip-question-ir-generation",
+        "--llm-evidence-rerank",
+        "--experimental-question-router",
+        "--experimental-question-router-hybrid-backbone",
+        "--experimental-visual-query-faiss-recall"
+      ]
+    },
+    {
+      "id": "CG6-clean+IR-QA-F-question-router-v3-specialized-backbone",
+      "description": "CG6-clean QuestionRoute v3 route. Keeps generic QuestionRoute routing and specializes the weakest v2 backbones: policy-aware count candidate sets, start/end temporal interval boundary packs, GER-v3-compatible wide evidence for binary/time/open, and entity-pack score-contract for entity attributes.",
+      "sequence_manifest": "configs/datasets/navqa/sequences_reuse.json",
+      "output_root": "datasets/navqa/runs/new_runs/payload",
+      "config": "datasets/navqa/graph.yaml",
+      "args": [
+        "--qa-workers",
+        "2",
+        "--reuse-manifest-question-ir",
+        "--reuse-sequence-projection-cache",
+        "--skip-question-ir-generation",
+        "--llm-evidence-rerank",
+        "--experimental-question-router",
+        "--experimental-question-router-specialized-backbone",
+        "--experimental-visual-query-faiss-recall"
+      ]
+    },
+    {
+      "id": "CG6-clean+IR-QA-F-question-router-v4-mainline",
+      "description": "CG6-clean consolidated QuestionRouter mainline. Uses one unified manifest question IR, then routes each question to the current route-specific backbone table: GER-v3-style binary/open evidence, temporal point candidates, temporal interval boundary packs, entity-pack score-contract with window alignment, count candidate sets, OCR owner-aware GER fallback, and broad ego-motion fallback.",
+      "sequence_manifest": "configs/datasets/navqa/sequences_reuse.json",
+      "output_root": "datasets/navqa/runs/new_runs/payload",
+      "config": "datasets/navqa/graph.yaml",
+      "args": [
+        "--qa-workers",
+        "1",
+        "--qa-scheduler",
+        "global",
+        "--reuse-manifest-question-ir",
+        "--reuse-sequence-projection-cache",
+        "--skip-question-ir-generation",
+        "--llm-evidence-rerank",
+        "--experimental-question-router",
+        "--experimental-question-router-mainline",
+        "--experimental-visual-query-faiss-recall"
+      ]
+    },
+    {
+      "id": "CG6-clean+IR-QA-F-GER-v12-owner-minprompt",
+      "description": "CG6-clean GER-like attribute-owner route with compact QA prompt. Reuses existing CG6 question IR/projection cache and keeps v11 owner-aware attribute evidence, but replaces the long QA system policy with a minimal owner-attribute instruction.",
+      "sequence_manifest": "configs/datasets/navqa/sequences_reuse.json",
+      "output_root": "datasets/navqa/runs/new_runs/payload",
+      "config": "datasets/navqa/graph.yaml",
+      "args": [
+        "--reuse-manifest-question-ir",
+        "--reuse-sequence-projection-cache",
+        "--skip-question-ir-generation",
+        "--llm-evidence-rerank",
+        "--experimental-visual-query-faiss-recall",
+        "--experimental-visual-faiss-ger-fusion",
+        "--experimental-visual-faiss-ger-binding",
+        "--experimental-visual-faiss-attribute-owner",
+        "--experimental-owner-minimal-prompt"
+      ]
+    },
+    {
+      "id": "CG6-clean+IR-QA-F-GER-v13-role-aware-aux",
+      "description": "CG6-clean GER-v12 owner-minprompt route plus auxiliary role-aware visual FAISS checks. Keeps GER/object-local graph evidence as the primary route and adds question-IR target/context role checks only as lower-priority auxiliary evidence.",
+      "sequence_manifest": "configs/datasets/navqa/sequences_reuse.json",
+      "output_root": "datasets/navqa/runs/new_runs/payload",
+      "config": "datasets/navqa/graph.yaml",
+      "args": [
+        "--reuse-manifest-question-ir",
+        "--reuse-sequence-projection-cache",
+        "--skip-question-ir-generation",
+        "--llm-evidence-rerank",
+        "--experimental-visual-query-faiss-recall",
+        "--experimental-visual-faiss-ger-fusion",
+        "--experimental-visual-faiss-ger-binding",
+        "--experimental-visual-faiss-attribute-owner",
+        "--experimental-owner-minimal-prompt",
+        "--experimental-visual-faiss-role-aware-aux"
+      ]
+    },
+    {
+      "id": "CG6-clean+IR-QA-F-GER-v11-attribute-owner",
+      "description": "CG6-clean GER-like attribute-owner route. Reuses existing CG6 question IR/projection cache, keeps object FAISS GER-like binding, and marks HSGG attributes as direct_object_attribute or neighbor_object_attribute with explicit owner object roles before QA.",
+      "sequence_manifest": "configs/datasets/navqa/sequences_reuse.json",
+      "output_root": "datasets/navqa/runs/new_runs/payload",
+      "config": "datasets/navqa/graph.yaml",
+      "args": [
+        "--reuse-manifest-question-ir",
+        "--reuse-sequence-projection-cache",
+        "--skip-question-ir-generation",
+        "--llm-evidence-rerank",
+        "--experimental-visual-query-faiss-recall",
+        "--experimental-visual-faiss-ger-fusion",
+        "--experimental-visual-faiss-ger-binding",
+        "--experimental-visual-faiss-attribute-owner"
+      ]
+    },
+    {
+      "id": "CG6-clean+IR-QA-F-CG6-local-subgraph-v1",
+      "description": "CG6-clean object FAISS local-subgraph route. Uses object FAISS to locate candidate CG6 entities, then packages each candidate entity as a local subgraph with direct attributes, relations, time range, visual anchor, and bounded neighbors before generic LLM evidence rerank.",
+      "sequence_manifest": "configs/datasets/navqa/sequences.json",
+      "output_root": "datasets/navqa/runs/new_runs/payload",
+      "config": "datasets/navqa/graph.yaml",
+      "args": [
+        "--llm-evidence-rerank",
+        "--experimental-visual-query-faiss-recall",
+        "--experimental-visual-faiss-ger-fusion",
+        "--experimental-visual-faiss-ger-binding",
+        "--experimental-visual-faiss-local-subgraph"
+      ]
+    },
+    {
+      "id": "CG6-clean+IR-QA-F-CG6-local-subgraph-v2",
+      "description": "CG6-clean object FAISS local-subgraph v2 route. Uses object FAISS to locate candidate CG6 entities, but only the temporal observation entity directly mapped from each FAISS hit becomes a candidate local subgraph; nearby entities remain context only.",
+      "sequence_manifest": "configs/datasets/navqa/sequences.json",
+      "output_root": "datasets/navqa/runs/new_runs/payload",
+      "config": "datasets/navqa/graph.yaml",
+      "args": [
+        "--llm-evidence-rerank",
+        "--experimental-visual-query-faiss-recall",
+        "--experimental-visual-faiss-ger-fusion",
+        "--experimental-visual-faiss-ger-binding",
+        "--experimental-visual-faiss-local-subgraph",
+        "--experimental-visual-faiss-local-subgraph-anchor-only"
+      ]
+    },
+    {
+      "id": "CG6-clean+IR-QA-F-evidence-layer-v1",
+      "description": "CG6-clean object FAISS evidence-layer route. Uses object FAISS to locate candidate HSGG/object observations, then queries the standalone evidence-layer SQLite to package object-bound attributes, HSGG relations, bbox neighbors, image anchors, and time anchors before generic LLM evidence rerank.",
+      "sequence_manifest": "configs/datasets/navqa/sequences.json",
+      "output_root": "datasets/navqa/runs/new_runs/payload",
+      "config": "datasets/navqa/graph.yaml",
+      "args": [
+        "--llm-evidence-rerank",
+        "--experimental-visual-query-faiss-recall",
+        "--experimental-visual-faiss-evidence-layer",
+        "--visual-faiss-evidence-layer-sqlite",
+        "datasets/navqa/indexes/navqa-cg6-retrieval-v1/payload/runtime/evidence_layer.sqlite"
+      ]
+    },
+    {
+      "id": "CG6-clean+IR-QA-F-evidence-layer-v2-constraint-binding",
+      "description": "CG6-clean object FAISS evidence-layer v2 route. Reuses existing CG6 question IR/projection cache, retrieves object-local HSGG evidence packs, then ranks them by generic question-IR target, attribute, event, spatial, and evidence-need coverage before generic LLM evidence rerank.",
+      "sequence_manifest": "configs/datasets/navqa/sequences_reuse.json",
+      "output_root": "datasets/navqa/runs/new_runs/payload",
+      "config": "datasets/navqa/graph.yaml",
+      "args": [
+        "--reuse-manifest-question-ir",
+        "--reuse-sequence-projection-cache",
+        "--skip-question-ir-generation",
+        "--llm-evidence-rerank",
+        "--experimental-visual-query-faiss-recall",
+        "--experimental-visual-faiss-evidence-layer",
+        "--experimental-visual-faiss-evidence-layer-constraint-binding",
+        "--visual-faiss-evidence-layer-sqlite",
+        "datasets/navqa/indexes/navqa-cg6-retrieval-v1/payload/runtime/evidence_layer.sqlite"
+      ]
+    },
+    {
+      "id": "CG6-clean+IR-QA-F-role-aware-evidence-v1",
+      "description": "CG6-clean object FAISS role-aware evidence route. Reuses existing CG6 question IR/projection cache, lets question-IR target entities become candidate subjects, keeps event/spatial/evidence-need FAISS hits as context attachments, and reads or creates simple processed_attributes.json entries for selected HSGG objects on demand.",
+      "sequence_manifest": "configs/datasets/navqa/sequences_reuse.json",
+      "output_root": "datasets/navqa/runs/new_runs/payload",
+      "config": "datasets/navqa/graph.yaml",
+      "args": [
+        "--reuse-manifest-question-ir",
+        "--reuse-sequence-projection-cache",
+        "--skip-question-ir-generation",
+        "--llm-evidence-rerank",
+        "--experimental-visual-query-faiss-recall",
+        "--experimental-visual-faiss-role-aware-evidence"
+      ]
+    }
+  ],
+  "active_graph_id": "CG6-clean"
+}

@@ -1,0 +1,148 @@
+profile_name: default
+
+static_labels:
+  - wall
+  - floor
+  - ceiling
+  - window
+  - door
+
+hierarchy_static_labels: []
+
+noise_labels:
+  - label
+  - text
+  - digits
+  - numbers
+
+component_labels:
+  - shirt
+  - pants
+  - shoes
+  - arm
+  - hand
+  - leg
+
+component_host_labels:
+  - person
+  - man
+  - woman
+  - boy
+  - girl
+  - player
+
+component_inside_ratio: 0.85
+
+state_subject_labels: []
+
+state_prefix_allowlist:
+  - wearing
+
+state_exact_allowlist: []
+
+state_aliases: {}
+min_state_episode_length_frames: 2
+min_state_transition_support_frames: 3
+state_transition_min_dominance_margin_frames: 2
+state_transition_min_dominance_share: 0.6
+state_transition_max_gap_frames: 10
+
+label_aliases:
+  t shirt: shirt
+  t - shirt: shirt
+  shoe: shoes
+  jerseys: jersey
+
+relation_map:
+  standing on: STANDING_ON
+  "on": "ON"
+  above: ABOVE
+  below: BELOW
+  against: AGAINST
+  near: NEAR
+  close to: NEAR
+  beside: NEXT_TO
+  adjacent to: NEXT_TO
+  next to: NEXT_TO
+  in front of: IN_FRONT_OF
+  behind: BEHIND
+  holding: HOLDING
+  holds: HOLDING
+  looking at: LOOKING_AT
+  attached to: ATTACHED_TO
+  reflects: REFLECTS
+  is similar to: SIMILAR_TO
+  features: FEATURES
+  advertises: ADVERTISES
+  define: DEFINES
+
+min_relation_episode_length_frames: 2
+min_relation_event_support_frames: 3
+max_entity_absence_tolerance_frames: 3
+min_entity_segment_event_support_frames: 3
+
+scene_segmentation:
+  enabled: true
+  min_scene_length: 8
+  boundary_confirmation_frames: 2
+  boundary_window_size: 3
+  min_static_entities: 2
+  min_anchor_entity_support_frames: 2
+  static_entity_jaccard_threshold: 0.25
+  static_label_jaccard_threshold: 0.45
+  max_timestamp_gap_sec: 30.0
+
+association:
+  enable_parent_label_constraint: false
+  enable_track_hints: true
+
+llm_fallback:
+  enabled: false
+  provider: deepseek_openai_compatible
+  model: deepseek-v4-flash
+  api_base_url: https://api.deepseek.com
+  endpoint_path: /chat/completions
+  api_key_env_var: DEEPSEEK_API_KEY
+  timeout_sec: 30.0
+  temperature: 0.0
+  max_tokens: 512
+  reasoning_effort:
+  thinking_enabled: false
+  max_candidates: 4
+  max_requests_per_run: 5
+  min_candidate_count: 1
+  ambiguity_margin: 0.05
+  low_similarity_floor: 0.55
+  low_similarity_ambiguity_margin: 0.03
+  single_candidate_score_margin: 0.03
+  enable_static_fallback: false
+  enable_noise_fallback: false
+  enable_candidate_context_fallback: false
+  require_second_candidate_for_low_similarity: true
+  override_confidence_threshold: 0.80
+  decision_log_path:
+
+graph_qa:
+  enabled: false
+  provider: deepseek_openai_compatible
+  model: deepseek-v4-flash
+  api_base_url: https://api.deepseek.com
+  endpoint_path: /chat/completions
+  api_key_env_var: DEEPSEEK_API_KEY
+  timeout_sec: 30.0
+  temperature: 0.1
+  max_tokens: 700
+  reasoning_effort:
+  thinking_enabled: false
+  max_evidence_lines: 6
+  max_focus_frames: 6
+  max_scene_lines: 4
+  enforce_supported_evidence_only: true
+  fallback_to_graph_only_on_invalid_response: true
+
+garbage_collection:
+  min_lifespan: 2
+
+export:
+  exclude_noise: false
+  exclude_fragments: false

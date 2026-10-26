@@ -1,0 +1,34 @@
+{
+  "pointer_version": "asset_pointer_v1",
+  "dataset": "navqa",
+  "layer": "indexes",
+  "asset_id": "navqa-cg6-retrieval-v1",
+  "status": "active_owned_mainline",
+  "payload_migrated": true,
+  "current_paths": [
+    "datasets/navqa/indexes/navqa-cg6-retrieval-v1/payload/runtime/index_manifest.json",
+    "datasets/navqa/indexes/navqa-cg6-retrieval-v1/payload/runtime/object_siglip_flat_ip.manifest.json",
+    "datasets/navqa/indexes/navqa-cg6-retrieval-v1/payload/runtime/evidence_layer.sqlite"
+  ],
+  "target_path": "datasets/navqa/indexes/navqa-cg6-retrieval-v1",
+  "code_revision": "7b0345e41de2142329be972312fbc3fcf620f06b",
+  "registry": "configs/dataset_asset_registry.yaml",
+  "migration": {
+    "copy": false,
+    "move": true,
+    "delete": false,
+    "next_step": "final_deletion_gate"
+  },
+  "metadata_paths": [],
+  "previous_paths": [
+    ".scratch/navqa_evidence_layer_index",
+    ".scratch/navqa_graph_experiments/visual_faiss_grounding"
+  ],
+  "entrypoints": {
+    "manifest": "datasets/navqa/indexes/navqa-cg6-retrieval-v1/payload/runtime/index_manifest.json",
+    "visual_manifest": "datasets/navqa/indexes/navqa-cg6-retrieval-v1/payload/runtime/object_siglip_flat_ip.manifest.json",
+    "evidence_layer": "datasets/navqa/indexes/navqa-cg6-retrieval-v1/payload/runtime/evidence_layer.sqlite"
+  },
+  "dependency_paths": [],
+  "remaining_work": "Final review of sealed deletion catalog; actual deletion remains disabled."
+}

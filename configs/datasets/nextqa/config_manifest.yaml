@@ -1,0 +1,39 @@
+config_manifest_version: dataset_config_manifest_v1
+dataset: nextqa
+status: owned_selected_configs
+runtime_switch_enabled: true
+graph_config: configs/datasets/nextqa/graph.yaml
+pipeline_entrypoint: scripts/datasets/pipeline.py
+configs:
+- path: configs/datasets/nextqa/causal_why_qa.yaml
+  sha256: 978258d3a344315b9ffe274518984dc92188dae21e7d40c16b163a93c028dabd
+  bytes: 578
+- path: configs/datasets/nextqa/graph.yaml
+  sha256: da94eda25af461951d285c50cdc6774ae648acf72a3d0b7392331ed1986b1903
+  bytes: 6039
+- path: configs/datasets/nextqa/graph_qa.yaml
+  sha256: 33c1e87f505baf35851f29bb048c44ddb5d8df0019456a52c41ebeaef2f69978
+  bytes: 513
+- path: configs/datasets/nextqa/no_routing_qa.yaml
+  sha256: b69a5cfcc17bcf0371907ed4ec8fcdfeeefc20a91e257910784374e889a46c3a
+  bytes: 508
+- path: configs/datasets/nextqa/question_ir.yaml
+  sha256: 1ba06d2cb78d66d742a3b488af125f41e54d1ba7326c3cbcfda8dfcb8528e465
+  bytes: 499
+- path: configs/datasets/nextqa/retrieval.yaml
+  sha256: 5d171fa5ff5cda28c2f1eafe5c016d2875bc4ae20900d49a17ced18b65d7eea0
+  bytes: 1064
+- path: configs/datasets/nextqa/route_policy.json
+  sha256: 2e090a49ee74551edfa26eb201616c39a022a619c723c5c9ee21a061aa72f94d
+  bytes: 1563
+- path: configs/datasets/nextqa/visual_index_build.json
+  sha256: 268ad596c6b68e8d7bc939dba6573820c19571ed721c319ebab5211f9005e311
+  bytes: 743
+- path: configs/datasets/nextqa/visual_qa.yaml
+  sha256: da3ee52e8f81f5d1ec5195d6e6428eb42d6fc71951ce10c342551ed976b0ff07
+  bytes: 557
+- path: configs/datasets/nextqa/visual_runtime.json
+  sha256: 8671603b254ca636a465a07014c01d1ef91e2de5a46bb5128faec21b94b028a9
+  bytes: 560
+original_configs_sealed: true
+final_workspace_acceptance: false

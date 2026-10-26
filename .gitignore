@@ -1,0 +1,95 @@
+# Python / test caches
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+pytest-cache-files-*/
+
+# Local environments and secrets
+.venv/
+.claude/
+.env
+.env.*
+
+# Generated experiment outputs
+.scratch/
+runs/
+temporal_graph_*.html
+
+# Parallel datasets: track control metadata, keep payloads local.
+/datasets/**/payload/
+# Sealed heavy assets stay local; manifests, source snapshots and hashes are tracked.
+/archive/**/assets/
+/archive/**/original_mainline/
+/archive/**/runtime_superseded/
+/archive/**/third_party/
+/archive/**/environment_state/
+# Paper/release snapshots contain local compiler caches and generated bundles.
+# Previously tracked sources are added explicitly at their sealed locations.
+/archive/legacy_20260928/shared/papers_and_release/
+!/datasets/*/runs/
+/datasets/*/runs/**
+!/datasets/*/runs/**/
+!/datasets/*/runs/**/asset_pointer.json
+!/datasets/*/runs/**/metadata/*.json
+
+# Local caches and work directories
+data/cache/
+data/workdir/
+/data/examples/*/frames/
+
+# Local dataset assets (source annotations, frames, and HSGG archives)
+/data/next-qa/
+/data/openeqa/
+/HSGG_upload.tgz
+
+# Local paper kits, reference PDFs, and generated manuscript exports
+/AuthorKit27/
+/paper_graph/
+/aaai27_paper_draft/*.docx
+/aaai27_paper_draft/*.pdf
+/aaai27_paper_draft/*.png
+/aaai27_paper_draft/_render_chinese_review*/
+/aaai27_paper_draft/figure_reference_pages/
+/aaai27_paper_draft/figures/*.pdf
+/aaai27_paper_draft/figures/*.png
+/aaai27_paper_draft/figures/*.svg
+!/aaai27_paper_draft/figures/fig1_original_reference.png
+
+# Heavy generated indexes / databases / logs
+*.faiss
+*.sqlite
+*.db
+*.jsonl
+*.json.gz
+*.log
+*.tmp
+
+# Local third-party checkouts kept outside this repository snapshot
+/graphiti-main/
+/cognee-main/
+/HSGG/
+/HSGG-main/
+/HSGG_pri/
+
+# Local dataset compatibility junctions and media files
+/basketball_frame/
+/robot_unitree_every5/
+*.mp4
+*.avi
+*.mov
+
+# Compact integrity ledgers are control metadata, not experiment payloads.
+!/registry/migrations/*.json.gz
+!/archive/legacy_20260928/migration/deletion_catalog/*.json.gz
+!/archive/legacy_20260928/governance/registry/migrations/*.json.gz
+!/registry/gates/*.files.json.gz
+!/archive/legacy_20260928/migration/final_deletion_catalog/*.json.gz
+
+# Retired local checkouts/media remain local until the final deletion step.
+/archive/legacy_20260928/shared/retired_features/retired/graphiti-main/
+/archive/legacy_20260928/shared/retired_features/retired/cognee-main/
+/archive/legacy_20260928/shared/retired_features/retired/data/examples/
+/archive/legacy_20260928/shared/retired_features/retired_generated/datasets/
+/archive/legacy_20260928/shared/retired_features/compatibility_links/

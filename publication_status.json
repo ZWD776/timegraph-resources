@@ -1,0 +1,18 @@
+{
+  "schema_version": "private_publication_status_v2",
+  "client_date": "2026-10-27",
+  "repository_url": "https://github.com/ZWD776/timegraph-resources",
+  "visibility": "private",
+  "private_repository_verified": true,
+  "authenticated_git_read_verified": true,
+  "push_permission_verified": true,
+  "scope": "code_and_portable_resource_metadata_only",
+  "hsgg_images": "external user-supplied Baidu share",
+  "graph_memory": "external_link_pending",
+  "visual_features": "delivery_location_pending",
+  "original_project_modified": false,
+  "credentials_in_repository": false,
+  "publication_preflight": "passed",
+  "transport_status": "See GitHub commit and chat delivery receipt; file is a pre-publication manifest.",
+  "local_git_repository_is_independent": true
+}

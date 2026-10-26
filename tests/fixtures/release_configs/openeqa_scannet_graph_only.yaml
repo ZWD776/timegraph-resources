@@ -1,0 +1,8 @@
+extends: ../../../configs/datasets/navqa/graph.yaml
+profile_name: openeqa_scannet_graph_only
+
+# Preserve the historical ScanNet association profile without a dependency on
+# the author's archive directory. The unified release graph config is checked
+# against the same NAVQA CG6 contract in the accompanying test.
+association:
+  enable_visual_embeddings: true

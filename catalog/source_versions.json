@@ -1,0 +1,204 @@
+{
+  "schema_version": "source_versions_v1",
+  "files": [
+    {
+      "dataset": "navqa",
+      "role": "source_manifest",
+      "path": "datasets/navqa/source/navqa-coda-every10-v1/payload/source_manifest.json",
+      "bytes": 5513,
+      "sha256": "58ad3db4d3c0d259a02a7a52c2fa5b5567bcad0d28c5fb7363f647ef6ebbadc8",
+      "record_count": null,
+      "source_content_copied": false
+    },
+    {
+      "dataset": "nextqa",
+      "role": "source_manifest",
+      "path": "datasets/nextqa/source/nextqa-val-v1-repaired29/payload/source_manifest.json",
+      "bytes": 1212829,
+      "sha256": "7d0505dca59fc1eb7514fbba0bc09fc60994b6f6d44222418655019a9f80fdd9",
+      "record_count": null,
+      "source_content_copied": false
+    },
+    {
+      "dataset": "openeqa",
+      "role": "source_manifest",
+      "path": "datasets/openeqa/source/openeqa-em-eqa-hm3d-scannet-v1/payload/source_manifest.json",
+      "bytes": 1187,
+      "sha256": "8aca173c79a918b47c2ce82cf11c530301c04d3b0c1632edeab6282939173669",
+      "record_count": null,
+      "source_content_copied": false
+    },
+    {
+      "dataset": "navqa",
+      "role": "frame_time_mapping",
+      "path": "datasets/navqa/source/navqa-coda-every10-v1/payload/navqa/seq0/cam0/every10/frame_time_index.json",
+      "bytes": 437438,
+      "sha256": "5fe76e7be81c9cef67c237789a72d84a4116b12146ace66af5a0201f8df0c699",
+      "record_count": 822,
+      "source_content_copied": false
+    },
+    {
+      "dataset": "navqa",
+      "role": "qa_history_windows",
+      "path": "datasets/navqa/source/navqa-coda-every10-v1/payload/navqa/seq0/qa_unfilled.json",
+      "bytes": 12562,
+      "sha256": "0c0faa48cb3ce3f5f0fce392db8cb768b186a3a1ee32968d994644be3a07375c",
+      "record_count": 30,
+      "source_content_copied": false
+    },
+    {
+      "dataset": "navqa",
+      "role": "frame_time_mapping",
+      "path": "datasets/navqa/source/navqa-coda-every10-v1/payload/navqa/seq3/cam0/every10/frame_time_index.json",
+      "bytes": 772003,
+      "sha256": "0f7ace59a199106062817b65e83f98a8b795d7b78a169c60d72e8212aec72d1b",
+      "record_count": 1472,
+      "source_content_copied": false
+    },
+    {
+      "dataset": "navqa",
+      "role": "qa_history_windows",
+      "path": "datasets/navqa/source/navqa-coda-every10-v1/payload/navqa/seq3/qa_unfilled.json",
+      "bytes": 12623,
+      "sha256": "e76689cb9f5b11d4c0c5702f0db2025230f6b29c712f69e419124b1725c09853",
+      "record_count": 30,
+      "source_content_copied": false
+    },
+    {
+      "dataset": "navqa",
+      "role": "frame_time_mapping",
+      "path": "datasets/navqa/source/navqa-coda-every10-v1/payload/navqa/seq4/cam0/every10/frame_time_index.json",
+      "bytes": 436464,
+      "sha256": "4718ddeca6741ed8bfca0801bbdb86d58e8e59b7f51d148a5a621b235edfd39d",
+      "record_count": 824,
+      "source_content_copied": false
+    },
+    {
+      "dataset": "navqa",
+      "role": "qa_history_windows",
+      "path": "datasets/navqa/source/navqa-coda-every10-v1/payload/navqa/seq4/qa_unfilled.json",
+      "bytes": 12604,
+      "sha256": "2e59c99f8fa6820f8ec28dd034113c7b05279c8d41beaeb9992dbc90be48bdd3",
+      "record_count": 30,
+      "source_content_copied": false
+    },
+    {
+      "dataset": "navqa",
+      "role": "frame_time_mapping",
+      "path": "datasets/navqa/source/navqa-coda-every10-v1/payload/navqa/seq6/cam0/every10/frame_time_index.json",
+      "bytes": 713300,
+      "sha256": "23b69d1a59f1ae85d9cbe103ac922f1eb7e025be8094008c0de9367db3e8fd8f",
+      "record_count": 1359,
+      "source_content_copied": false
+    },
+    {
+      "dataset": "navqa",
+      "role": "qa_history_windows",
+      "path": "datasets/navqa/source/navqa-coda-every10-v1/payload/navqa/seq6/qa_unfilled.json",
+      "bytes": 12626,
+      "sha256": "fe32e479fdecdcf3901c69dad870c1d9f989a3376d04a8d4c04f3ae23258e734",
+      "record_count": 30,
+      "source_content_copied": false
+    },
+    {
+      "dataset": "navqa",
+      "role": "frame_time_mapping",
+      "path": "datasets/navqa/source/navqa-coda-every10-v1/payload/navqa/seq16/cam0/every10/frame_time_index.json",
+      "bytes": 900908,
+      "sha256": "b2056f39b14cb39fa85fd4871c036d1e8b4fc5bcc288b58913b041f5f283b177",
+      "record_count": 1707,
+      "source_content_copied": false
+    },
+    {
+      "dataset": "navqa",
+      "role": "qa_history_windows",
+      "path": "datasets/navqa/source/navqa-coda-every10-v1/payload/navqa/seq16/qa_unfilled.json",
+      "bytes": 12652,
+      "sha256": "4e68d238a6ae11fc01d87652b57ed6fe214eeee226b5ad0b0753318fa5299dec",
+      "record_count": 30,
+      "source_content_copied": false
+    },
+    {
+      "dataset": "navqa",
+      "role": "frame_time_mapping",
+      "path": "datasets/navqa/source/navqa-coda-every10-v1/payload/navqa/seq21/cam0/every10/frame_time_index.json",
+      "bytes": 1134119,
+      "sha256": "4e4a14fc98eb0672621e86877929ba5fad8598c3b12f82886dec2fd369b96d54",
+      "record_count": 2153,
+      "source_content_copied": false
+    },
+    {
+      "dataset": "navqa",
+      "role": "qa_history_windows",
+      "path": "datasets/navqa/source/navqa-coda-every10-v1/payload/navqa/seq21/qa_unfilled.json",
+      "bytes": 12653,
+      "sha256": "f3e3663c2a2888ea76c6d434fb439cbc2d154bce32b7c20a32b5361017958cb6",
+      "record_count": 30,
+      "source_content_copied": false
+    },
+    {
+      "dataset": "navqa",
+      "role": "frame_time_mapping",
+      "path": "datasets/navqa/source/navqa-coda-every10-v1/payload/navqa/seq22/cam0/every10/frame_time_index.json",
+      "bytes": 819769,
+      "sha256": "a4c9116b50f89130bd3457316e409eb31dd22a8e5d42e01d53d151da5541a98c",
+      "record_count": 1552,
+      "source_content_copied": false
+    },
+    {
+      "dataset": "navqa",
+      "role": "qa_history_windows",
+      "path": "datasets/navqa/source/navqa-coda-every10-v1/payload/navqa/seq22/qa_unfilled.json",
+      "bytes": 12652,
+      "sha256": "a886170b3e2020517a0f9dff7c6dfe864e3b59e485d3e75b4414f160451f5284",
+      "record_count": 30,
+      "source_content_copied": false
+    },
+    {
+      "dataset": "navqa",
+      "role": "official_qa_210_before_nonposition_filter",
+      "path": "datasets/navqa/source/navqa-coda-every10-v1/payload/official/qa.csv",
+      "bytes": 27254,
+      "sha256": "7bfb33da88c325d30e25e998e7ec0ea5cb4fc33d1aa8fb91a6f8a06d68d34e09",
+      "record_count": 210,
+      "source_content_copied": false
+    },
+    {
+      "dataset": "nextqa",
+      "role": "official_validation_qa",
+      "path": "datasets/nextqa/source/nextqa-val-v1-repaired29/payload/official/val.csv",
+      "bytes": 814107,
+      "sha256": "43198bdef8436b8d64a9b75d846b0987c10cbf94ebf4be325c4a4e54634d66b8",
+      "record_count": 4996,
+      "source_content_copied": false
+    },
+    {
+      "dataset": "nextqa",
+      "role": "runtime_questions",
+      "path": "datasets/nextqa/source/nextqa-val-v1-repaired29/payload/evaluation/questions.runtime.json",
+      "bytes": 2080760,
+      "sha256": "e79666dc72bed4b2ca9b1e2e17b981f0f1253e651ad2d4614cd841ba79d9b262",
+      "record_count": 4996,
+      "source_content_copied": false
+    },
+    {
+      "dataset": "nextqa",
+      "role": "evaluator_only_reference_labels",
+      "path": "datasets/nextqa/source/nextqa-val-v1-repaired29/payload/evaluation/labels.evaluator_only.json",
+      "bytes": 565358,
+      "sha256": "33a095923f2023aa7693fa867a011216205d17fcc3d8b209e7fe857cd2b6efd7",
+      "record_count": 4996,
+      "source_content_copied": false
+    },
+    {
+      "dataset": "openeqa",
+      "role": "open_eqa_v0_official_questions_answers",
+      "path": "datasets/openeqa/source/openeqa-em-eqa-hm3d-scannet-v1/payload/official/open-eqa-v0.json",
+      "bytes": 476360,
+      "sha256": "a64dd101133213fa3b5ca31e5af8216662471aa34894b443d803f497757557ee",
+      "record_count": 1636,
+      "source_content_copied": false
+    }
+  ],
+  "note": "SHA256 fingerprints identify the exact local annotation/mapping version; no question or answer content is copied."
+}

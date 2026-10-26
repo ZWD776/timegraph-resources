@@ -1,0 +1,1 @@
+"""nextqa graph boundary."""

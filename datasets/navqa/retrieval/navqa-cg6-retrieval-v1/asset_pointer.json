@@ -1,0 +1,29 @@
+{
+  "pointer_version": "asset_pointer_v1",
+  "dataset": "navqa",
+  "layer": "retrieval",
+  "asset_id": "navqa-cg6-retrieval-v1",
+  "status": "active_owned_mainline",
+  "payload_migrated": true,
+  "current_paths": [
+    "datasets/navqa/retrieval/navqa-cg6-retrieval-v1/payload/retrieval_manifest.json"
+  ],
+  "target_path": "datasets/navqa/retrieval/navqa-cg6-retrieval-v1",
+  "code_revision": "7b0345e41de2142329be972312fbc3fcf620f06b",
+  "registry": "configs/dataset_asset_registry.yaml",
+  "migration": {
+    "copy": false,
+    "move": true,
+    "delete": false,
+    "next_step": "final_deletion_gate"
+  },
+  "metadata_paths": [],
+  "previous_paths": [
+    ".scratch/navqa_cache_reuse/recommended_manifests/cg6_uniform_CG6-clean_IR-QA-F-CG6-local-subgraph-v1_full_20260602_reuse_manifest_20260604.json"
+  ],
+  "entrypoints": {
+    "manifest": "datasets/navqa/retrieval/navqa-cg6-retrieval-v1/payload/retrieval_manifest.json"
+  },
+  "dependency_paths": [],
+  "remaining_work": "Final review of sealed deletion catalog; actual deletion remains disabled."
+}

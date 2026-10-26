@@ -1,0 +1,51 @@
+profile_name: nextqa_graph_only_unified_v2
+vector_model: sentence-transformers/all-MiniLM-L6-v2
+
+# All questions use the same recall, expansion, reranking and evidence budgets.
+lexical_top_k: 96
+vector_top_k: 48
+vector_min_similarity: 0.20
+exact_entity_top_k: 64
+seed_limit: 16
+max_hops: 2
+max_neighbors_per_node: 32
+expanded_candidate_limit: 320
+evidence_limit: 16
+max_per_evidence_group: 2
+hop_decay: 0.68
+
+weights:
+  lexical: 3.0
+  vector: 1.8
+  exact_entity: 1.1
+  graph_expansion: 0.55
+  structural: 0.35
+  temporal: 1.2
+  constraint: 0.9
+  demand: 1.1
+
+source_kind_prior:
+  episode: 0.45
+  transition_event: 0.42
+  entity_attribute: 0.30
+  entity: 0.18
+  stable_identity: 0.16
+  state_value: 0.12
+  scene: 0.08
+  interaction_type: 0.08
+
+edge_type_weight:
+  NEXT_EPISODE: 0.60
+  PREVIOUS_EPISODE: 0.60
+  TRIGGERED_BY: 0.58
+  INTERACTS_WITH: 0.52
+  OVERLAPS_WITH: 0.48
+  TEMPORALLY_NEAR: 0.46
+  HAS_EPISODE: 0.40
+  BELONGS_TO_SEGMENT: 0.38
+  HAS_STATE: 0.34
+  STARTS_AT: 0.32
+  ENDS_AT: 0.32
+  DESCRIBES_ENTITY: 0.30
+  HAS_MEMBER_ENTITY: 0.28
+  IN_SCENE: 0.10

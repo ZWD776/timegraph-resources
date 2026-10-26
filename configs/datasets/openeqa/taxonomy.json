@@ -1,0 +1,34 @@
+{
+  "contract": "openeqa_single_route_taxonomy.v1",
+  "dataset": "OpenEQA",
+  "routing_profile": "openeqa_ir_first_single_route_v5",
+  "status": "frozen",
+  "question_type_count": 14,
+  "runtime_reclassification_allowed": false,
+  "official_category_used_for_routing": false,
+  "unsupported_fallback_is_question_type": false,
+  "question_types": [
+    "relation_bound_identity",
+    "direct_identity",
+    "entity_attribute",
+    "entity_state",
+    "entity_existence",
+    "surface_capacity",
+    "target_location",
+    "relation_query",
+    "entity_count",
+    "text_reading",
+    "functional_affordance",
+    "grounded_world_knowledge",
+    "scene_description",
+    "content_description"
+  ],
+  "parameter_contract": {
+    "attribute_dimension": "parameter_only",
+    "target_state": "parameter_only",
+    "spatial_constraints": "parameter_only",
+    "aggregation": "parameter_only",
+    "hard_constraints": "parameter_only",
+    "target_entities": "parameter_only"
+  }
+}

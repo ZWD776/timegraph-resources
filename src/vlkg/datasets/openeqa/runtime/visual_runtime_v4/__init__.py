@@ -1,0 +1,3 @@
+"""OpenEQA-only route-isolated visual strategy runtime v4."""
+from vlkg.datasets.openeqa.runtime.visual_runtime_v4.dispatcher import ACTIVE_HANDLER_VARIANTS, FROZEN_V3_DELEGATION_VARIANTS, OPENEQA_VISUAL_RUNTIME_CONTRACT, ROUTE_STRATEGY_CONTRACT, fuse_route_dispatched_visual_evidence, handler_provenance, route_handler_contract_issues, route_handler_id
+__all__ = ['OPENEQA_VISUAL_RUNTIME_CONTRACT', 'ACTIVE_HANDLER_VARIANTS', 'FROZEN_V3_DELEGATION_VARIANTS', 'ROUTE_STRATEGY_CONTRACT', 'fuse_route_dispatched_visual_evidence', 'handler_provenance', 'route_handler_contract_issues', 'route_handler_id']

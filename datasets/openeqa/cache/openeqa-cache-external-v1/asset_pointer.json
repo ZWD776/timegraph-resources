@@ -1,0 +1,27 @@
+{
+  "pointer_version": "asset_pointer_v1",
+  "dataset": "openeqa",
+  "layer": "cache",
+  "asset_id": "openeqa-cache-external-v1",
+  "status": "active_owned_mainline",
+  "payload_migrated": true,
+  "current_paths": [
+    "datasets/openeqa/cache/openeqa-cache-external-v1/payload/embedding_cache.sqlite"
+  ],
+  "target_path": "datasets/openeqa/cache/openeqa-cache-external-v1",
+  "code_revision": "7b0345e41de2142329be972312fbc3fcf620f06b",
+  "registry": "configs/dataset_asset_registry.yaml",
+  "migration": {
+    "copy": false,
+    "move": true,
+    "delete": false,
+    "next_step": "final_deletion_gate"
+  },
+  "metadata_paths": [],
+  "previous_paths": [],
+  "entrypoints": {
+    "embeddings": "datasets/openeqa/cache/openeqa-cache-external-v1/payload/embedding_cache.sqlite"
+  },
+  "dependency_paths": [],
+  "remaining_work": "Final review of sealed deletion catalog; actual deletion remains disabled."
+}

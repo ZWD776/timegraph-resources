@@ -1,0 +1,43 @@
+{
+  "schema_version": "nextqa_visual_route_policy_config_v3",
+  "policy_id": "nextqa_visual_route_policy_v3_uniform_negative_routes",
+  "route_strategies": {
+    "causal_how": {
+      "strategy_id": "causal_how_uniform_visual_v1",
+      "handler_id": "nextqa_visual_handler_v3:causal_how_uniform_visual"
+    },
+    "causal_why": {
+      "strategy_id": "nextqa_visual_runtime_v2",
+      "handler_id": "nextqa_visual_handler_v2:causal_why"
+    },
+    "descriptive_count": {
+      "strategy_id": "descriptive_count_uniform_visual_v1",
+      "handler_id": "nextqa_visual_handler_v3:descriptive_count_uniform_visual"
+    },
+    "descriptive_direct": {
+      "strategy_id": "nextqa_visual_runtime_v2",
+      "handler_id": "nextqa_visual_handler_v2:descriptive_direct"
+    },
+    "descriptive_location": {
+      "strategy_id": "nextqa_visual_runtime_v2",
+      "handler_id": "nextqa_visual_handler_v2:descriptive_location"
+    },
+    "temporal_concurrent": {
+      "strategy_id": "nextqa_visual_runtime_v2",
+      "handler_id": "nextqa_visual_handler_v2:temporal_concurrent"
+    },
+    "temporal_next": {
+      "strategy_id": "nextqa_visual_runtime_v2",
+      "handler_id": "nextqa_visual_handler_v2:temporal_next"
+    },
+    "temporal_previous": {
+      "strategy_id": "nextqa_visual_runtime_v2",
+      "handler_id": "nextqa_visual_handler_v2:temporal_previous"
+    }
+  },
+  "selection_unit": "persisted_ir_route",
+  "selects_better_answer_per_question": false,
+  "uses_official_type": false,
+  "uses_answer_choices_for_retrieval": false,
+  "uses_gold_answer": false
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": "private_release_validation_v1",
+  "client_date": "2026-10-27",
+  "status": "passed_before_private_push",
+  "original_project": {
+    "protected_files": 600,
+    "sha256_unchanged": true,
+    "git_status_unchanged": true,
+    "data_files_written": false
+  },
+  "independent_candidate": {
+    "old_machine_root_removed": true,
+    "python_sources_parse": true,
+    "common_secret_pattern_scan_passed": true,
+    "large_data_included": false,
+    "catalogue_frames": 65012,
+    "catalogue_qa_ids": 6842,
+    "catalogue_units": 729,
+    "catalogue_checksum_and_cross_reference_check": "passed"
+  },
+  "offline_tests": {
+    "passed": 213,
+    "skipped": 5,
+    "skipped_reason": "External dataset payloads are intentionally not included; no fallback to the original project.",
+    "scope": [
+      "catalogue path/corruption guards",
+      "published registry metadata and stage command contracts",
+      "NExT-QA offline suite",
+      "OpenEQA path/configuration and unified QA command tests"
+    ]
+  },
+  "entrypoint_help": {
+    "navqa_openeqa_modified_scripts": 9,
+    "status": "passed",
+    "nextqa_external_cwd_help": "passed"
+  },
+  "not_verified": [
+    "Netdisk archive contents or reconstruction layout",
+    "Full graph/index regeneration",
+    "Online model/API QA",
+    "Cross-platform runtime beyond this Windows verification"
+  ],
+  "git_index_roundtrip": {
+    "status": "passed",
+    "files_checked": 615,
+    "byte_differences": 0,
+    "fresh_directory_catalog_check": "passed",
+    "fresh_directory_import_isolation": "passed",
+    "fresh_directory_registry_layers_checked": 27
+  },
+  "release_payload_excludes": [
+    "images",
+    "videos",
+    "HSGG bodies",
+    "graph bodies",
+    "FAISS/embedding databases",
+    "QA text and answers",
+    "old Git history",
+    "archival migration ledgers"
+  ],
+  "markdown_local_links": "passed",
+  "original_worktree_final_check": "unchanged"
+}

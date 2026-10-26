@@ -1,0 +1,20 @@
+{
+  "contract": "openeqa_unified_execution_resources.v1",
+  "dataset": "OpenEQA",
+  "effective_graph_config": "configs/datasets/openeqa/graph.yaml",
+  "existing_graphs_are_effective_config_equivalent": true,
+  "execution_shards": [
+    {
+      "data_source": "hm3d-v0",
+      "graph_manifest": "datasets/openeqa/graphs/openeqa-time-fact-core-v1/payload/runtime/hm3d/openeqa_hm3d_graph_build_manifest.json",
+      "visual_index_dir": "datasets/openeqa/indexes/openeqa-v5-full-visual-indexes/payload/runtime/hm3d",
+      "visual_index_name": "openeqa_object_siglip_flat_ip"
+    },
+    {
+      "data_source": "scannet-v0",
+      "graph_manifest": "datasets/openeqa/graphs/openeqa-time-fact-core-v1/payload/runtime/scannet/openeqa_hm3d_graph_build_manifest.json",
+      "visual_index_dir": "datasets/openeqa/indexes/openeqa-v5-full-visual-indexes/payload/runtime/scannet",
+      "visual_index_name": "openeqa_object_siglip_flat_ip"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "pointer_version": "asset_pointer_v1",
+  "dataset": "nextqa",
+  "layer": "runs",
+  "asset_id": "nextqa-cg6-qa-v3-luna-full4996",
+  "status": "active_owned_mainline",
+  "payload_migrated": true,
+  "current_paths": [
+    "datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/payload/nextqa-graph-qa-luna-irv3-full4996-20260817a",
+    "datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/payload/nextqa-visual-qa-luna-v2-irv3-full4996-20260818a",
+    "datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/payload/nextqa-graph-qa-luna-irv3-full4996-evalfix-20260817a",
+    "datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/payload/nextqa-visual-paired-eval-v2-irv3-full4996-20260818a",
+    "datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/payload/nextqa_visual_route_policy_v3_mainline_eval_20260902a",
+    "datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/payload/nextqa_visual_route_policy_v3_mainline_composite_20260902a"
+  ],
+  "target_path": "datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996",
+  "code_revision": "7b0345e41de2142329be972312fbc3fcf620f06b",
+  "registry": "configs/dataset_asset_registry.yaml",
+  "migration": {
+    "copy": true,
+    "move": false,
+    "delete": false,
+    "next_step": "final_deletion_gate"
+  },
+  "metadata_paths": [
+    "datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/metadata/graph_only_summary.json",
+    "datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/metadata/latest_c_manifest.json",
+    "datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/metadata/latest_c_summary.json",
+    "datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/metadata/visual_paired_summary.json"
+  ],
+  "previous_paths": [
+    ".scratch/nextqa/qa/nextqa-graph-qa-luna-irv3-full4996-20260817a",
+    ".scratch/nextqa/qa/nextqa-visual-qa-luna-v2-irv3-full4996-20260818a",
+    ".scratch/nextqa/qa_evaluations/nextqa-graph-qa-luna-irv3-full4996-evalfix-20260817a",
+    ".scratch/nextqa/qa_evaluations/nextqa-visual-paired-eval-v2-irv3-full4996-20260818a",
+    ".scratch/nextqa/ablation/nextqa_visual_route_policy_v3_mainline_eval_20260902a",
+    ".scratch/nextqa/ablation/nextqa_visual_route_policy_v3_mainline_composite_20260902a"
+  ],
+  "dependency_paths": [
+    "datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/payload/nextqa_visual_mainline_overlay_causal_why_v4_20260829a",
+    "datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/payload/nextqa_causal_why_coherent_chain_v2_qa_full1927_20260829a",
+    "datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/payload/nextqa_visual_no_routing_qa_v2_full4996_20260901a",
+    "datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/payload/nextqa_three_way_ablation_latest_c_eval_20260902a",
+    "datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/payload/nextqa_three_way_ablation_eval_v2_20260901b",
+    "datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/payload/nextqa_visual_mainline_overlay_causal_why_v4_20260829a/predictions.json",
+    "datasets/nextqa/retrieval/nextqa-cg6-retrieval-v3-route-policy-v3/payload/nextqa_visual_route_policy_v3_full4996_20260902a/target_overlay_predictions.json"
+  ],
+  "entrypoints": {
+    "A": "datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/payload/nextqa-graph-qa-luna-irv3-full4996-20260817a/predictions.json",
+    "B": "datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/payload/nextqa_visual_no_routing_qa_v2_full4996_20260901a/predictions.json",
+    "C": "datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/payload/nextqa_visual_route_policy_v3_mainline_composite_20260902a/predictions.json",
+    "causal_base": "datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/payload/nextqa_visual_mainline_overlay_causal_why_v4_20260829a/predictions.json",
+    "policy_overlay": "datasets/nextqa/retrieval/nextqa-cg6-retrieval-v3-route-policy-v3/payload/nextqa_visual_route_policy_v3_full4996_20260902a/target_overlay_predictions.json",
+    "visual_base": "datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/payload/nextqa-visual-qa-luna-v2-irv3-full4996-20260818a/predictions.json",
+    "causal_qa": "datasets/nextqa/runs/nextqa-cg6-qa-v3-luna-full4996/payload/nextqa_causal_why_coherent_chain_v2_qa_full1927_20260829a/predictions.json"
+  },
+  "remaining_work": "Final review of sealed deletion catalog; actual deletion remains disabled."
+}
