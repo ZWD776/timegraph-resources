@@ -1,0 +1,75 @@
+{
+  "schema_version": "resource_delivery_validation_v1",
+  "client_date": "2026-10-27",
+  "status": "passed_before_private_push",
+  "scope": "independent_release_maintenance",
+  "catalog": {
+    "frame_count": 65012,
+    "qa_ids": 6842,
+    "units": 729,
+    "aligned_groups": 30,
+    "aligned_packages": 60,
+    "qa_package_metadata": 3,
+    "checksums_and_cross_references": "passed"
+  },
+  "tests": {
+    "passed": 39,
+    "failed": 0,
+    "scope": [
+      "portable_reader",
+      "aligned_archive_metadata",
+      "resource_catalog",
+      "metadata_registry"
+    ]
+  },
+  "python_files_parsed": 527,
+  "markdown_local_links": {
+    "checked": 15,
+    "missing": 0
+  },
+  "reader": {
+    "datasets": [
+      "navqa",
+      "nextqa",
+      "hm3d",
+      "scannet"
+    ],
+    "local_units_checked": 4,
+    "all_source_float32_bytes_match": true,
+    "image_hsgg_and_graph_file_bindings": "passed",
+    "graph_body_identity_or_topology_checked": false,
+    "binding_mode": "explicit_read_only_original_data_root",
+    "cloud_download_checked": false
+  },
+  "privacy": {
+    "current_files_scan": "passed",
+    "reachable_history_scan": "passed",
+    "historical_commits_rewritten": 3,
+    "historical_blobs_sanitized": 2,
+    "invalidated_signature_omitted": 1,
+    "access_credentials_in_current_files_or_reachable_history": false,
+    "provider_cache_or_prior_copies_revoked": false
+  },
+  "source_preservation": {
+    "project_input_files_unchanged": 10896,
+    "prior_backup_files_unchanged": 26,
+    "qa_source_copies_byte_identical": 36,
+    "original_graph_or_feature_recomputed": false
+  },
+  "qa": {
+    "packages_prepared": 3,
+    "cloud_upload_confirmed": false,
+    "original_annotations_preserved": true,
+    "navqa_time_labels_unverified": 30,
+    "navqa_negative_time_labels_flagged": 1,
+    "position_coordinates_invented": false
+  },
+  "first_round_manual_review": "deferred_by_owner",
+  "not_verified": [
+    "cloud download bytes",
+    "full original QA runtime restoration",
+    "online model or LLM Judge evaluation",
+    "manual identity ground truth",
+    "provider-side dangling Git cache removal"
+  ]
+}

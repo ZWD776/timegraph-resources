@@ -1,14 +1,14 @@
 {
-  "schema_version": "portable_publication_inventory_v2",
+  "schema_version": "portable_publication_inventory_v3",
   "client_date": "2026-10-27",
   "repository_url": "https://github.com/ZWD776/timegraph-resources",
   "visibility": "private",
-  "source_code_snapshot": "current original working tree plus independent release-only path adaptations",
+  "source_code_snapshot": "Existing code plus independent portable reader, aligned resource metadata and delivery documentation",
   "original_project_modified": false,
   "external_data_included": false,
   "self_excluded": true,
-  "file_count_excluding_inventory": 614,
-  "total_bytes_excluding_inventory": 40974408,
+  "file_count_excluding_inventory": 627,
+  "total_bytes_excluding_inventory": 44276622,
   "omitted_candidate_maintenance_files": [
     "scripts/datasets/split_benchmark_archives.py",
     "scripts/datasets/publish_benchmark_splits.ps1",
@@ -18,8 +18,8 @@
     "registry/current_registry_lock.json"
   ],
   "pending_external_resources": [
-    "graph_memory_netdisk_url",
-    "visual_feature_delivery_location"
+    "qa_cloud_upload_confirmation",
+    "teacher_github_identity"
   ],
   "files": [
     {
@@ -37,10 +37,41 @@
       "origin": "current_working_tree_copy"
     },
     {
+      "path": "README.md",
+      "bytes": 7136,
+      "sha256": "64652876ee5f2cc85e726b91f85eff6da586ff626bbc38393cb12c59bd355acf",
+      "source_sha256": "1a02c04f3785dfb729200690f7d67f117d2f2f5ab2d4f5297497bbced2a610a8",
+      "origin": "release_resource_delivery_maintenance"
+    },
+    {
+      "path": "catalog/README.md",
+      "bytes": 2809,
+      "sha256": "a36e8a8853c096f2c0ff87c4cd59aecc7867b35bac0dbb12df1d0a5a0928daa8",
+      "origin": "release_resource_delivery_maintenance"
+    },
+    {
+      "path": "catalog/aligned_packages.SHA256SUMS.txt",
+      "bytes": 9678,
+      "sha256": "08db427ec598803a7aca428a8ae911fd226d3e323d6411b52d3be01e71a24675",
+      "origin": "release_resource_delivery_maintenance"
+    },
+    {
+      "path": "catalog/aligned_packages.json",
+      "bytes": 260058,
+      "sha256": "d1005b55fa3f9a549baa2c9c5e21e31b3020ae5f453ebe58b4cf93120c522fb9",
+      "origin": "release_resource_delivery_maintenance"
+    },
+    {
+      "path": "catalog/aligned_units.json",
+      "bytes": 2962338,
+      "sha256": "f8e18080af0a85a41efba9039db612785710c8864c330bd517a8963a7992aca6",
+      "origin": "release_resource_delivery_maintenance"
+    },
+    {
       "path": "catalog/catalog_files.json",
-      "bytes": 1875,
-      "sha256": "f81a1f6a7cf31c6c49d1cef99b45aaff7c617f743f8dd8ea9fe1d3117c8ce9c7",
-      "origin": "release_metadata_or_portability_support"
+      "bytes": 2584,
+      "sha256": "5a684019750f5c3c98d042ffca384aeb544d203049f7355950b74a2f9f13af94",
+      "origin": "release_resource_delivery_maintenance"
     },
     {
       "path": "catalog/export_summary.json",
@@ -50,9 +81,9 @@
     },
     {
       "path": "catalog/external_resources.template.json",
-      "bytes": 4049,
-      "sha256": "91b8c0e714fd603f9c33f8ceddbdcbb03fc7bc6104120fb3d70f5f1442146e57",
-      "origin": "release_metadata_or_portability_support"
+      "bytes": 5578,
+      "sha256": "43c8f572460e19f03da7ae1a7cd6618c2eef40923fb291a70cb36c114424b511",
+      "origin": "release_resource_delivery_maintenance"
     },
     {
       "path": "catalog/navqa_frames.csv",
@@ -91,10 +122,10 @@
       "origin": "release_metadata_or_portability_support"
     },
     {
-      "path": "catalog/README.md",
-      "bytes": 1733,
-      "sha256": "0a178852cf3fe9f4653f8d802ed99ff628ef4a2863fd19010cf63b03f5d68416",
-      "origin": "release_metadata_or_portability_support"
+      "path": "catalog/qa_resources.json",
+      "bytes": 4223,
+      "sha256": "211ddd1d919b2c134f6eefe7c410c513032930c2313a1e74ca17fdb6d8200c84",
+      "origin": "release_resource_delivery_maintenance"
     },
     {
       "path": "catalog/source_versions.json",
@@ -473,6 +504,13 @@
       "origin": "independent_release_adaptation"
     },
     {
+      "path": "docs/datasets/SOURCE_ORGANIZATION_20261009_CN.md",
+      "bytes": 3975,
+      "sha256": "bf022a618d7135ee7c5f5a1158fe6d9381e401c7776d892ff15fca99ee6684b5",
+      "source_sha256": "1faac9cbf157d3301ff6c162b81667a7d601037bad6ccaedac7ad3537693d0a6",
+      "origin": "independent_release_adaptation"
+    },
+    {
       "path": "docs/datasets/navqa/MAINLINE_CN.md",
       "bytes": 843,
       "sha256": "8d6dda4b9c19f82e9014d02462c89794a6563f8ea16d50ced7c2aca4fc4e34c0",
@@ -494,44 +532,48 @@
       "origin": "current_working_tree_copy"
     },
     {
-      "path": "docs/datasets/SOURCE_ORGANIZATION_20261009_CN.md",
-      "bytes": 3975,
-      "sha256": "bf022a618d7135ee7c5f5a1158fe6d9381e401c7776d892ff15fca99ee6684b5",
-      "source_sha256": "1faac9cbf157d3301ff6c162b81667a7d601037bad6ccaedac7ad3537693d0a6",
-      "origin": "independent_release_adaptation"
+      "path": "docs/github_release_20261027/ALIGNED_READER_CN.md",
+      "bytes": 6716,
+      "sha256": "b4b6ec5b9cb4c656e8c0912c04634158e1b56dcf23492d2b58dd497b050ccc26",
+      "origin": "release_resource_delivery_maintenance"
+    },
+    {
+      "path": "docs/github_release_20261027/QA_RESOURCES_CN.md",
+      "bytes": 3639,
+      "sha256": "68420c6b761d6b4a0c5802c4aef35672982d999055db6544011c804e88f0fc3f",
+      "origin": "release_resource_delivery_maintenance"
     },
     {
       "path": "docs/github_release_20261027/RELEASE_SCOPE_CN.md",
-      "bytes": 7121,
-      "sha256": "87a00bb064c2bb29039812acf8a676c2bf179c125c6b5a37af020b361699c78c",
+      "bytes": 7363,
+      "sha256": "a7c3c170f3db69cc6572a700f41c1e3abfcf1e850b5b00018e376f1ebfbd64db",
       "source_sha256": "87a00bb064c2bb29039812acf8a676c2bf179c125c6b5a37af020b361699c78c",
-      "origin": "current_working_tree_copy"
+      "origin": "release_resource_delivery_maintenance"
     },
     {
       "path": "docs/github_release_20261027/RESOURCE_PREPARATION_CN.md",
-      "bytes": 11633,
-      "sha256": "7dc7c7aba18f04b3e3ad6127ff626a3e8d3d090ef62154d36df156048bdfad38",
+      "bytes": 15334,
+      "sha256": "86bc95748de7fdc6158a2dea90a2412e134d1c8ab9b91482b96f8332ec81dec8",
       "source_sha256": "7dc7c7aba18f04b3e3ad6127ff626a3e8d3d090ef62154d36df156048bdfad38",
-      "origin": "current_working_tree_copy"
+      "origin": "release_resource_delivery_maintenance"
+    },
+    {
+      "path": "docs/github_release_20261027/SAMPLING_AND_HSGG_CN.md",
+      "bytes": 9310,
+      "sha256": "c807a17496c3bfb48c077dfdb6113d63aba4137cf0cf0b604897fc85614d80f6",
+      "origin": "release_resource_delivery_maintenance"
     },
     {
       "path": "publication_status.json",
-      "bytes": 770,
-      "sha256": "94cb46b0a7e50ffef21765570e59d56d3cbde8f24ecf91800ae486e3d02ad301",
-      "origin": "release_metadata_or_portability_support"
+      "bytes": 1177,
+      "sha256": "253b59803af9ac347e0d275e1652afb606d7af160afa587f9144740404da7e46",
+      "origin": "release_resource_delivery_maintenance"
     },
     {
       "path": "pyproject.toml",
       "bytes": 1262,
       "sha256": "e92533d514b30e85daefec9ca0ca97a94cc666b4d9d32c98afb9e5d8b1fccd2f",
       "source_sha256": "6acde317f0d08f85e1eabeaec4723416e0bb623b4f1c9b84e124a94ced44d1f4",
-      "origin": "independent_release_adaptation"
-    },
-    {
-      "path": "README.md",
-      "bytes": 5634,
-      "sha256": "7f5bfe12f69a1c13e8a114bbca16efc261731c3d6c5a8abfb323c0ef27c67c5c",
-      "source_sha256": "1a02c04f3785dfb729200690f7d67f117d2f2f5ab2d4f5297497bbced2a610a8",
       "origin": "independent_release_adaptation"
     },
     {
@@ -567,6 +609,12 @@
       "bytes": 1927,
       "sha256": "7a69a1afa16fba05a9856692cd18e5809ecfb4a57de4e51a2b68a36b6510310c",
       "origin": "release_metadata_or_portability_support"
+    },
+    {
+      "path": "resource_delivery_validation.json",
+      "bytes": 2130,
+      "sha256": "037e1d5f0b98fdebcf7417fc4c5f3f0d6e220e055da29b7a01f31949926f27e1",
+      "origin": "release_resource_delivery_maintenance"
     },
     {
       "path": "scripts/__init__.py",
@@ -1668,13 +1716,6 @@
       "origin": "current_working_tree_copy"
     },
     {
-      "path": "scripts/ops/cleanup_blocked_pytest_dirs.ps1",
-      "bytes": 2846,
-      "sha256": "5553ae31089991ed94add2b0334f033cac8680c07de15611bec7e6dcbb6f335b",
-      "source_sha256": "5553ae31089991ed94add2b0334f033cac8680c07de15611bec7e6dcbb6f335b",
-      "origin": "current_working_tree_copy"
-    },
-    {
       "path": "scripts/ops/Invoke-WithCleanPathEnv.ps1",
       "bytes": 1192,
       "sha256": "d86eee77f51143e04b5660cac5977efb65753a4c2a225186dbab94da525f6dea",
@@ -1686,6 +1727,13 @@
       "bytes": 1174,
       "sha256": "cb20b183546be39434c9c1289089dc048b4da33aaaf35c02ea2a48421b4dec3e",
       "source_sha256": "cb20b183546be39434c9c1289089dc048b4da33aaaf35c02ea2a48421b4dec3e",
+      "origin": "current_working_tree_copy"
+    },
+    {
+      "path": "scripts/ops/cleanup_blocked_pytest_dirs.ps1",
+      "bytes": 2846,
+      "sha256": "5553ae31089991ed94add2b0334f033cac8680c07de15611bec7e6dcbb6f335b",
+      "source_sha256": "5553ae31089991ed94add2b0334f033cac8680c07de15611bec7e6dcbb6f335b",
       "origin": "current_working_tree_copy"
     },
     {
@@ -1836,17 +1884,35 @@
       "origin": "current_working_tree_copy"
     },
     {
+      "path": "scripts/release/audit_release_privacy.py",
+      "bytes": 2414,
+      "sha256": "ef69506b6913f64d4e77875d8d0e4a3b6c3471fdcc4984c969cc33b5d4d1034f",
+      "origin": "release_resource_delivery_maintenance"
+    },
+    {
+      "path": "scripts/release/export_aligned_catalog.py",
+      "bytes": 5414,
+      "sha256": "ae09d760f9dc8dffe9042ae5786473ca510ef94f64f02ec812b6de1e88a4479b",
+      "origin": "release_resource_delivery_maintenance"
+    },
+    {
       "path": "scripts/release/export_resource_catalog.py",
-      "bytes": 22378,
-      "sha256": "dd742d03aed1884969e6cf820a94a59142e43162045537e621670a7ae65c22d4",
+      "bytes": 22499,
+      "sha256": "80193d8e2b4ecd8b1bd80e8432327edf9a972e3fb258f7af548294cd8455d103",
       "source_sha256": "b81c3a1200322457efa940ac93a1f09aa15e8af2bf497894d6f4a495e0ad7ac9",
-      "origin": "independent_release_adaptation"
+      "origin": "release_resource_delivery_maintenance"
+    },
+    {
+      "path": "scripts/release/read_aligned_unit.py",
+      "bytes": 14463,
+      "sha256": "e3eba17f76b54ab3d5e96d06e5feaf9e5375706bb435542f067bd7d937d77de4",
+      "origin": "release_resource_delivery_maintenance"
     },
     {
       "path": "scripts/release/verify_resource_catalog.py",
-      "bytes": 9657,
-      "sha256": "05d2d55f4cd1fa6fa9594cb2d71316a85798d8edb6fb30ced96ea567ce4b72e5",
-      "origin": "release_metadata_or_portability_support"
+      "bytes": 14056,
+      "sha256": "5406000e0a08e5ef950a77ae011ab5b82673b8e1d6343d858486bcec1521ef8b",
+      "origin": "release_resource_delivery_maintenance"
     },
     {
       "path": "scripts/report_stable_identity_merge_suggestions.py",
@@ -4014,6 +4080,18 @@
       "origin": "release_metadata_or_portability_support"
     },
     {
+      "path": "tests/test_aligned_resource_catalog.py",
+      "bytes": 2121,
+      "sha256": "7b7f3f7567fc3899e1fa5613fee8a2c2ec3f511deade45cb5e50db2d48c9ea0a",
+      "origin": "release_resource_delivery_maintenance"
+    },
+    {
+      "path": "tests/test_aligned_unit_reader.py",
+      "bytes": 6024,
+      "sha256": "0fb63f660de6b2e95197ccd5eebc1bd57723da16a118a5813e5a9aebb9569b1e",
+      "origin": "release_resource_delivery_maintenance"
+    },
+    {
       "path": "tests/test_asset_paths.py",
       "bytes": 1768,
       "sha256": "70367ed1bb3d3bf3ec40d755d680e83aae052ef2f4d3aff3c29d261133f7bdf6",
@@ -4298,5 +4376,7 @@
       "source_sha256": "abfec2ab1ccf5cd5e5afbccaffd8359f4d7eea4b880a4b192abdabbdd8687a6a",
       "origin": "current_working_tree_copy"
     }
-  ]
+  ],
+  "first_round_manual_review": "deferred_by_owner",
+  "download_credentials_included": false
 }
