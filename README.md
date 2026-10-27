@@ -13,7 +13,7 @@
 - 图包保留每单元的 `canonical_temporal_memory_graph.json` 与 `temporal_graph.json`；视觉包保留已有 SigLIP 向量及行号映射。上传由维护者确认，本地包已完整校验，云端字节尚未重新下载复核。
 
 本仓库不含图片、视频、HSGG 正文、图正文、embedding、FAISS、数据库或模型权重。
-官方 QA 正文及参考答案也不随包复制；`catalog/source_versions.json` 提供精确版本与 SHA256，获取和使用遵循各上游条款。
+官方 QA、参考答案、模型回答和逐题评分正文不进入 GitHub；外部 QA 综合包已包含这些资料，`catalog/source_versions.json` 提供原始标注版本与 SHA256，获取和使用遵循各上游条款。
 
 ## 先检查资源清单：只需要 Python 标准库
 
@@ -54,7 +54,15 @@ python scripts/release/verify_resource_catalog.py --data-root /path/to/resource-
 
 详见 [采样与 HSGG 生成说明](docs/github_release_20261027/SAMPLING_AND_HSGG_CN.md)、[资源准备说明](docs/github_release_20261027/RESOURCE_PREPARATION_CN.md) 和 [发布范围](docs/github_release_20261027/RELEASE_SCOPE_CN.md)。首轮人工回看短名单暂不制作。
 
-QA 配套已按数据集独立整理为本地候选包，题文和答案仍不进入 GitHub。版本、评分格式、上传准备状态与已知时间标签限制见 [QA 资料说明](docs/github_release_20261027/QA_RESOURCES_CN.md) 和 [QA 包清单](catalog/qa_resources.json)。QA 包尚未确认上传到外部分享。
+QA 配套已按 **2026-09-04 论文冻结 C** 整理成三个完整主包：`qa_navqa_paper_frozen_c_v1.tar.gz`、`qa_nextqa_paper_frozen_c_v1.tar.gz`、`qa_openeqa_paper_frozen_c_v1.tar.gz`，分别位于资源目录的 `QA_NAVQA/`、`QA_NEXTQA/`、`QA_OPENEQA/`。三包共 6,494,001 字节，包含原始问题、参考答案、模型回答、逐题历史评分、汇总和 HSGG 分包绑定；旧参考 QA 包保留备份，无需同时解压。`CURRENT_PACKAGE.json` 指向推荐主包。
+
+| 论文冻结 C | 评测范围 | 保存结果 |
+| --- | --- | --- |
+| NaVQA | 139 道 non-position | 102/139，73.3813% |
+| NExT-QA | 4,996 道五选一 | 3,334/4,996，66.7334% |
+| OpenEQA | 1,636 道开放问答 | 53.4994（0–100 归一化 LLM Judge 分数） |
+
+这些是已有冻结回答及历史评判，未重新调用模型或 Judge。当前旧运行入口的 NaVQA C=101/139、OpenEQA C=53.2549 是不同结果快照，不能替代论文冻结 C。包内目录、读取方法、版本及时间标签限制见 [QA 资料说明](docs/github_release_20261027/QA_RESOURCES_CN.md)，文件大小与 SHA256 见 [QA 包清单](catalog/qa_resources.json)。QA 综合包已在本地完成并校验，尚未确认上传到外部分享。
 
 ## 运行已有代码
 

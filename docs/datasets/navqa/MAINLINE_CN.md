@@ -4,6 +4,8 @@
 
 139 道 non-position 问题；官方风格正确数 A/B/C = 73/87/101。
 
+以上为保留的旧运行入口快照。外部 QA 综合资料采用论文冻结 C：102/139（73.3813%），不覆盖旧结果；主包与逐题记录说明见 [QA 资料说明](../../github_release_20261027/QA_RESOURCES_CN.md)。
+
 资产入口由 `registry/datasets/navqa.yaml` 声明，不从旧实验目录猜测版本。
 
 代码：`src/vlkg/datasets/navqa/{graph,retrieval,qa,runtime,audit}`。

@@ -4,6 +4,8 @@
 
 1636 题；项目归一化 LLM-Judge 分数 A/B/C = 48.915/49.3888/53.2549。
 
+以上 C 为保留的 routed reference。外部 QA 综合资料采用论文冻结最终 C：53.4994（0–100 归一化 Judge 分），不覆盖旧结果；所选历史 Judge 记录和来源见 [QA 资料说明](../../github_release_20261027/QA_RESOURCES_CN.md)。
+
 资产入口由 `registry/datasets/openeqa.yaml` 声明，不从旧实验目录猜测版本。
 
 代码：`src/vlkg/datasets/openeqa/{graph,retrieval,qa,runtime,audit}`。

@@ -68,7 +68,42 @@
       "QA_NEXTQA",
       "QA_OPENEQA"
     ],
-    "backup_files_copy_sha256_checked": 12
+    "backup_files_copy_sha256_checked": 12,
+    "comprehensive_paper_frozen_c": {
+      "status": "passed",
+      "frozen_on": "2026-09-04",
+      "package_count": 3,
+      "archive_bytes": 6494001,
+      "prediction_and_score_count": 6771,
+      "official_qa_count": 6842,
+      "navqa": {
+        "correct": 102,
+        "total": 139,
+        "accuracy_percent": 73.38129496402878
+      },
+      "nextqa": {
+        "correct": 3334,
+        "total": 4996,
+        "accuracy_percent": 66.7333867093675
+      },
+      "openeqa": {
+        "total": 1636,
+        "normalized_judge_mean_0_to_100": 53.49938875305624
+      },
+      "independent_member_and_semantic_audit": "passed",
+      "destination_hash_verification": "passed",
+      "original_qa_archives_and_metadata_bytes_preserved": 12,
+      "source_data_modified": false,
+      "historical_scores_rejudged": false,
+      "cloud_upload_confirmed": false,
+      "github_documentation_update": {
+        "current_package_names_sizes_sha256_match_local_backup": true,
+        "all_20_local_markdown_links_exist": true,
+        "old_reference_backups_identified": true,
+        "paper_vs_runtime_result_identity_explicit": true,
+        "questions_predictions_or_per_question_scores_added_to_git": false
+      }
+    }
   },
   "first_round_manual_review": "deferred_by_owner",
   "not_verified": [

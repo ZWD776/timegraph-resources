@@ -4,6 +4,8 @@ human v2 time-fact-core；570 视频，IRv3 与 strict-pairs v2 索引。
 
 4996 道五选一题；exact-choice 正确数 A/B/C = 3024/3257/3334。
 
+外部 QA 综合资料采用同一论文冻结 C：3334/4996（66.7334%），含逐题回答、评分及与选中 HSGG 单元的绑定，见 [QA 资料说明](../../github_release_20261027/QA_RESOURCES_CN.md)。
+
 资产入口由 `registry/datasets/nextqa.yaml` 声明，不从旧实验目录猜测版本。
 
 代码：`src/vlkg/datasets/nextqa/{graph,retrieval,qa,runtime,audit}`。

@@ -56,14 +56,19 @@
       "sha256": "28b8ff1cc705de6f3492bd7b19614bea11e503881d3af38f9d41476aab0bc4ff"
     },
     {
+      "path": "qa_packages.SHA256SUMS.txt",
+      "bytes": 333,
+      "sha256": "2f06c765fa966484042e5392dacea2de80cb400fb764bfb1a814da154a28cc7b"
+    },
+    {
       "path": "qa_resources.json",
-      "bytes": 4223,
-      "sha256": "211ddd1d919b2c134f6eefe7c410c513032930c2313a1e74ca17fdb6d8200c84"
+      "bytes": 9824,
+      "sha256": "229bf454f94302d7bf2f30f634a6366645abc19545cee5d9466d728b6a8331b5"
     },
     {
       "path": "README.md",
-      "bytes": 2809,
-      "sha256": "a36e8a8853c096f2c0ff87c4cd59aecc7867b35bac0dbb12df1d0a5a0928daa8"
+      "bytes": 3246,
+      "sha256": "8cc8e042b63dc2640cdfdf6561972297abdc43c19ef4cba5be4aafe7f1d45642"
     },
     {
       "path": "source_versions.json",

@@ -127,6 +127,8 @@ QA 标准答案属于评分侧数据，不可写入记忆图或用于身份关�
 
 ## 4. 图记忆、特征与来源配套
 
+QA 配套现已按论文冻结 C 制作完整主包：各 `QA_<DATASET>/qa_<dataset>_paper_frozen_c_v1.tar.gz` 包含原始问题、参考答案、模型回答、历史逐题评分、汇总及 HSGG 分包绑定。官方题目共 6,842 条，论文 C 回答共 6,771 条（NaVQA 的 71 道 position 题仅保留参考题目）。论文 C 为 NaVQA 102/139、NExT-QA 3,334/4,996、OpenEQA 归一化 Judge 分 53.4994；不同于旧运行入口的部分 C 快照。包已在本地完成校验，尚未确认云端上传。目录和读取说明见 [QA 资料说明](QA_RESOURCES_CN.md)，实际文件名、SHA256 与状态以 `catalog/qa_resources.json` 为准。
+
 已经上传的图包中，主线图文件是 `temporal_graph.json` 与 `canonical_temporal_memory_graph.json`。当前登记版本如下：
 
 | 数据集 | graph asset | 对应 index asset |

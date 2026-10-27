@@ -20,8 +20,12 @@
   "aligned_catalog": "catalog/aligned_packages.json",
   "aligned_reader": "scripts/release/read_aligned_unit.py",
   "first_round_manual_review": "deferred_by_owner",
-  "qa_resources": "prepared_locally_pending_owner_upload",
+  "qa_resources": "paper_frozen_c_comprehensive_packages_available_locally_pending_owner_upload",
   "qa_catalog": "catalog/qa_resources.json",
   "teacher_access": "deferred_by_owner",
-  "qa_local_backup": "QA_NAVQA/;QA_NEXTQA/;QA_OPENEQA/; archive SHA256 and copy integrity checked"
+  "qa_local_backup": "QA_NAVQA/;QA_NEXTQA/;QA_OPENEQA/; archive SHA256 and copy integrity checked",
+  "qa_frozen_on": "2026-09-04",
+  "qa_frozen_c_prediction_count": 6771,
+  "qa_archive_bytes": 6494001,
+  "qa_old_reference_packages": "retained_superseded_backups"
 }

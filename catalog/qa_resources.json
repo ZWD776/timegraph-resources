@@ -1,22 +1,37 @@
 {
-  "schema_version": "qa_resource_packages_v1",
+  "schema_version": "qa_resource_packages_v2",
   "client_date": "2026-10-27",
   "access_method": "contact_maintainer_separately",
   "download_credentials_included": false,
   "question_and_answer_bodies_in_git": false,
   "official_version_fingerprints": "source_versions.json",
   "source_files_modified": false,
+  "official_question_count": 6842,
+  "paper_frozen_c_prediction_count": 6771,
+  "archive_bytes": 6494001,
   "packages": [
     {
       "dataset": "navqa",
-      "filename": "qa_navqa_v2.tar.gz",
-      "local_backup_relative_path": "QA_NAVQA/qa_navqa_v2.tar.gz",
-      "archive_bytes": 124788,
-      "sha256": "a0162cd894e19be09be0c866e2d54f65e41cd4cd3392a3e7c3c00986fdd5b4ef",
-      "member_count": 36,
-      "status": "prepared_locally_pending_owner_upload",
+      "filename": "qa_navqa_paper_frozen_c_v1.tar.gz",
+      "local_backup_relative_path": "QA_NAVQA/qa_navqa_paper_frozen_c_v1.tar.gz",
+      "archive_bytes": 191060,
+      "sha256": "07fcec1593ef5d31ea908a4d8dc60782f92bc1022c7016c893fd9efd8575d153",
+      "member_count": 49,
+      "status": "available_locally_pending_owner_upload",
       "cloud_upload_confirmed": false,
+      "recommended_for_handoff": true,
+      "package_scope": "reference_qa_plus_paper_frozen_c_answers_scores_and_bindings",
+      "paper_frozen_on": "2026-09-04",
+      "paper_frozen_c": {
+        "question_count": 139,
+        "value": 73.38129496402878,
+        "metric": "project official-style accuracy",
+        "correct": 102
+      },
       "all_member_bytes_verified": true,
+      "gzip_eof_crc_verified": true,
+      "reference_only_legacy_package": "qa_navqa_v2.tar.gz",
+      "reference_only_legacy_content_included": true,
       "verification": {
         "status": "passed_with_review_required",
         "official_question_count": 210,
@@ -46,14 +61,26 @@
     },
     {
       "dataset": "nextqa",
-      "filename": "qa_nextqa_v1.tar.gz",
-      "local_backup_relative_path": "QA_NEXTQA/qa_nextqa_v1.tar.gz",
-      "archive_bytes": 775774,
-      "sha256": "e941f8eb1730d4c7f1c8403bfebb8af63f29c2442dc9f63a6373f5b3068797b4",
-      "member_count": 12,
-      "status": "prepared_locally_pending_owner_upload",
+      "filename": "qa_nextqa_paper_frozen_c_v1.tar.gz",
+      "local_backup_relative_path": "QA_NEXTQA/qa_nextqa_paper_frozen_c_v1.tar.gz",
+      "archive_bytes": 5345066,
+      "sha256": "7d424009d3faef3ea35326caed58593706ce861056cac035115451334f363da9",
+      "member_count": 26,
+      "status": "available_locally_pending_owner_upload",
       "cloud_upload_confirmed": false,
+      "recommended_for_handoff": true,
+      "package_scope": "reference_qa_plus_paper_frozen_c_answers_scores_and_bindings",
+      "paper_frozen_on": "2026-09-04",
+      "paper_frozen_c": {
+        "question_count": 4996,
+        "value": 66.7333867093675,
+        "metric": "validation exact-choice accuracy",
+        "correct": 3334
+      },
       "all_member_bytes_verified": true,
+      "gzip_eof_crc_verified": true,
+      "reference_only_legacy_package": "qa_nextqa_v1.tar.gz",
+      "reference_only_legacy_content_included": true,
       "verification": {
         "status": "passed",
         "official_question_count": 4996,
@@ -75,14 +102,26 @@
     },
     {
       "dataset": "openeqa",
-      "filename": "qa_openeqa_v1.tar.gz",
-      "local_backup_relative_path": "QA_OPENEQA/qa_openeqa_v1.tar.gz",
-      "archive_bytes": 299881,
-      "sha256": "f2b38052a36c1adf4e549a24c3195ef49781e65a72de06104e69dead92cf3fc6",
-      "member_count": 15,
-      "status": "prepared_locally_pending_owner_upload",
+      "filename": "qa_openeqa_paper_frozen_c_v1.tar.gz",
+      "local_backup_relative_path": "QA_OPENEQA/qa_openeqa_paper_frozen_c_v1.tar.gz",
+      "archive_bytes": 957875,
+      "sha256": "d1b5337708481c2b7e173411752118ee973ff2309d7568c55d073c3ea936e226",
+      "member_count": 35,
+      "status": "available_locally_pending_owner_upload",
       "cloud_upload_confirmed": false,
+      "recommended_for_handoff": true,
+      "package_scope": "reference_qa_plus_paper_frozen_c_answers_scores_and_bindings",
+      "paper_frozen_on": "2026-09-04",
+      "paper_frozen_c": {
+        "question_count": 1636,
+        "value": 53.49938875305624,
+        "metric": "project normalized LLM-Judge score",
+        "mean_recomputed": 53.49938875305624
+      },
       "all_member_bytes_verified": true,
+      "gzip_eof_crc_verified": true,
+      "reference_only_legacy_package": "qa_openeqa_v1.tar.gz",
+      "reference_only_legacy_content_included": true,
       "verification": {
         "status": "passed",
         "official_question_count": 1636,
@@ -103,5 +142,105 @@
       }
     }
   ],
-  "note": "QA packages are prepared locally for owner upload. Time answers derived by the legacy NaVQA adapter require verification; original annotations are preserved."
+  "reference_only_packages": [
+    {
+      "dataset": "navqa",
+      "filename": "qa_navqa_v2.tar.gz",
+      "local_backup_relative_path": "QA_NAVQA/qa_navqa_v2.tar.gz",
+      "archive_bytes": 124788,
+      "sha256": "a0162cd894e19be09be0c866e2d54f65e41cd4cd3392a3e7c3c00986fdd5b4ef",
+      "member_count": 36,
+      "status": "superseded_reference_only_backup",
+      "cloud_upload_confirmed": false,
+      "all_member_bytes_verified": true,
+      "verification": {
+        "status": "passed_with_review_required",
+        "official_question_count": 210,
+        "mainline_non_position_count": 139,
+        "type_counts": {
+          "time": 30,
+          "duration": 9,
+          "position": 71,
+          "binary": 67,
+          "text": 33
+        },
+        "question_window_matches": 210,
+        "materialized_time_labels": 30,
+        "derived_time_labels_unverified": 30,
+        "negative_derived_time_label_count": 1,
+        "time_derived_labels_are_not_verified_ground_truth": true,
+        "derived_position_labels_have_coordinates": false,
+        "existing_partial_gold_sequences": [
+          "3",
+          "6",
+          "16"
+        ],
+        "existing_partial_gold_is_not_new_ground_truth": true,
+        "old_retrieval_is_uniform_hard_cutoff": false,
+        "labels_are_evaluator_only": true
+      },
+      "package_scope": "reference_questions_answers_windows_and_bindings_only"
+    },
+    {
+      "dataset": "nextqa",
+      "filename": "qa_nextqa_v1.tar.gz",
+      "local_backup_relative_path": "QA_NEXTQA/qa_nextqa_v1.tar.gz",
+      "archive_bytes": 775774,
+      "sha256": "e941f8eb1730d4c7f1c8403bfebb8af63f29c2442dc9f63a6373f5b3068797b4",
+      "member_count": 12,
+      "status": "superseded_reference_only_backup",
+      "cloud_upload_confirmed": false,
+      "all_member_bytes_verified": true,
+      "verification": {
+        "status": "passed",
+        "official_question_count": 4996,
+        "runtime_question_count": 4996,
+        "label_count": 4996,
+        "video_count": 570,
+        "question_choice_type_and_gold_match_after_whitespace_normalization": true,
+        "rows_with_surface_whitespace_differences": 9,
+        "question_whitespace_differing_rows": 5,
+        "choice_whitespace_differing_rows": 4,
+        "overlap_question_and_choice_differing_rows": 0,
+        "differing_question_fields": 5,
+        "differing_choice_fields": 4,
+        "per_question_cutoff_field_exists": false,
+        "metric": "exact_choice_accuracy",
+        "judge_required": false,
+        "labels_are_evaluator_only": true
+      },
+      "package_scope": "reference_questions_answers_windows_and_bindings_only"
+    },
+    {
+      "dataset": "openeqa",
+      "filename": "qa_openeqa_v1.tar.gz",
+      "local_backup_relative_path": "QA_OPENEQA/qa_openeqa_v1.tar.gz",
+      "archive_bytes": 299881,
+      "sha256": "f2b38052a36c1adf4e549a24c3195ef49781e65a72de06104e69dead92cf3fc6",
+      "member_count": 15,
+      "status": "superseded_reference_only_backup",
+      "cloud_upload_confirmed": false,
+      "all_member_bytes_verified": true,
+      "verification": {
+        "status": "passed",
+        "official_question_count": 1636,
+        "unique_question_ids": 1636,
+        "episode_count": 152,
+        "question_counts_by_source": {
+          "hm3d-v0": 557,
+          "scannet-v0": 1079
+        },
+        "questions_with_extra_answers": 263,
+        "qa_episodes_equal_selected_hsgg_episodes": true,
+        "answer_format": "open_ended",
+        "judge_required_for_original_protocol": true,
+        "per_question_cutoff_field_exists": false,
+        "prompt_snapshots_are_local_project_versions": true,
+        "historical_judge_run_configuration_not_inferred_from_current_defaults": true,
+        "labels_are_evaluator_only": true
+      },
+      "package_scope": "reference_questions_answers_windows_and_bindings_only"
+    }
+  ],
+  "note": "Use the comprehensive paper-frozen C packages. Reference-only packages are retained backups and need not be unpacked alongside them. Official NaVQA has 210 questions; frozen C covers its 139 non-position questions. Cloud upload of the comprehensive QA packages is not confirmed."
 }

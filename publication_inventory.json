@@ -3,12 +3,12 @@
   "client_date": "2026-10-27",
   "repository_url": "https://github.com/ZWD776/timegraph-resources",
   "visibility": "private",
-  "source_code_snapshot": "Existing code plus independent portable reader, aligned resource metadata and delivery documentation",
+  "source_code_snapshot": "Existing code and portable readers with documentation and metadata for the verified paper-frozen C QA bundles",
   "original_project_modified": false,
   "external_data_included": false,
   "self_excluded": true,
-  "file_count_excluding_inventory": 627,
-  "total_bytes_excluding_inventory": 44276945,
+  "file_count_excluding_inventory": 628,
+  "total_bytes_excluding_inventory": 44292682,
   "omitted_candidate_maintenance_files": [
     "scripts/datasets/split_benchmark_archives.py",
     "scripts/datasets/publish_benchmark_splits.ps1",
@@ -37,16 +37,16 @@
     },
     {
       "path": "README.md",
-      "bytes": 7136,
-      "sha256": "64652876ee5f2cc85e726b91f85eff6da586ff626bbc38393cb12c59bd355acf",
+      "bytes": 8122,
+      "sha256": "88f29052c5c9790701349ab4f6fe2e82217ae331ba24ab8486e1e9d339bc78e3",
       "source_sha256": "1a02c04f3785dfb729200690f7d67f117d2f2f5ab2d4f5297497bbced2a610a8",
-      "origin": "release_resource_delivery_maintenance"
+      "origin": "paper_frozen_c_qa_documentation_update"
     },
     {
       "path": "catalog/README.md",
-      "bytes": 2809,
-      "sha256": "a36e8a8853c096f2c0ff87c4cd59aecc7867b35bac0dbb12df1d0a5a0928daa8",
-      "origin": "release_resource_delivery_maintenance"
+      "bytes": 3246,
+      "sha256": "8cc8e042b63dc2640cdfdf6561972297abdc43c19ef4cba5be4aafe7f1d45642",
+      "origin": "paper_frozen_c_qa_documentation_update"
     },
     {
       "path": "catalog/aligned_packages.SHA256SUMS.txt",
@@ -68,9 +68,9 @@
     },
     {
       "path": "catalog/catalog_files.json",
-      "bytes": 2584,
-      "sha256": "5a684019750f5c3c98d042ffca384aeb544d203049f7355950b74a2f9f13af94",
-      "origin": "release_resource_delivery_maintenance"
+      "bytes": 2749,
+      "sha256": "873716c55ff852d71638f71be2375a8af56f1f991121a16c5a18b125bc9cfc6c",
+      "origin": "paper_frozen_c_qa_documentation_update"
     },
     {
       "path": "catalog/export_summary.json",
@@ -121,10 +121,16 @@
       "origin": "release_metadata_or_portability_support"
     },
     {
+      "path": "catalog/qa_packages.SHA256SUMS.txt",
+      "bytes": 333,
+      "sha256": "2f06c765fa966484042e5392dacea2de80cb400fb764bfb1a814da154a28cc7b",
+      "origin": "paper_frozen_c_qa_documentation_update"
+    },
+    {
       "path": "catalog/qa_resources.json",
-      "bytes": 4223,
-      "sha256": "211ddd1d919b2c134f6eefe7c410c513032930c2313a1e74ca17fdb6d8200c84",
-      "origin": "release_resource_delivery_maintenance"
+      "bytes": 9824,
+      "sha256": "229bf454f94302d7bf2f30f634a6366645abc19545cee5d9466d728b6a8331b5",
+      "origin": "paper_frozen_c_qa_documentation_update"
     },
     {
       "path": "catalog/source_versions.json",
@@ -511,24 +517,24 @@
     },
     {
       "path": "docs/datasets/navqa/MAINLINE_CN.md",
-      "bytes": 843,
-      "sha256": "8d6dda4b9c19f82e9014d02462c89794a6563f8ea16d50ced7c2aca4fc4e34c0",
+      "bytes": 1078,
+      "sha256": "a870a2be1fe7d65f23d868e702b82661c10b736a848c215b9a74949fa4f2a22e",
       "source_sha256": "8d6dda4b9c19f82e9014d02462c89794a6563f8ea16d50ced7c2aca4fc4e34c0",
-      "origin": "current_working_tree_copy"
+      "origin": "paper_frozen_c_qa_documentation_update"
     },
     {
       "path": "docs/datasets/nextqa/MAINLINE_CN.md",
-      "bytes": 3386,
-      "sha256": "72477b081f66f3a6561870330dc9e7f70a1f496df0ac1d4789818b597c2ef8b5",
+      "bytes": 3599,
+      "sha256": "84d0634a8e67bbf5762c53e57ae57c4474e8c788ee1720eba911751afe4262ee",
       "source_sha256": "72477b081f66f3a6561870330dc9e7f70a1f496df0ac1d4789818b597c2ef8b5",
-      "origin": "current_working_tree_copy"
+      "origin": "paper_frozen_c_qa_documentation_update"
     },
     {
       "path": "docs/datasets/openeqa/MAINLINE_CN.md",
-      "bytes": 857,
-      "sha256": "68ca497767967e9848d89fc3d29fbbd459a252febd81830cefd37dd7d3cd6301",
+      "bytes": 1123,
+      "sha256": "c7c98410c8c6719cfeec4426598924db5d679bc3733f9b0b997452eaab66d491",
       "source_sha256": "68ca497767967e9848d89fc3d29fbbd459a252febd81830cefd37dd7d3cd6301",
-      "origin": "current_working_tree_copy"
+      "origin": "paper_frozen_c_qa_documentation_update"
     },
     {
       "path": "docs/github_release_20261027/ALIGNED_READER_CN.md",
@@ -538,23 +544,23 @@
     },
     {
       "path": "docs/github_release_20261027/QA_RESOURCES_CN.md",
-      "bytes": 3639,
-      "sha256": "68420c6b761d6b4a0c5802c4aef35672982d999055db6544011c804e88f0fc3f",
-      "origin": "release_resource_delivery_maintenance"
+      "bytes": 8885,
+      "sha256": "ec7d382571d873e2dd668e02a62886266eee62d9dce04e9d42482ba93b78686c",
+      "origin": "paper_frozen_c_qa_documentation_update"
     },
     {
       "path": "docs/github_release_20261027/RELEASE_SCOPE_CN.md",
-      "bytes": 7363,
-      "sha256": "a7c3c170f3db69cc6572a700f41c1e3abfcf1e850b5b00018e376f1ebfbd64db",
+      "bytes": 7526,
+      "sha256": "de3169b1c7b640dd0912c52f9e08c38b68681e2980fac04e7b15099cf28a744e",
       "source_sha256": "87a00bb064c2bb29039812acf8a676c2bf179c125c6b5a37af020b361699c78c",
-      "origin": "release_resource_delivery_maintenance"
+      "origin": "paper_frozen_c_qa_documentation_update"
     },
     {
       "path": "docs/github_release_20261027/RESOURCE_PREPARATION_CN.md",
-      "bytes": 15334,
-      "sha256": "86bc95748de7fdc6158a2dea90a2412e134d1c8ab9b91482b96f8332ec81dec8",
+      "bytes": 15995,
+      "sha256": "276caa9ad3da3cdcb40ff0147714700ad0a866ffccc1c54bc8498da4572887bf",
       "source_sha256": "7dc7c7aba18f04b3e3ad6127ff626a3e8d3d090ef62154d36df156048bdfad38",
-      "origin": "release_resource_delivery_maintenance"
+      "origin": "paper_frozen_c_qa_documentation_update"
     },
     {
       "path": "docs/github_release_20261027/SAMPLING_AND_HSGG_CN.md",
@@ -564,9 +570,9 @@
     },
     {
       "path": "publication_status.json",
-      "bytes": 1318,
-      "sha256": "01ed200d25bad4168b950c29f04a2b397dc967659dda9c0d15d9237174637b1f",
-      "origin": "release_resource_delivery_maintenance"
+      "bytes": 1522,
+      "sha256": "c35b03ced4ef2b0fb341cbeedd08ba1f303598b9f4650535409d6ab15c7afe84",
+      "origin": "paper_frozen_c_qa_documentation_update"
     },
     {
       "path": "pyproject.toml",
@@ -611,9 +617,9 @@
     },
     {
       "path": "resource_delivery_validation.json",
-      "bytes": 2312,
-      "sha256": "cd24d1eb6c701e3d7a4cee3a434213472c021347e3f727105fed4ca4ce88b239",
-      "origin": "release_resource_delivery_maintenance"
+      "bytes": 3539,
+      "sha256": "74ac626f0cc3afc2fe3212509564d111bc5ba9b3ad7ed286c6d9aaf200f78a86",
+      "origin": "paper_frozen_c_qa_documentation_update"
     },
     {
       "path": "scripts/__init__.py",
@@ -4378,5 +4384,6 @@
   ],
   "first_round_manual_review": "deferred_by_owner",
   "download_credentials_included": false,
-  "teacher_access": "deferred_by_owner"
+  "teacher_access": "deferred_by_owner",
+  "qa_package_identity": "paper_frozen_c_20260904"
 }
