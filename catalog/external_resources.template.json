@@ -1,5 +1,5 @@
 {
-  "schema_version": "external_resources_v1",
+  "schema_version": "external_resources_v2",
   "resources": [
     {
       "dataset": "navqa",
@@ -8,9 +8,10 @@
       "access_code": null,
       "archive_sha256": null,
       "archive_bytes": null,
-      "status": "user_supplied_link_contents_not_verified",
+      "status": "owner_confirmed_uploaded",
       "large_binary_in_git": false,
-      "access_method": "contact_maintainer_separately"
+      "access_method": "contact_maintainer_separately",
+      "cloud_bytes_reverified": false
     },
     {
       "dataset": "navqa",
@@ -19,9 +20,10 @@
       "access_code": null,
       "archive_sha256": null,
       "archive_bytes": null,
-      "status": "user_supplied_link_contents_not_verified",
+      "status": "owner_confirmed_uploaded",
       "large_binary_in_git": false,
-      "access_method": "contact_maintainer_separately"
+      "access_method": "contact_maintainer_separately",
+      "cloud_bytes_reverified": false
     },
     {
       "dataset": "navqa",
@@ -30,9 +32,12 @@
       "access_code": null,
       "archive_sha256": null,
       "archive_bytes": null,
-      "status": "link_to_be_supplied",
+      "status": "owner_confirmed_uploaded",
       "large_binary_in_git": false,
-      "access_method": "contact_maintainer_separately"
+      "access_method": "contact_maintainer_separately",
+      "cloud_bytes_reverified": false,
+      "archive_catalog": "aligned_packages.json",
+      "local_archive_integrity": "all_member_sha256_and_gzip_crc_passed"
     },
     {
       "dataset": "navqa",
@@ -41,9 +46,12 @@
       "access_code": null,
       "archive_sha256": null,
       "archive_bytes": null,
-      "status": "link_to_be_supplied",
+      "status": "owner_confirmed_uploaded",
       "large_binary_in_git": false,
-      "access_method": "contact_maintainer_separately"
+      "access_method": "contact_maintainer_separately",
+      "cloud_bytes_reverified": false,
+      "archive_catalog": "aligned_packages.json",
+      "local_archive_integrity": "all_member_sha256_and_gzip_crc_passed"
     },
     {
       "dataset": "nextqa",
@@ -52,9 +60,10 @@
       "access_code": null,
       "archive_sha256": null,
       "archive_bytes": null,
-      "status": "user_supplied_link_contents_not_verified",
+      "status": "owner_confirmed_uploaded",
       "large_binary_in_git": false,
-      "access_method": "contact_maintainer_separately"
+      "access_method": "contact_maintainer_separately",
+      "cloud_bytes_reverified": false
     },
     {
       "dataset": "nextqa",
@@ -63,9 +72,10 @@
       "access_code": null,
       "archive_sha256": null,
       "archive_bytes": null,
-      "status": "user_supplied_link_contents_not_verified",
+      "status": "owner_confirmed_uploaded",
       "large_binary_in_git": false,
-      "access_method": "contact_maintainer_separately"
+      "access_method": "contact_maintainer_separately",
+      "cloud_bytes_reverified": false
     },
     {
       "dataset": "nextqa",
@@ -74,9 +84,12 @@
       "access_code": null,
       "archive_sha256": null,
       "archive_bytes": null,
-      "status": "link_to_be_supplied",
+      "status": "owner_confirmed_uploaded",
       "large_binary_in_git": false,
-      "access_method": "contact_maintainer_separately"
+      "access_method": "contact_maintainer_separately",
+      "cloud_bytes_reverified": false,
+      "archive_catalog": "aligned_packages.json",
+      "local_archive_integrity": "all_member_sha256_and_gzip_crc_passed"
     },
     {
       "dataset": "nextqa",
@@ -85,9 +98,12 @@
       "access_code": null,
       "archive_sha256": null,
       "archive_bytes": null,
-      "status": "link_to_be_supplied",
+      "status": "owner_confirmed_uploaded",
       "large_binary_in_git": false,
-      "access_method": "contact_maintainer_separately"
+      "access_method": "contact_maintainer_separately",
+      "cloud_bytes_reverified": false,
+      "archive_catalog": "aligned_packages.json",
+      "local_archive_integrity": "all_member_sha256_and_gzip_crc_passed"
     },
     {
       "dataset": "openeqa",
@@ -96,9 +112,10 @@
       "access_code": null,
       "archive_sha256": null,
       "archive_bytes": null,
-      "status": "user_supplied_link_contents_not_verified",
+      "status": "owner_confirmed_uploaded",
       "large_binary_in_git": false,
-      "access_method": "contact_maintainer_separately"
+      "access_method": "contact_maintainer_separately",
+      "cloud_bytes_reverified": false
     },
     {
       "dataset": "openeqa",
@@ -107,9 +124,10 @@
       "access_code": null,
       "archive_sha256": null,
       "archive_bytes": null,
-      "status": "user_supplied_link_contents_not_verified",
+      "status": "owner_confirmed_uploaded",
       "large_binary_in_git": false,
-      "access_method": "contact_maintainer_separately"
+      "access_method": "contact_maintainer_separately",
+      "cloud_bytes_reverified": false
     },
     {
       "dataset": "openeqa",
@@ -118,9 +136,12 @@
       "access_code": null,
       "archive_sha256": null,
       "archive_bytes": null,
-      "status": "link_to_be_supplied",
+      "status": "owner_confirmed_uploaded",
       "large_binary_in_git": false,
-      "access_method": "contact_maintainer_separately"
+      "access_method": "contact_maintainer_separately",
+      "cloud_bytes_reverified": false,
+      "archive_catalog": "aligned_packages.json",
+      "local_archive_integrity": "all_member_sha256_and_gzip_crc_passed"
     },
     {
       "dataset": "openeqa",
@@ -129,10 +150,13 @@
       "access_code": null,
       "archive_sha256": null,
       "archive_bytes": null,
-      "status": "link_to_be_supplied",
+      "status": "owner_confirmed_uploaded",
       "large_binary_in_git": false,
-      "access_method": "contact_maintainer_separately"
+      "access_method": "contact_maintainer_separately",
+      "cloud_bytes_reverified": false,
+      "archive_catalog": "aligned_packages.json",
+      "local_archive_integrity": "all_member_sha256_and_gzip_crc_passed"
     }
   ],
-  "note": "Resource access credentials are intentionally withheld."
+  "note": "All four resource kinds are in the same owner-controlled share. Access details are deliberately excluded. The owner confirmed upload; cloud archive bytes have not been downloaded and reverified."
 }

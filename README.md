@@ -6,10 +6,11 @@
 
 ## 数据获取
 
-HSGG 与对应图片通过用户提供的百度网盘分享：
+图片、HSGG、图记忆和视觉特征已由维护者上传至同一受控分享。访问方式由维护者单独提供，仓库不记录分享链接、提取码或其他访问凭据。
 
-- [benchmark_data]。
-- 完整资源登记见 `catalog/external_resources.template.json`。
+- 云端使用原分包：NaVQA 7 组、NExT-QA 6 组、HM3D 7 组、ScanNet 10 组；四类资源按相同单元范围对应。
+- 新增图与特征共 60 个压缩包，覆盖 729 个单元，约 12.98 GiB；单包小于 4 GB。文件名、大小、SHA256 和配对关系见 [分包清单](catalog/aligned_packages.json)，单元入口见 [单元清单](catalog/aligned_units.json)。
+- 图包保留每单元的 `canonical_temporal_memory_graph.json` 与 `temporal_graph.json`；视觉包保留已有 SigLIP 向量及行号映射。上传由维护者确认，本地包已完整校验，云端字节尚未重新下载复核。
 
 本仓库不含图片、视频、HSGG 正文、图正文、embedding、FAISS、数据库或模型权重。
 官方 QA 正文及参考答案也不随包复制；`catalog/source_versions.json` 提供精确版本与 SHA256，获取和使用遵循各上游条款。
@@ -30,7 +31,9 @@ python scripts/release/verify_resource_catalog.py
 python scripts/release/verify_resource_catalog.py --data-root /path/to/resource-root
 ```
 
-`--data-root` 是包含 `datasets/` 的目录。网盘压缩包的直接解压布局不一定与旧项目规范化目录相同，应按清单对照准备，不能只更换盘符。
+`--data-root` 是包含 `datasets/` 的旧项目资源根，仅检查图片/HSGG文件存在性。它不导入新分包，也不验证图或索引的读取。网盘压缩包的实际单元目录见 [读取与绑定示例](docs/github_release_20261027/ALIGNED_READER_CN.md)，不能只更换盘符。
+
+新包的 `unit_binding.json` 用于明确绑定图、画面、HSGG 与特征。NaVQA 旧图片包为平铺结构；NaVQA/HM3D/ScanNet 新视觉包为分组 FAISS + JSONL，与旧 runtime 的全局索引 + SQLite 不同。读取示例不需要模型，不会自动改写旧图或原数据。完整旧主线复现仍需对应索引/目录适配及其余检索资源。
 
 | 数据集 | 图片映射 | 当前完成 HSGG | 官方 QA ID | 单元 |
 | --- | ---: | ---: | ---: | ---: |
@@ -44,12 +47,14 @@ python scripts/release/verify_resource_catalog.py --data-root /path/to/resource-
 ## 时间、身份和版本说明
 
 - NaVQA 保留采样序号、图帧号、原帧号、Unix 时间和经过秒数；不能将文件名前缀当秒数。
-- NextQA 保留最终选中的 570 个视频版本；秒数来自帧号与 FPS，不是容器 PTS。四表需按 `hsgg_record_key` 一起读取。
+- NextQA 保留最终选中的 570 个视频版本；秒数来自帧号与 FPS，不是容器 PTS。网盘 HSGG 使用逐帧 `hsgg/frame_scene_graphs/`；旧项目规范化四表视图需按 `hsgg_record_key` 一起读取。
 - OpenEQA 的 `ordinal_time` 是旧图排序值，不是真实秒数；缺失旧图映射的 745 帧保持空值。
 - NaVQA QA 窗口使用 `start_time/end_time`，与答案事件时间分开；旧检索不保证统一硬截止。NextQA/OpenEQA 使用整段提供的视频或 episode 历史，没有逐题截止字段。
 - 当前 HSGG 与冻结旧图的覆盖不同：NaVQA 9,759 对 9,757；OpenEQA 31,034 对 30,997。NextQA 图的 23,381 帧计数包含 skipped 时间槽。
 
-详见 [资源准备说明](docs/github_release_20261027/RESOURCE_PREPARATION_CN.md) 和 [发布范围](docs/github_release_20261027/RELEASE_SCOPE_CN.md)。
+详见 [采样与 HSGG 生成说明](docs/github_release_20261027/SAMPLING_AND_HSGG_CN.md)、[资源准备说明](docs/github_release_20261027/RESOURCE_PREPARATION_CN.md) 和 [发布范围](docs/github_release_20261027/RELEASE_SCOPE_CN.md)。首轮人工回看短名单暂不制作。
+
+QA 配套已按数据集独立整理为本地候选包，题文和答案仍不进入 GitHub。版本、评分格式、上传准备状态与已知时间标签限制见 [QA 资料说明](docs/github_release_20261027/QA_RESOURCES_CN.md) 和 [QA 包清单](catalog/qa_resources.json)。QA 包尚未确认上传到外部分享。
 
 ## 运行已有代码
 
@@ -81,8 +86,8 @@ python -m pytest tests/test_release_resource_catalog.py tests/test_release_metad
 ## 维护与发布记录
 
 - `scripts/release/export_resource_catalog.py` 是维护导出工具，必须显式传入完整 `--data-root` 和新的 `--output`，不覆盖非空目录。
-- `publication_inventory.json` 记录发布文件校验值和相对来源；适配仅发生在独立发布副本。
-- `release_validation.json` 记录本次离线验收及原项目保护校验；不代表网盘资源或在线模型实验已验证。
+- `publication_inventory.json` 记录当前发布文件校验值；适配仅发生在独立发布副本。
+- `release_validation.json` 保留首次发布的历史验收，`resource_delivery_validation.json` 记录本次维护验收；均不代表云端下载和在线模型实验已验证。
 - 旧删除、迁移和封存工具只用于相应历史工作流，不是常规数据准备入口；本仓库没有携带其依赖的历史 archive 台账。
 
 本仓库为私有协作资源。自有代码许可证由作者确定；第三方来源、许可和引用应保留，不能将所有数据统一视为同一代码许可证。

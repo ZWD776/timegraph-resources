@@ -8,6 +8,7 @@ from functools import lru_cache
 import hashlib
 import json
 import math
+import re
 from pathlib import Path, PurePosixPath, PureWindowsPath
 from typing import Any
 
@@ -50,6 +51,59 @@ def number(value: str, *, name: str) -> float:
     return result
 
 
+def verify_aligned_catalog(catalog: Path, unit_lookup: dict) -> dict:
+    package_file = catalog / "aligned_packages.json"
+    if not package_file.exists():
+        return {"aligned_packages_checked": False}
+    packages = load_json(package_file)["packages"]
+    units = load_json(catalog / "aligned_units.json")["units"]
+    if len(packages) != 60 or len(units) != 729:
+        raise ValueError("unexpected aligned package/unit counts")
+    groups: dict[str, dict] = {}
+    package_paths = set()
+    for row in packages:
+        safe_reference(catalog, row["backup_relative_path"])
+        if row["backup_relative_path"] in package_paths or not re.fullmatch(r"[0-9a-f]{64}", row["sha256"]):
+            raise ValueError("invalid archive hash or duplicate archive path")
+        package_paths.add(row["backup_relative_path"])
+        if not 0 < row["archive_bytes"] < 4_000_000_000:
+            raise ValueError("aligned archive exceeds size bound")
+        group = groups.setdefault(row["group_id"], {})
+        if row["kind"] in group or row["kind"] not in ("timegraph", "visual_features"):
+            raise ValueError("invalid duplicate aligned package kind")
+        group[row["kind"]] = row
+    seen = set()
+    by_group: dict[str, set] = {}
+    for row in units:
+        key = row["dataset"], row["shard"], str(row["unit_id"])
+        if key not in unit_lookup or key in seen:
+            raise ValueError("aligned unit differs from resource catalogue")
+        seen.add(key)
+        by_group.setdefault(row["group_id"], set()).add(str(row["unit_id"]))
+        for kind in ("timegraph", "visual"):
+            if row[kind + "_archive"] not in package_paths:
+                raise ValueError("aligned unit references an unregistered archive")
+            expected_kind = "timegraph" if kind == "timegraph" else "visual_features"
+            if row[kind + "_archive"] != groups[row["group_id"]][expected_kind]["backup_relative_path"]:
+                raise ValueError("aligned unit references another group's archive")
+        for value in row["timegraph"].values():
+            safe_reference(catalog, value)
+        for field in ("binding", "index", "metadata"):
+            safe_reference(catalog, row["visual_features"][field])
+    if seen != set(unit_lookup) or len(groups) != 30:
+        raise ValueError("aligned groups do not cover selected units")
+    for ident, group in groups.items():
+        if set(group) != {"timegraph", "visual_features"}:
+            raise ValueError("aligned archive pair is incomplete")
+        a, b = group["timegraph"], group["visual_features"]
+        if a["unit_ids"] != b["unit_ids"] or a["paired_archives"] != b["paired_archives"] or set(a["unit_ids"]) != by_group[ident]:
+            raise ValueError("paired archives differ in unit coverage")
+    expected_sums = "".join(r["sha256"] + "  " + r["backup_relative_path"] + "\n" for r in packages)
+    if (catalog / "aligned_packages.SHA256SUMS.txt").read_text(encoding="utf-8") != expected_sums:
+        raise ValueError("aligned archive checksum ledger differs")
+    return {"aligned_packages_checked": True, "aligned_package_count": 60, "aligned_group_count": 30}
+
+
 def verify_catalog(catalog: Path, data_root: Path | None = None) -> dict[str, Any]:
     catalog = catalog.resolve()
     ledger = load_json(catalog / "catalog_files.json")
@@ -76,6 +130,10 @@ def verify_catalog(catalog: Path, data_root: Path | None = None) -> dict[str, An
         raise ValueError("duplicate dataset/shard/unit identity")
     if dict(Counter(r["dataset"] for r in units)) != EXPECTED_UNITS:
         raise ValueError("unit counts differ from the selected release")
+    aligned_result = verify_aligned_catalog(catalog, unit_lookup)
+    resources = load_json(catalog / "external_resources.template.json")["resources"]
+    if any(r.get("download_url") or r.get("access_code") for r in resources):
+        raise ValueError("external access credentials must not be included in the release")
     for unit in units:
         for key in ("current_hsgg_reference_root", "canonical_path", "temporal_path"):
             safe_reference(catalog, unit[key])
@@ -162,6 +220,18 @@ def verify_catalog(catalog: Path, data_root: Path | None = None) -> dict[str, An
         raise ValueError("catalogue summary disagrees with CSV content")
     if summary["current_completed_hsgg_counts"] != hsgg_counts:
         raise ValueError("completed HSGG counts disagree")
+    qa_package_count = 0
+    if (catalog / "qa_resources.json").exists():
+        qa_packages = load_json(catalog / "qa_resources.json")["packages"]
+        if Counter(row["dataset"] for row in qa_packages) != Counter({k: 1 for k in DATASETS}):
+            raise ValueError("QA package dataset identities differ")
+        for row in qa_packages:
+            safe_reference(catalog, row["local_backup_relative_path"])
+            if not re.fullmatch(r"[0-9a-f]{64}", row["sha256"]) or not 0 < row["archive_bytes"] < 4_000_000_000:
+                raise ValueError("invalid QA archive fingerprint")
+            if row["verification"]["official_question_count"] != EXPECTED_QA[row["dataset"]]:
+                raise ValueError("QA package differs from selected question version")
+        qa_package_count = len(qa_packages)
     if real_data_missing:
         raise ValueError(f"selected external data root lacks {len(real_data_missing)} referenced files; first: {real_data_missing[0]}")
     return {
@@ -171,6 +241,8 @@ def verify_catalog(catalog: Path, data_root: Path | None = None) -> dict[str, An
         "openeqa_frames_without_legacy_ordinal_mapping": open_missing_ordinal,
         "catalog_checksums_verified": True, "external_data_checked": data_root is not None,
         "netdisk_contents_verified": False, "models_or_apis_called": False,
+        **aligned_result,
+        "qa_package_metadata_checked": qa_package_count,
     }
 
 

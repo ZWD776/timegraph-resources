@@ -1,5 +1,5 @@
 {
-  "schema_version": "private_publication_status_v2",
+  "schema_version": "private_publication_status_v3",
   "client_date": "2026-10-27",
   "repository_url": "https://github.com/ZWD776/timegraph-resources",
   "visibility": "private",
@@ -7,12 +7,19 @@
   "authenticated_git_read_verified": true,
   "push_permission_verified": true,
   "scope": "code_and_portable_resource_metadata_only",
-  "hsgg_images": "external user-supplied Baidu share",
-  "graph_memory": "external_link_pending",
-  "visual_features": "delivery_location_pending",
+  "hsgg_images": "owner_controlled_external_share",
+  "graph_memory": "owner_confirmed_uploaded_local_archives_verified",
+  "visual_features": "owner_confirmed_uploaded_local_archives_verified",
   "original_project_modified": false,
   "credentials_in_repository": false,
   "publication_preflight": "passed",
-  "transport_status": "See GitHub commit and chat delivery receipt; file is a pre-publication manifest.",
-  "local_git_repository_is_independent": true
+  "transport_status": "Maintenance snapshot; actual pushed commit is recorded in the external delivery receipt.",
+  "local_git_repository_is_independent": true,
+  "download_credentials_in_repository": false,
+  "cloud_bytes_reverified": false,
+  "aligned_catalog": "catalog/aligned_packages.json",
+  "aligned_reader": "scripts/release/read_aligned_unit.py",
+  "first_round_manual_review": "deferred_by_owner",
+  "qa_resources": "prepared_locally_pending_owner_upload",
+  "qa_catalog": "catalog/qa_resources.json"
 }
