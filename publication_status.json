@@ -21,5 +21,7 @@
   "aligned_reader": "scripts/release/read_aligned_unit.py",
   "first_round_manual_review": "deferred_by_owner",
   "qa_resources": "prepared_locally_pending_owner_upload",
-  "qa_catalog": "catalog/qa_resources.json"
+  "qa_catalog": "catalog/qa_resources.json",
+  "teacher_access": "deferred_by_owner",
+  "qa_local_backup": "QA_NAVQA/;QA_NEXTQA/;QA_OPENEQA/; archive SHA256 and copy integrity checked"
 }

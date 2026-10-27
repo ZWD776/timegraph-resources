@@ -8,7 +8,7 @@
   "external_data_included": false,
   "self_excluded": true,
   "file_count_excluding_inventory": 627,
-  "total_bytes_excluding_inventory": 44276622,
+  "total_bytes_excluding_inventory": 44276945,
   "omitted_candidate_maintenance_files": [
     "scripts/datasets/split_benchmark_archives.py",
     "scripts/datasets/publish_benchmark_splits.ps1",
@@ -18,8 +18,7 @@
     "registry/current_registry_lock.json"
   ],
   "pending_external_resources": [
-    "qa_cloud_upload_confirmation",
-    "teacher_github_identity"
+    "qa_cloud_upload_confirmation"
   ],
   "files": [
     {
@@ -565,8 +564,8 @@
     },
     {
       "path": "publication_status.json",
-      "bytes": 1177,
-      "sha256": "253b59803af9ac347e0d275e1652afb606d7af160afa587f9144740404da7e46",
+      "bytes": 1318,
+      "sha256": "01ed200d25bad4168b950c29f04a2b397dc967659dda9c0d15d9237174637b1f",
       "origin": "release_resource_delivery_maintenance"
     },
     {
@@ -612,8 +611,8 @@
     },
     {
       "path": "resource_delivery_validation.json",
-      "bytes": 2130,
-      "sha256": "037e1d5f0b98fdebcf7417fc4c5f3f0d6e220e055da29b7a01f31949926f27e1",
+      "bytes": 2312,
+      "sha256": "cd24d1eb6c701e3d7a4cee3a434213472c021347e3f727105fed4ca4ce88b239",
       "origin": "release_resource_delivery_maintenance"
     },
     {
@@ -4378,5 +4377,6 @@
     }
   ],
   "first_round_manual_review": "deferred_by_owner",
-  "download_credentials_included": false
+  "download_credentials_included": false,
+  "teacher_access": "deferred_by_owner"
 }

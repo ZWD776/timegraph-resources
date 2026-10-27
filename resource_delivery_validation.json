@@ -62,7 +62,13 @@
     "original_annotations_preserved": true,
     "navqa_time_labels_unverified": 30,
     "navqa_negative_time_labels_flagged": 1,
-    "position_coordinates_invented": false
+    "position_coordinates_invented": false,
+    "local_backup_directories": [
+      "QA_NAVQA",
+      "QA_NEXTQA",
+      "QA_OPENEQA"
+    ],
+    "backup_files_copy_sha256_checked": 12
   },
   "first_round_manual_review": "deferred_by_owner",
   "not_verified": [
@@ -71,5 +77,6 @@
     "online model or LLM Judge evaluation",
     "manual identity ground truth",
     "provider-side dangling Git cache removal"
-  ]
+  ],
+  "teacher_access": "deferred_by_owner"
 }
