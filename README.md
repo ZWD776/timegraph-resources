@@ -8,9 +8,8 @@
 
 HSGG 与对应图片通过用户提供的百度网盘分享：
 
-- [benchmark_data](WITHHELD)，提取码 `WITHHELD`。
-- 图记忆网盘链接待补充；对象特征和索引的获取位置也待补充。
-- 完整资源登记见 `catalog/external_resources.template.json`。网盘内容未在本次发布中下载或重新核验。
+- [benchmark_data]。
+- 完整资源登记见 `catalog/external_resources.template.json`。
 
 本仓库不含图片、视频、HSGG 正文、图正文、embedding、FAISS、数据库或模型权重。
 官方 QA 正文及参考答案也不随包复制；`catalog/source_versions.json` 提供精确版本与 SHA256，获取和使用遵循各上游条款。
